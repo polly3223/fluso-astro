@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, useAnimationFrame } from "motion/react";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/utils/styles";
-import { useMorphingShape } from "@/hooks/useMorphingShape";
 import { FlusoText } from "@/components/FlusoWordmark";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
@@ -277,16 +276,6 @@ export default function SiteNav({ hidePricing = false }: { hidePricing?: boolean
     setDrawerOpen(false);
   }, [location.pathname]);
 
-  const { ref: bgRef, clipPath, transform } = useMorphingShape<HTMLDivElement>({
-    radiusMin: 16,
-    radiusMax: 26,
-    bulgeRange: 0.18,
-    driftX: 1.5,
-    driftScale: 0.003,
-    driftY: 4,
-    driftPeriodMs: 5200,
-  });
-
   const headerRef = useRef<HTMLElement>(null);
   const [navTheme, setNavTheme] = useState<"light" | "dark" | "cross">("dark");
   const navThemeRef = useRef<"light" | "dark" | "cross">("dark");
@@ -439,18 +428,10 @@ export default function SiteNav({ hidePricing = false }: { hidePricing?: boolean
       )}
     >
 
-      <motion.div
-        ref={bgRef}
+      <div
         aria-hidden="true"
-        // While the mobile menu is open the header grows; freeze the morphing
-        // shape to a plain rounded rect so the bg covers the whole expanded
-        // header as ONE shape.
-        style={{
-          clipPath: drawerOpen ? "inset(0 round 24px)" : clipPath,
-          transform: drawerOpen ? "none" : transform,
-        }}
         className={cn(
-          "absolute inset-0 -z-10 pointer-events-none",
+          "absolute inset-0 -z-10 pointer-events-none rounded-2xl",
           barTheme === "light" && "bg-[#0c0c0c]",
           barTheme === "dark" && "bg-[#faf9f5]",
           barTheme === "cross" && "bg-[#faf9f5]",
