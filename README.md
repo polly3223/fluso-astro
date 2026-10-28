@@ -23,7 +23,7 @@ bun run preview
 
 - Free $0, Plus $10/month (10× Free), Pro $30/month (10× Plus); weekly usage allowances, no absolute token quotas. Pro includes confidential mode. The eligible 30-day card-required Pro trial is preserved.
 - Homepage Agents section, setup explanation and three selectable workflow examples. The actual `AgentReplica`/`AgentSurface` components are reused from the previous Fluso landing, with desktop and phone layouts and synthetic example content.
-- English at `/`; Italian marketing pages at `/it/`. The URL determines the language. Footer language links preserve the current page; the header has no language flags.
+- English at `/`; Italian marketing pages at `/it/`. The URL determines the language. Header flags and footer language links preserve the current page, query and section.
 - Localized canonical/alternate metadata and sitemap. Privacy and terms retain their existing published English versions; their Italian URLs redirect to English.
 - Retired Telegram, outdated model and mobile-roadmap claims are removed from current marketing copy.
 

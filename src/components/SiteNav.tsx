@@ -5,8 +5,10 @@ import { useTranslation } from "react-i18next";
 import { cn } from "@/utils/styles";
 import { useMorphingShape } from "@/hooks/useMorphingShape";
 import { FlusoText } from "@/components/FlusoWordmark";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
-const BREAKPOINT = 1024;
+// Keep both language flags and translated navigation clear at tablet widths.
+const BREAKPOINT = 1280;
 
 type IndustryKey =
   | "founders"
@@ -411,7 +413,7 @@ export default function SiteNav({ hidePricing = false }: { hidePricing?: boolean
         aria-hidden="true"
         onClick={closeDrawer}
         className={cn(
-          "fixed inset-0 z-90 bg-black/40 backdrop-blur-[2px] transition-opacity duration-220 lg:hidden!",
+          "fixed inset-0 z-90 bg-black/40 backdrop-blur-[2px] transition-opacity duration-220 xl:hidden!",
           drawerOpen ? "opacity-100" : "opacity-0 pointer-events-none",
         )}
       />
@@ -433,8 +435,8 @@ export default function SiteNav({ hidePricing = false }: { hidePricing?: boolean
         "w-[calc(100%-3rem)]",
         "left-6",
 
-        "max-lg:gap-x-4",
-        "max-lg:grid-cols-[1fr_auto] max-lg:gap-x-3 max-lg:py-3 max-lg:px-4!",
+        "max-xl:gap-x-4",
+        "max-xl:grid-cols-[1fr_auto] max-xl:gap-x-3 max-xl:py-3 max-xl:px-4!",
       )}
     >
 
@@ -455,7 +457,7 @@ export default function SiteNav({ hidePricing = false }: { hidePricing?: boolean
           barTheme === "cross" && "bg-[#faf9f5]",
         )}
       />
-      <div className="justify-self-start max-lg:justify-self-auto">
+      <div className="justify-self-start max-xl:justify-self-auto">
         <Link to="/" className="text-2xl text-inherit no-underline relative top-[-3px]">
           <FlusoText />
         </Link>
@@ -463,7 +465,7 @@ export default function SiteNav({ hidePricing = false }: { hidePricing?: boolean
 
       <nav
         aria-label={t("nav.primaryLabel")}
-        className="flex items-center justify-self-center justify-center gap-6 max-lg:gap-4 max-lg:hidden!"
+        className="flex items-center justify-self-center justify-center gap-6 max-xl:gap-4 max-xl:hidden!"
       >
         <div
           ref={dropdownRef}
@@ -538,13 +540,13 @@ export default function SiteNav({ hidePricing = false }: { hidePricing?: boolean
 
           "before:content-[''] before:absolute before:-top-3 before:inset-x-0 before:h-3",
           "transition-[opacity,transform] duration-200 ease-[ease]",
-          "max-lg:hidden",
+          "max-xl:hidden",
           dropdownOpen
             ? "visible translate-y-0 opacity-100 pointer-events-auto"
             : "invisible -translate-y-1.5 opacity-0 pointer-events-none",
         )}
       >
-        <div className="grid grid-cols-3 gap-1.5 max-lg:grid-cols-2">
+        <div className="grid grid-cols-3 gap-1.5 max-xl:grid-cols-2">
           {industries.map((i) => (
             <Link
               key={i.href}
@@ -571,13 +573,13 @@ export default function SiteNav({ hidePricing = false }: { hidePricing?: boolean
 
       <div
         className={cn(
-          "justify-self-end text-right",
-          "max-lg:flex! max-lg:items-center max-lg:justify-end max-lg:ml-auto",
-          "max-lg:justify-self-auto max-lg:opacity-100",
+          "flex items-center gap-3 justify-self-end text-right",
+          "max-xl:flex! max-xl:items-center max-xl:justify-end max-xl:ml-auto",
+          "max-xl:justify-self-auto max-xl:opacity-100",
         )}
       >
-
-        <div className="inline-flex items-center gap-5 max-lg:hidden!">
+        <LanguageSwitcher />
+        <div className="inline-flex items-center gap-5 max-xl:hidden!">
           <a
             href="https://form.typeform.com/to/vZnBDhzs"
             target="_blank"
@@ -659,7 +661,7 @@ export default function SiteNav({ hidePricing = false }: { hidePricing?: boolean
             barTheme !== "light" && "text-[#0c0c0c]",
             "hover:opacity-80",
             "[-webkit-tap-highlight-color:transparent]",
-            "max-lg:inline-flex",
+            "max-xl:inline-flex",
           )}
         >
           <IconMenu className={drawerOpen ? "hidden" : "block"} />
@@ -679,7 +681,7 @@ export default function SiteNav({ hidePricing = false }: { hidePricing?: boolean
           if ((e.target as HTMLElement).closest("a")) closeDrawer();
         }}
         className={cn(
-          "col-span-full hidden min-w-0 max-lg:grid",
+          "col-span-full hidden min-w-0 max-xl:grid",
           "transition-[grid-template-rows] duration-300 ease-[cubic-bezier(0.22,0.61,0.36,1)]",
           drawerOpen ? "[grid-template-rows:1fr]" : "[grid-template-rows:0fr]",
         )}
