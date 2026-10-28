@@ -33,8 +33,7 @@ const INDUSTRY_LINKS: { href: string; key: IndustryKey }[] = [
   { href: "/for-operations", key: "operations" },
 ];
 
-const TOP_LINKS: { href: string; key: "agents" | "pricing" | "enterprise"; soon?: boolean }[] = [
-  { href: "/#agents", key: "agents" },
+const TOP_LINKS: { href: string; key: "pricing" | "enterprise"; soon?: boolean }[] = [
   { href: "/pricing", key: "pricing" },
   { href: "/enterprise", key: "enterprise" },
 ];
