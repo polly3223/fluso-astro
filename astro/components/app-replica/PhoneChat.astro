@@ -8,24 +8,24 @@ const { request, workedFor, tool, intro, points } = REPLICA.chat;
 const phaseLine = "absolute inset-0 flex items-center gap-2 opacity-0 transition-opacity duration-300";
 ---
 
-<div class="absolute inset-x-5 top-[128px] text-[14px] leading-[22px] text-[#0c0d0d] opacity-0 transition-opacity duration-500 group-data-[view=chat]/app:opacity-100 group-data-[view=chat]/app:delay-300">
-  <div data-replica-reveal class="ml-auto w-fit max-w-[300px] rounded-[22px] border border-[#dadadb] bg-white px-4 py-3">{request}</div>
+<div class="absolute inset-x-5 top-[128px] text-[14px] leading-[22px] text-[#eeeeee] opacity-0 transition-opacity duration-500 group-data-[view=chat]/app:opacity-100 group-data-[view=chat]/app:delay-300">
+  <div data-replica-reveal class="ml-auto w-fit max-w-[300px] rounded-[22px] border border-[#343638] bg-[#111213] px-4 py-3">{request}</div>
 
-  <div class="relative mt-5 h-5 font-medium text-[#979899]/85">
+  <div class="relative mt-5 h-5 font-medium text-[#b0b2b5]/85">
     <span class:list={[phaseLine, "group-data-[phase=thinking]/app:opacity-100"]}>
-      <Mark class="size-4 text-[#0c0d0d]/80 motion-safe:animate-spin" />
-      <span class="font-normal text-[#0c0d0d]/80">Thinking it through</span>
+      <Mark class="size-4 text-[#eeeeee]/80 motion-safe:animate-spin" />
+      <span class="font-normal text-[#eeeeee]/80">Thinking it through</span>
     </span>
     <span class:list={[phaseLine, "group-data-[phase=working]/app:opacity-100"]}>Working for 12s <Icon name="chevronRight" size={14} stroke={2} /></span>
     <span class:list={[phaseLine, "group-data-[phase=answer]/app:opacity-100"]}>
       {workedFor} <Icon name="chevronRight" size={14} stroke={2} />
-      <span class="ml-1 h-px flex-1 bg-[#dadadb]"></span>
+      <span class="ml-1 h-px flex-1 bg-[#343638]"></span>
     </span>
   </div>
-  <p class="mt-1 h-5 pl-5 text-[12px] leading-5 text-[#979899] opacity-0 transition-opacity duration-300 group-data-[phase=working]/app:opacity-100">{tool}</p>
+  <p class="mt-1 h-5 pl-5 text-[12px] leading-5 text-[#b0b2b5] opacity-0 transition-opacity duration-300 group-data-[phase=working]/app:opacity-100">{tool}</p>
 
   <p data-replica-reveal class="-mt-6">{intro}</p>
-  <ul class="mt-3 list-disc space-y-2 pl-5 marker:text-[#0c0d0d]/70">
+  <ul class="mt-3 list-disc space-y-2 pl-5 marker:text-[#eeeeee]/70">
     {
       points.map((point) => (
         <li data-replica-reveal>
@@ -34,7 +34,7 @@ const phaseLine = "absolute inset-0 flex items-center gap-2 opacity-0 transition
       ))
     }
   </ul>
-  <div data-replica-reveal class="mt-4 flex items-center gap-4 text-[#979899]">
+  <div data-replica-reveal class="mt-4 flex items-center gap-4 text-[#b0b2b5]">
     <Icon name="copy" stroke={2} /><Icon name="thumbsUp" stroke={2} /><Icon name="thumbsDown" stroke={2} />
   </div>
 </div>
