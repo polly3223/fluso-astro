@@ -34,7 +34,7 @@ const LANGS = [
 export default function LanguageSwitcher() {
   const { pathname, search, hash } = useLocation();
   return (
-    <nav aria-label="Language" className="inline-flex shrink-0 items-center gap-1">
+    <nav aria-label="Language" className="inline-flex shrink-0 items-center gap-2 max-xl:gap-1">
       {LANGS.map(({ code, label, Flag }) => (
         <a
           key={code}
@@ -44,7 +44,7 @@ export default function LanguageSwitcher() {
           aria-label={label}
           aria-current={locale === code ? "page" : undefined}
           title={label}
-          className="inline-flex size-7 items-center justify-center rounded-full text-inherit focus-visible:outline-2 focus-visible:outline-offset-2"
+          className={cn("inline-flex size-4 items-center justify-center rounded-full text-inherit focus-visible:outline-2 focus-visible:outline-offset-2 max-xl:size-7", locale === code && "xl:scale-105")}
         >
           <Flag className={cn(
             "block h-4 w-4 overflow-hidden rounded-lg border-[1.5px] border-transparent grayscale transition-opacity",

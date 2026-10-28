@@ -573,7 +573,7 @@ export default function SiteNav({ hidePricing = false }: { hidePricing?: boolean
 
       <div
         className={cn(
-          "flex items-center gap-3 justify-self-end text-right",
+          "flex items-center gap-5 justify-self-end text-right max-xl:gap-3",
           "max-xl:flex! max-xl:items-center max-xl:justify-end max-xl:ml-auto",
           "max-xl:justify-self-auto max-xl:opacity-100",
         )}
