@@ -1,0 +1,9 @@
+---
+import Site from '../layouts/Site.astro';
+import { ROUTE_SEO } from '../../src/seo/config';
+
+export function getStaticPaths() {
+  return Object.keys(ROUTE_SEO).map(path => ({params: {path: path === '/' ? undefined : path.slice(1)}, props: {path}}));
+}
+---
+<Site path={Astro.props.path} />

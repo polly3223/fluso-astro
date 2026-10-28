@@ -1,0 +1,61 @@
+{
+  "industries": {
+    "founders": "Founders",
+    "lawyers": "Lawyers",
+    "investors": "Investors",
+    "marketers": "Marketers",
+    "researchers": "Researchers",
+    "doctors": "Doctors",
+    "consultants": "Consultants",
+    "sales": "Sales",
+    "operations": "Operations"
+  },
+  "nav": {
+    "professionals": "Professionals",
+    "pricing": "Pricing",
+    "enterprise": "Enterprise",
+    "contact": "Contact us",
+    "getStarted": "Get Started",
+    "comingSoon": "Coming soon",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "primaryLabel": "Primary",
+    "navigationLabel": "Navigation"
+  },
+  "footer": {
+    "tagline": "Your personal AI workspace. Connected context, open-weight models, your boundary.",
+    "productOf": "A product of",
+    "requestEarlyAccess": "Request early access",
+    "columns": {
+      "product": "Product",
+      "industries": "Industries",
+      "company": "Company"
+    },
+    "product": {
+      "pricing": "Pricing",
+      "enterprise": "Enterprise",
+      "getStarted": "Get started"
+    },
+    "company": {
+      "premai": "Prem AI",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "contact": "Contact"
+    },
+    "copyright": "© {{year}} Fluso",
+    "engineeredInSwitzerland": "Engineered in Switzerland",
+    "hostedInEu": "Hosted in the EU",
+    "backToTop": "Back to top"
+  },
+  "parent": {
+    "productOf": "A product of",
+    "tagline": "Prem AI is a private intelligence company.",
+    "visit": "Visit premai.io",
+    "contact": "Contact us"
+  },
+  "industryPage": {
+    "customSkills": "Custom skills",
+    "automations": "Automations",
+    "connectors": "Potential connectors"
+  }
+}

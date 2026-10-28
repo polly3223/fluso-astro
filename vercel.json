@@ -1,0 +1,89 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "astro",
+  "buildCommand": "bun run build",
+  "installCommand": "bun install --frozen-lockfile",
+  "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/auth/client/:path*",
+      "destination": "https://app.fluso.ai/auth/client/:path*",
+      "statusCode": 307
+    },
+    {
+      "source": "/pricing.html",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/enterprise.html",
+      "destination": "/enterprise",
+      "permanent": true
+    },
+    {
+      "source": "/download.html",
+      "destination": "/download",
+      "permanent": true
+    },
+    {
+      "source": "/get-started.html",
+      "destination": "/get-started",
+      "permanent": true
+    },
+    {
+      "source": "/privacy.html",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/terms.html",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/for-founders.html",
+      "destination": "/for-founders",
+      "permanent": true
+    },
+    {
+      "source": "/for-lawyers.html",
+      "destination": "/for-lawyers",
+      "permanent": true
+    },
+    {
+      "source": "/for-investors.html",
+      "destination": "/for-investors",
+      "permanent": true
+    },
+    {
+      "source": "/for-marketers.html",
+      "destination": "/for-marketers",
+      "permanent": true
+    },
+    {
+      "source": "/for-researchers.html",
+      "destination": "/for-researchers",
+      "permanent": true
+    },
+    {
+      "source": "/for-doctors.html",
+      "destination": "/for-doctors",
+      "permanent": true
+    },
+    {
+      "source": "/for-consultants.html",
+      "destination": "/for-consultants",
+      "permanent": true
+    },
+    {
+      "source": "/for-sales.html",
+      "destination": "/for-sales",
+      "permanent": true
+    },
+    {
+      "source": "/for-operations.html",
+      "destination": "/for-operations",
+      "permanent": true
+    }
+  ]
+}

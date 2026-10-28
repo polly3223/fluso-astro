@@ -1,0 +1,198 @@
+/* ──────────────────────────────────────────────────────────────────
+   Industry pages — body styles only.
+
+   Chrome (background, global-bar, nav-dropdown, scroller, main-card
+   shell, title/lead) is inherited from persona-pages.css so industries
+   pages share the same shell as pricing/benchmarks/enterprise.
+
+   This file adds only what is unique to the 9 for-* posters:
+   the rotated stamp, the 3-column grid, the connector chip with a
+   real brand logo, and the footer CTA layout.
+   ────────────────────────────────────────────────────────────────── */
+
+/* Override the main-card padding for the tighter poster layout. */
+.main-card.industry-poster {
+    padding: 44px 56px;
+    overflow: hidden;
+}
+
+/* Rotated watermark behind the content. */
+.industry-stamp {
+    position: absolute;
+    top: 50%;
+    right: -80px;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: center;
+    font-size: 92px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: rgba(12, 12, 12, 0.04);
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+/* Header — uses persona-pages.css .title and .lead under the hood. */
+.industry-header {
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 2;
+}
+.industry-header .lead { max-width: 540px; }
+
+/* Three-column grid (custom skills · automations · connectors) */
+.industry-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.9fr;
+    gap: 44px;
+    flex-grow: 1;
+    min-height: 0;
+    margin-top: 28px;
+    position: relative;
+    z-index: 2;
+}
+
+.column-label {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.feature-item { margin-bottom: 18px; }
+.feature-item:last-child { margin-bottom: 0; }
+
+.feature-title {
+    font-size: 16.5px;
+    font-weight: 600;
+    letter-spacing: -0.012em;
+    line-height: 1.25;
+    margin-bottom: 5px;
+    color: var(--text-primary);
+}
+.feature-desc {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text-muted);
+    max-width: 38ch;
+}
+
+/* Connector chip with a real brand logo */
+.connector-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+.connector-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px 6px 8px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-soft);
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.connector-pill:hover {
+    border-color: rgba(12, 12, 12, 0.3);
+    transform: translateY(-1px);
+}
+.connector-logo {
+    width: 14px;
+    height: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.connector-logo img { width: 14px; height: 14px; display: block; }
+.connector-mono {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 8.5px;
+    font-weight: 700;
+    line-height: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    letter-spacing: 0;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+/* Footer (no use-cases, no sub-stamp) */
+.industry-footer {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    display: grid;
+    grid-template-columns: 2fr 3fr auto;
+    gap: 40px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+.footer-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.footer-meta-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+.footer-blurb {
+    font-size: 14.5px;
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+    color: var(--text-muted);
+    max-width: 56ch;
+}
+.industry-cta {
+    background: var(--text-primary);
+    color: var(--card-bg);
+    padding: 13px 24px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+}
+.industry-cta:hover { opacity: 0.85; transform: translateX(2px); }
+.industry-cta svg { width: 14px; height: 14px; }
+
+/* ── Responsive overrides (chrome already handled by persona-pages.css) */
+@media (max-width: 1024px) {
+    .main-card.industry-poster { padding: 36px 28px; }
+    .industry-stamp { display: none; }
+    .industry-header { margin-bottom: 18px; }
+    .industry-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin-top: 24px;
+    }
+    .feature-desc { max-width: 100%; }
+    .industry-footer {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-top: 28px;
+    }
+    .industry-cta { width: fit-content; }
+}

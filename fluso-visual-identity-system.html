@@ -1,0 +1,2398 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fluso Visual Identity System</title>
+  <style>
+    :root {
+      --canvas: #f5f5f3;
+      --paper: #ffffff;
+      --soft-paper: #f8f8f6;
+      --mist: #ececeb;
+      --line: #d7d7d3;
+      --line-strong: #bdbdb8;
+      --ink: #111214;
+      --graphite: #3f403e;
+      --muted: #81817c;
+      --faint: #b7b7b1;
+
+      --studio: #6e8063;
+      --studio-soft: #dfe5df;
+      --studio-deep: #154320;
+      --chat: #9f5a31;
+      --chat-soft: #e8dccd;
+      --chat-deep: #4c2c1c;
+      --api: #405b69;
+      --api-soft: #dbeaf0;
+      --api-deep: #0f274a;
+
+      --ocean: #588698;
+      --ocean-soft: #a9c1ca;
+      --ember: #e45009;
+      --ember-soft: #f27f31;
+      --violet: #7b549e;
+      --violet-soft: #b98ebb;
+      --grove: #32672d;
+      --grove-soft: #9ab359;
+      --earth: #884a20;
+      --sky: #afd1f1;
+      --navy: #06112c;
+
+      --radius: 8px;
+      --radius-sm: 4px;
+      --max: 1180px;
+      --sidebar: 92px;
+      --shadow-soft: 0 1px 2px rgba(17, 18, 20, 0.05), 0 10px 30px rgba(17, 18, 20, 0.04);
+      --font-sans: "Helvetica Now Display", "Helvetica Neue", Arial, sans-serif;
+      --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      --motion-fast: 150ms;
+      --motion-medium: 220ms;
+      --motion-slow: 320ms;
+      --motion-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+      --motion-ease-pop: cubic-bezier(0.34, 1.36, 0.64, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .shell {
+      min-height: 100dvh;
+      padding-left: var(--sidebar);
+    }
+
+    .rail {
+      position: fixed;
+      inset: 0 auto 0 0;
+      z-index: 20;
+      width: var(--sidebar);
+      border-right: 1px solid var(--line);
+      background: rgba(245, 245, 243, 0.92);
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .rail-title {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 13px;
+      color: var(--graphite);
+    }
+
+    .rail-meta {
+      font-size: 12px;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 15;
+      border-bottom: 1px solid var(--line);
+      background: rgba(245, 245, 243, 0.94);
+    }
+
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 12px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 210px;
+    }
+
+    .brand-name {
+      font-size: 18px;
+      line-height: 1;
+      letter-spacing: 0;
+      font-weight: 500;
+    }
+
+    .nav {
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      white-space: nowrap;
+    }
+
+    .nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav a {
+      border-radius: var(--radius-sm);
+      padding: 7px 10px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible {
+      outline: none;
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 58px 28px 96px;
+    }
+
+    section {
+      scroll-margin-top: 84px;
+      margin-bottom: 96px;
+    }
+
+    .hero {
+      min-height: 78dvh;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.72fr);
+      gap: 48px;
+      align-items: end;
+      padding-bottom: 50px;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -12% -12% auto auto;
+      width: 620px;
+      height: 420px;
+      opacity: 0.55;
+      background:
+        radial-gradient(circle at center, rgba(255, 255, 255, 0.82) 0 7px, transparent 8px) 0 0 / 33px 33px,
+        linear-gradient(180deg, transparent, var(--canvas));
+      mask-image: radial-gradient(closest-side, #000 0 66%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 18px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      max-width: 820px;
+      font-size: clamp(72px, 10vw, 142px);
+      line-height: 0.92;
+      letter-spacing: 0;
+      font-weight: 500;
+      text-wrap: balance;
+    }
+
+    .hero-copy {
+      max-width: 560px;
+      margin: 28px 0 0;
+      font-size: clamp(21px, 2.2vw, 31px);
+      line-height: 1.12;
+      color: var(--muted);
+      text-wrap: pretty;
+    }
+
+    .hero-copy strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .hero-card {
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      z-index: 1;
+    }
+
+    .texture-stack {
+      display: grid;
+      gap: 10px;
+    }
+
+    .texture-strip {
+      min-height: 84px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      position: relative;
+      background: var(--soft-paper);
+    }
+
+    .texture-strip img {
+      width: 100%;
+      height: 100%;
+      min-height: 84px;
+      object-fit: cover;
+    }
+
+    .texture-strip::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle, rgba(17, 18, 20, 0.16) 0 1px, transparent 1.4px) 0 0 / 8px 8px;
+      mix-blend-mode: multiply;
+      opacity: 0.24;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 82px minmax(0, 1fr);
+      gap: 20px;
+      margin-bottom: 30px;
+      align-items: start;
+    }
+
+    .number {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--muted);
+      padding-top: 9px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(38px, 5vw, 74px);
+      line-height: 0.96;
+      letter-spacing: 0;
+      font-weight: 500;
+      text-wrap: balance;
+    }
+
+    .section-lede {
+      max-width: 850px;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: clamp(20px, 2vw, 28px);
+      line-height: 1.15;
+      text-wrap: pretty;
+    }
+
+    .section-lede strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid.four {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      padding: 22px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card.quiet {
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .label {
+      margin: 0 0 10px;
+      font-family: var(--font-mono);
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      line-height: 1.05;
+      font-weight: 500;
+      text-wrap: balance;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
+      text-wrap: pretty;
+    }
+
+    .rules {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .rule {
+      display: grid;
+      grid-template-columns: 13px minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+      color: var(--graphite);
+      font-size: 14px;
+      line-height: 1.42;
+    }
+
+    .rule::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--ink);
+      margin-top: 7px;
+    }
+
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .swatch {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      padding: 0;
+      text-align: left;
+      cursor: pointer;
+      color: inherit;
+    }
+
+    .swatch-chip {
+      height: 84px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(17, 18, 20, 0.12);
+      margin-bottom: 10px;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+    }
+
+    .swatch:focus-visible .swatch-chip {
+      outline: 2px solid var(--ink);
+      outline-offset: 2px;
+    }
+
+    .swatch-name {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .swatch-value {
+      display: block;
+      margin-top: 2px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .token-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+
+    .token-table th,
+    .token-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+    }
+
+    .token-table th {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+      background: var(--soft-paper);
+    }
+
+    .token-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .mono {
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+
+    .mark {
+      width: 48px;
+      height: 48px;
+      flex: 0 0 auto;
+    }
+
+    .mark.large {
+      width: 280px;
+      height: 280px;
+      margin: 20px auto;
+    }
+
+    .mark circle {
+      fill: currentColor;
+    }
+
+    .dot-system {
+      border: 1px solid var(--line);
+      background: #000;
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 40px;
+    }
+
+    .dot-icon-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .dot-icon-cell {
+      min-height: 172px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .dot-icon-cell:nth-child(4n) {
+      border-right: 0;
+    }
+
+    .dot-icon-cell:nth-last-child(-n + 4) {
+      border-bottom: 0;
+    }
+
+    .pixel-icon {
+      display: grid;
+      grid-template-columns: repeat(7, 9px);
+      grid-auto-rows: 9px;
+      gap: 5px;
+    }
+
+    .pixel-icon i {
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .pixel-icon .on {
+      background: currentColor;
+    }
+
+    .pixel-icon .dim {
+      background: rgba(255, 255, 255, 0.38);
+    }
+
+    .product-row {
+      display: grid;
+      grid-template-columns: 0.75fr 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .product-diagram {
+      min-height: 380px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .branch-lines {
+      flex: 1 1 auto;
+      height: 250px;
+      border: 1px dashed var(--line-strong);
+      border-left: 0;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      position: relative;
+    }
+
+    .branch-lines::before,
+    .branch-lines::after {
+      content: "";
+      position: absolute;
+      left: -1px;
+      width: 100%;
+      height: 1px;
+      background: repeating-linear-gradient(90deg, var(--line-strong), var(--line-strong) 4px, transparent 4px, transparent 8px);
+    }
+
+    .branch-lines::before {
+      top: 50%;
+    }
+
+    .branch-lines::after {
+      display: none;
+    }
+
+    .product-bands {
+      display: grid;
+      gap: 10px;
+    }
+
+    .product-band {
+      min-height: 132px;
+      border-radius: var(--radius-sm);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid var(--line);
+      color: var(--ink);
+      font-size: clamp(30px, 4.2vw, 54px);
+      font-weight: 400;
+    }
+
+    .product-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.48;
+      background: radial-gradient(circle, currentColor 0 1.3px, transparent 1.7px) 0 0 / 10px 10px;
+      mask-image: linear-gradient(110deg, #000 0 18%, transparent 52%, #000 100%);
+    }
+
+    .product-band span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .image-mosaic {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr 0.75fr;
+      grid-auto-rows: 185px;
+      gap: 14px;
+    }
+
+    .image-tile {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: var(--paper);
+      position: relative;
+    }
+
+    .image-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-tile.wide {
+      grid-column: span 2;
+    }
+
+    .image-tile.tall {
+      grid-row: span 2;
+    }
+
+    .image-tile::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .texture-grid {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .texture-card {
+      min-height: 240px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      position: relative;
+      background: var(--paper);
+    }
+
+    .texture-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 240px;
+      object-fit: cover;
+    }
+
+    .texture-card .caption {
+      position: absolute;
+      inset: auto 10px 10px 10px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.82);
+      padding: 8px 9px;
+      font-size: 11px;
+      font-family: var(--font-mono);
+    }
+
+    .type-sample {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 32px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .type-sample:last-child {
+      border-bottom: 0;
+    }
+
+    .type-name {
+      font-size: 34px;
+      line-height: 1;
+      font-weight: 500;
+    }
+
+    .type-pill {
+      display: inline-flex;
+      margin-top: 28px;
+      padding: 10px 14px;
+      border-radius: var(--radius);
+      background: var(--mist);
+      font-size: 13px;
+    }
+
+    .alphabet {
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.18;
+      word-break: break-word;
+    }
+
+    .specimen {
+      display: grid;
+      gap: 20px;
+    }
+
+    .scale-row {
+      display: grid;
+      grid-template-columns: 120px minmax(0, 1fr) 220px;
+      gap: 18px;
+      align-items: baseline;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .scale-row:last-child {
+      border-bottom: 0;
+    }
+
+    .pattern-panels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .pattern-panel {
+      min-height: 360px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .pattern-panel.light {
+      background: #fff;
+    }
+
+    .pattern-panel::before {
+      content: "";
+      position: absolute;
+      inset: -12%;
+      background: radial-gradient(circle, currentColor 0 8px, transparent 8.8px) 0 0 / 32px 32px;
+      opacity: 0.42;
+      mask-image: radial-gradient(circle at center, transparent 0 22%, #000 24% 54%, transparent 72%);
+      transform: rotate(-10deg);
+    }
+
+    .pattern-panel.dark-dot {
+      color: rgba(255, 255, 255, 0.18);
+    }
+
+    .pattern-panel.light-dot {
+      color: rgba(17, 18, 20, 0.08);
+    }
+
+    .composition-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+    }
+
+    .site-frame {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--paper);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .site-nav {
+      height: 58px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 18px;
+      font-size: 13px;
+    }
+
+    .site-hero {
+      min-height: 360px;
+      padding: 40px;
+      display: grid;
+      align-items: end;
+      position: relative;
+      overflow: hidden;
+      background: var(--canvas);
+    }
+
+    .site-hero::before {
+      content: "";
+      position: absolute;
+      inset: auto -8% -18% -8%;
+      height: 280px;
+      background-image: url("assets/visual-identity/texture-ocean.png");
+      background-size: cover;
+      background-position: center;
+      opacity: 0.42;
+      filter: grayscale(0.1);
+    }
+
+    .site-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle, #fff 0 2px, transparent 2.6px) 0 0 / 13px 13px,
+        linear-gradient(180deg, rgba(245,245,243,0.12), rgba(245,245,243,0.95));
+      opacity: 0.75;
+      mix-blend-mode: screen;
+    }
+
+    .site-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 520px;
+    }
+
+    .site-hero h3 {
+      margin: 0;
+      font-size: 58px;
+      line-height: 0.95;
+      letter-spacing: 0;
+      font-weight: 500;
+    }
+
+    .site-hero p {
+      margin: 16px 0 0;
+      color: var(--graphite);
+      font-size: 18px;
+      max-width: 450px;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 22px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--ink);
+      padding: 0 15px;
+      font-size: 13px;
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .btn.secondary {
+      background: rgba(255, 255, 255, 0.5);
+      color: var(--ink);
+      border-color: var(--line-strong);
+    }
+
+    .dos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .motion-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .motion-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .motion-stage {
+      min-height: 214px;
+      padding: 22px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      background:
+        radial-gradient(circle, rgba(17, 18, 20, 0.08) 0 1px, transparent 1.4px) 0 0 / 16px 16px,
+        var(--soft-paper);
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .motion-meta {
+      padding: 16px 18px 18px;
+    }
+
+    .motion-meta h3 {
+      margin: 0 0 7px;
+      font-size: 20px;
+      line-height: 1.1;
+      font-weight: 500;
+    }
+
+    .motion-meta p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .motion-button {
+      appearance: none;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-sm);
+      min-height: 38px;
+      padding: 0 14px;
+      background: rgba(255, 255, 255, 0.86);
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      cursor: pointer;
+      font-size: 13px;
+      transition:
+        transform var(--motion-fast) ease-out,
+        background-color var(--motion-fast) ease-out,
+        border-color var(--motion-fast) ease-out;
+    }
+
+    .motion-button:hover {
+      background: var(--paper);
+      border-color: var(--graphite);
+      transform: translateY(-1px);
+    }
+
+    .motion-button:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 2px;
+    }
+
+    .dotmatrix-card {
+      grid-column: span 2;
+    }
+
+    .dotmatrix-stage {
+      padding: 20px;
+    }
+
+    .dotmatrix-primitive-set {
+      width: min(100%, 520px);
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .dotmatrix-primitive {
+      min-height: 142px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.62);
+      display: grid;
+      place-items: center;
+      align-content: center;
+      gap: 14px;
+      color: var(--ink);
+    }
+
+    .dotmatrix-primitive > span:last-child {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .dmx-root {
+      --dmx-size: 5;
+      --dmx-dot: 7px;
+      --dmx-gap: 5px;
+      --dmx-speed: 1;
+      --dmx-cycle: 1500ms;
+      --dmx-opacity-base: 0.14;
+      --dmx-opacity-mid: 0.36;
+      --dmx-opacity-peak: 1;
+      display: inline-grid;
+      place-items: center;
+      color: currentColor;
+    }
+
+    .dmx-root[data-dotmatrix-preview="circular"] {
+      color: var(--api);
+    }
+
+    .dmx-root[data-dotmatrix-preview="triangle"] {
+      --dmx-size: 7;
+      --dmx-dot: 5px;
+      --dmx-gap: 4px;
+      color: var(--studio);
+    }
+
+    .dmx-grid {
+      display: grid;
+      grid-template-columns: repeat(var(--dmx-size), var(--dmx-dot));
+      gap: var(--dmx-gap);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dmx-dot {
+      width: var(--dmx-dot);
+      height: var(--dmx-dot);
+      border-radius: 999px;
+      background: currentColor;
+      opacity: var(--dmx-opacity-base);
+      transform: scale(0.82);
+      will-change: opacity, transform;
+    }
+
+    .dmx-inactive {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .dmx-spiral-snake {
+      animation: dmx-spiral-snake var(--dmx-cycle) linear infinite;
+    }
+
+    .dmx-ring-pulse {
+      animation: dmx-ring-pulse 1650ms ease-in-out infinite;
+    }
+
+    .dmx-triangle-wave {
+      animation: dmx-triangle-wave 1575ms ease-in-out infinite;
+    }
+
+    @keyframes dmx-spiral-snake {
+      0%, 38%, 100% {
+        opacity: var(--dmx-opacity-base);
+        transform: scale(0.82);
+      }
+      12% {
+        opacity: var(--dmx-opacity-peak);
+        transform: scale(1.18);
+      }
+      24% {
+        opacity: var(--dmx-opacity-mid);
+        transform: scale(0.98);
+      }
+    }
+
+    @keyframes dmx-ring-pulse {
+      0%, 100% {
+        opacity: var(--dmx-opacity-base);
+        transform: scale(0.82);
+      }
+      45% {
+        opacity: var(--dmx-opacity-peak);
+        transform: scale(1.12);
+      }
+    }
+
+    @keyframes dmx-triangle-wave {
+      0%, 100% {
+        opacity: var(--dmx-opacity-base);
+        transform: translateY(0) scale(0.82);
+      }
+      45% {
+        opacity: var(--dmx-opacity-peak);
+        transform: translateY(-2px) scale(1.1);
+      }
+    }
+
+    .motion-code {
+      margin: 14px 0 0;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: var(--soft-paper);
+      overflow-x: auto;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      line-height: 1.55;
+      color: var(--graphite);
+    }
+
+    .text-swap {
+      position: relative;
+      min-width: 88px;
+      min-height: 18px;
+      display: inline-grid;
+      place-items: center;
+    }
+
+    .text-swap span {
+      grid-area: 1 / 1;
+      transition:
+        opacity var(--motion-medium) var(--motion-ease-out),
+        transform var(--motion-medium) var(--motion-ease-out),
+        filter var(--motion-medium) var(--motion-ease-out);
+    }
+
+    .text-swap [data-state="done"] {
+      opacity: 0;
+      transform: translateY(7px);
+      filter: blur(2px);
+    }
+
+    [data-motion-text="done"] .text-swap [data-state="idle"] {
+      opacity: 0;
+      transform: translateY(-7px);
+      filter: blur(2px);
+    }
+
+    [data-motion-text="done"] .text-swap [data-state="done"] {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    .bell-demo {
+      width: 74px;
+      height: 74px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      display: grid;
+      place-items: center;
+      position: relative;
+      color: var(--graphite);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .bell-demo svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    .badge-dot {
+      position: absolute;
+      top: 13px;
+      right: 13px;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: var(--chat);
+      border: 3px solid var(--paper);
+      opacity: 0;
+      transform: translate(-9px, 13px) scale(0.32);
+      transition:
+        opacity var(--motion-fast) ease-out,
+        transform var(--motion-slow) var(--motion-ease-pop);
+    }
+
+    [data-motion-badge="open"] .badge-dot {
+      opacity: 1;
+      transform: translate(0, 0) scale(1);
+    }
+
+    .panel-demo {
+      width: min(100%, 250px);
+      display: grid;
+      gap: 10px;
+      justify-items: center;
+    }
+
+    .reveal-panel {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      padding: 14px;
+      opacity: 0;
+      transform: translateY(10px) scale(0.97);
+      pointer-events: none;
+      transition:
+        opacity var(--motion-medium) var(--motion-ease-out),
+        transform var(--motion-medium) var(--motion-ease-out);
+      box-shadow: var(--shadow-soft);
+    }
+
+    [data-motion-panel="open"] .reveal-panel {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    .panel-row {
+      height: 10px;
+      border-radius: 999px;
+      background: var(--mist);
+      margin-bottom: 9px;
+    }
+
+    .panel-row:last-child {
+      margin-bottom: 0;
+      width: 64%;
+    }
+
+    .metric-demo {
+      font-variant-numeric: tabular-nums;
+      font-size: 54px;
+      line-height: 1;
+      font-weight: 500;
+      color: var(--api);
+      display: flex;
+      gap: 1px;
+    }
+
+    .metric-demo.is-animating .metric-digit {
+      animation: numberPop 420ms var(--motion-ease-pop) both;
+    }
+
+    .metric-digit:nth-child(2) { animation-delay: 45ms; }
+    .metric-digit:nth-child(3) { animation-delay: 90ms; }
+
+    @keyframes numberPop {
+      from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.92);
+        filter: blur(3px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+    }
+
+    .icon-swap {
+      width: 52px;
+      height: 52px;
+      position: relative;
+      display: inline-grid;
+      place-items: center;
+    }
+
+    .icon-swap svg {
+      grid-area: 1 / 1;
+      width: 52px;
+      height: 52px;
+      position: absolute;
+      transition:
+        opacity var(--motion-fast) ease-out,
+        transform var(--motion-fast) ease-out,
+        filter var(--motion-fast) ease-out;
+    }
+
+    .icon-swap [data-icon="check"] {
+      opacity: 0;
+      transform: scale(0.35);
+      filter: blur(2px);
+      color: var(--studio);
+    }
+
+    [data-motion-icon="check"] .icon-swap [data-icon="dots"] {
+      opacity: 0;
+      transform: scale(0.35);
+      filter: blur(2px);
+    }
+
+    [data-motion-icon="check"] .icon-swap [data-icon="check"] {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0);
+    }
+
+    .motion-guidance {
+      margin-top: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      background: var(--paper);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 1ms !important;
+      }
+    }
+
+    .do-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      background: var(--paper);
+    }
+
+    .do-card h3 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    .do-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--graphite);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .do-card li + li {
+      margin-top: 8px;
+    }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .source-shot {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: var(--paper);
+    }
+
+    .source-shot img {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .source-shot figcaption {
+      margin: 0;
+      padding: 10px 12px;
+      font-family: var(--font-mono);
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .copy-toast {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 40;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: var(--paper);
+      padding: 10px 12px;
+      font-size: 13px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .copy-toast.show {
+      opacity: 1;
+    }
+
+    @media (max-width: 980px) {
+      :root {
+        --sidebar: 0px;
+      }
+
+      .rail {
+        display: none;
+      }
+
+      .topbar-inner {
+        padding: 12px 18px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      main {
+        padding: 36px 18px 70px;
+      }
+
+      .hero,
+      .product-row,
+      .composition-grid,
+      .grid.two,
+      .grid.three,
+      .grid.four,
+      .motion-grid,
+      .dos,
+      .pattern-panels {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .number {
+        padding-top: 0;
+      }
+
+      .swatch-grid,
+      .texture-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .dot-icon-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .dot-icon-cell:nth-child(2n) {
+        border-right: 0;
+      }
+
+      .dot-icon-cell:nth-last-child(-n + 4) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .dot-icon-cell:nth-last-child(-n + 2) {
+        border-bottom: 0;
+      }
+
+      .image-mosaic {
+        grid-template-columns: 1fr;
+      }
+
+      .image-tile.wide,
+      .image-tile.tall {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .type-sample,
+      .scale-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .source-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dotmatrix-card {
+        grid-column: auto;
+      }
+
+      .dotmatrix-primitive-set {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside class="rail" aria-label="Document rail">
+      <svg class="mark" viewBox="0 0 120 120" aria-hidden="true">
+        <use href="#fluso-mark"></use>
+      </svg>
+      <div class="rail-title">Visual Identity System</div>
+      <div class="rail-meta">2026</div>
+    </aside>
+
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand-lockup" href="#overview" aria-label="Fluso visual identity home">
+          <svg class="mark" viewBox="0 0 120 120" aria-hidden="true">
+            <use href="#fluso-mark"></use>
+          </svg>
+          <span class="brand-name">Fluso</span>
+        </a>
+        <nav class="nav" aria-label="Sections">
+          <a href="#principles">Principles</a>
+          <a href="#color">Color</a>
+          <a href="#type">Typography</a>
+          <a href="#symbol">Symbol</a>
+          <a href="#imagery">Imagery</a>
+          <a href="#products">Products</a>
+          <a href="#web">Website</a>
+          <a href="#motion">Motion</a>
+          <a href="#rules">Rules</a>
+          <a href="#sources">Sources</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="overview">
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">Identity reference / extracted from supplied brand slides and texture studies</p>
+          <h1 id="hero-title">Visual identity system</h1>
+          <p class="hero-copy"><strong>Human warmth, private structured intelligence, and modular clarity.</strong> The system combines quiet Swiss editorial structure with organic light, tactile image texture, and a dot language that can scale from logo to icon to atmosphere.</p>
+        </div>
+        <aside class="hero-card" aria-label="Texture direction preview">
+          <p class="label">Texture directions</p>
+          <div class="texture-stack">
+            <div class="texture-strip"><img src="assets/visual-identity/texture-ocean.png" alt="Ocean blue painterly texture"></div>
+            <div class="texture-strip"><img src="assets/visual-identity/texture-ember.png" alt="Orange ember painterly texture"></div>
+            <div class="texture-strip"><img src="assets/visual-identity/texture-grove.png" alt="Green grove painterly texture"></div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="principles" aria-labelledby="principles-title">
+        <div class="section-head">
+          <div class="number">01</div>
+          <div>
+            <h2 id="principles-title">Core principles</h2>
+            <p class="section-lede"><strong>Build from contrast.</strong> The brand should feel calm at rest and intelligent in detail: generous white space, exact typography, natural photographic warmth, and modular dot systems used with intent.</p>
+          </div>
+        </div>
+
+        <div class="grid four">
+          <article class="card">
+            <p class="label">Tone</p>
+            <h3>Quiet confidence</h3>
+            <p>Lead with restraint. Let space, typography, and precise hierarchy do the work before adding decoration.</p>
+            <div class="rules">
+              <div class="rule">Use black, white, and soft grey as the default interface language.</div>
+              <div class="rule">Use color to define product zones and page moods, not every component.</div>
+            </div>
+          </article>
+
+          <article class="card">
+            <p class="label">Texture</p>
+            <h3>Tactile intelligence</h3>
+            <p>Dither, dot fields, and painterly textures make the digital system feel human without becoming nostalgic.</p>
+            <div class="rules">
+              <div class="rule">Layer dots over natural imagery when the page needs depth.</div>
+              <div class="rule">Keep texture secondary to content and interaction.</div>
+            </div>
+          </article>
+
+          <article class="card">
+            <p class="label">Structure</p>
+            <h3>Editorial grid</h3>
+            <p>The source slides use disciplined margins, a slim rail, large type, and almost no ornament. Preserve that grammar on the web.</p>
+            <div class="rules">
+              <div class="rule">Favor wide bands, strong alignment, and clear section rhythm.</div>
+              <div class="rule">Avoid nested cards and over-rounded SaaS surfaces.</div>
+            </div>
+          </article>
+
+          <article class="card">
+            <p class="label">System</p>
+            <h3>Modular dots</h3>
+            <p>The dot is the smallest unit. It becomes the mark, the icon system, image treatment, dither pattern, and motion vocabulary.</p>
+            <div class="rules">
+              <div class="rule">Icons should be built on 3x3, 4x4, or 7x7 dot grids.</div>
+              <div class="rule">Dots may vary in size, opacity, or density, but never become random noise.</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="color" aria-labelledby="color-title">
+        <div class="section-head">
+          <div class="number">02</div>
+          <div>
+            <h2 id="color-title">Color system</h2>
+            <p class="section-lede"><strong>The foundation is monochrome.</strong> Accent families come from the supplied product slides and painterly texture references. Use them as environments and product identifiers, not as a rainbow UI kit.</p>
+          </div>
+        </div>
+
+        <article class="card" style="margin-bottom: 22px;">
+          <p class="label">Core canvas</p>
+          <div class="swatch-grid">
+            <button class="swatch" type="button" onclick="copyToken('#F5F5F3')" aria-label="Copy Canvas color">
+              <span class="swatch-chip" style="background: #f5f5f3;"></span>
+              <span class="swatch-name">Canvas</span>
+              <span class="swatch-value">#F5F5F3</span>
+            </button>
+            <button class="swatch" type="button" onclick="copyToken('#FFFFFF')" aria-label="Copy Paper color">
+              <span class="swatch-chip" style="background: #ffffff;"></span>
+              <span class="swatch-name">Paper</span>
+              <span class="swatch-value">#FFFFFF</span>
+            </button>
+            <button class="swatch" type="button" onclick="copyToken('#ECECEB')" aria-label="Copy Mist color">
+              <span class="swatch-chip" style="background: #ececeb;"></span>
+              <span class="swatch-name">Mist</span>
+              <span class="swatch-value">#ECECEB</span>
+            </button>
+            <button class="swatch" type="button" onclick="copyToken('#D7D7D3')" aria-label="Copy Line color">
+              <span class="swatch-chip" style="background: #d7d7d3;"></span>
+              <span class="swatch-name">Line</span>
+              <span class="swatch-value">#D7D7D3</span>
+            </button>
+            <button class="swatch" type="button" onclick="copyToken('#3F403E')" aria-label="Copy Graphite color">
+              <span class="swatch-chip" style="background: #3f403e;"></span>
+              <span class="swatch-name">Graphite</span>
+              <span class="swatch-value">#3F403E</span>
+            </button>
+            <button class="swatch" type="button" onclick="copyToken('#111214')" aria-label="Copy Ink color">
+              <span class="swatch-chip" style="background: #111214;"></span>
+              <span class="swatch-name">Ink</span>
+              <span class="swatch-value">#111214</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="card" style="margin-bottom: 22px;">
+          <p class="label">Product accents from the guideline slides</p>
+          <div class="swatch-grid">
+            <button class="swatch" type="button" onclick="copyToken('#6E8063')" aria-label="Copy Studio Sage color">
+              <span class="swatch-chip" style="background: #6e8063;"></span>
+              <span class="swatch-name">Studio Sage</span>
+              <span class="swatch-value">#6E8063</span>
+            </button>
+            <button class="swatch" type="button" onclick="copyToken('#DFE5DF')" aria-label="Copy Studio Wash color">
+              <span class="swatch-chip" style="background: #dfe5df;"></span>
+              <span class="swatch-name">Studio Wash</span>
+              <span class="swatch-value">#DFE5DF</span>
+            </button>
+            <button class="swatch" type="button" onclick="copyToken('#9F5A31')" aria-label="Copy Chat Clay color">
+              <span class="swatch-chip" style="background: #9f5a31;"></span>
+              <span class="swatch-name">Chat Clay</span>
+              <span class="swatch-value">#9F5A31</span>
+            </button>
+            <button class="swatch" type="button" onclick="copyToken('#E8DCCD')" aria-label="Copy Chat Wash color">
+              <span class="swatch-chip" style="background: #e8dccd;"></span>
+              <span class="swatch-name">Chat Wash</span>
+              <span class="swatch-value">#E8DCCD</span>
+            </button>
+            <button class="swatch" type="button" onclick="copyToken('#405B69')" aria-label="Copy API Slate color">
+              <span class="swatch-chip" style="background: #405b69;"></span>
+              <span class="swatch-name">API Slate</span>
+              <span class="swatch-value">#405B69</span>
+            </button>
+            <button class="swatch" type="button" onclick="copyToken('#DBEAF0')" aria-label="Copy API Wash color">
+              <span class="swatch-chip" style="background: #dbeaf0;"></span>
+              <span class="swatch-name">API Wash</span>
+              <span class="swatch-value">#DBEAF0</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="card">
+          <p class="label">Website texture accents from supplied ChatGPT images</p>
+          <div class="swatch-grid">
+            <button class="swatch" type="button" onclick="copyToken('#588698')" aria-label="Copy Ocean color">
+              <span class="swatch-chip" style="background: #588698;"></span>
+              <span class="swatch-name">Ocean</span>
+              <span class="swatch-value">#588698</span>
+            </button>
+            <button class="swatch" type="button" onclick="copyToken('#E45009')" aria-label="Copy Ember color">
+              <span class="swatch-chip" style="background: #e45009;"></span>
+              <span class="swatch-name">Ember</span>
+              <span class="swatch-value">#E45009</span>
+            </button>
+            <button class="swatch" type="button" onclick="copyToken('#7B549E')" aria-label="Copy Violet color">
+              <span class="swatch-chip" style="background: #7b549e;"></span>
+              <span class="swatch-name">Violet</span>
+              <span class="swatch-value">#7B549E</span>
+            </button>
+            <button class="swatch" type="button" onclick="copyToken('#32672D')" aria-label="Copy Grove color">
+              <span class="swatch-chip" style="background: #32672d;"></span>
+              <span class="swatch-name">Grove</span>
+              <span class="swatch-value">#32672D</span>
+            </button>
+            <button class="swatch" type="button" onclick="copyToken('#884A20')" aria-label="Copy Earth color">
+              <span class="swatch-chip" style="background: #884a20;"></span>
+              <span class="swatch-name">Earth</span>
+              <span class="swatch-value">#884A20</span>
+            </button>
+            <button class="swatch" type="button" onclick="copyToken('#06112C')" aria-label="Copy Deep Navy color">
+              <span class="swatch-chip" style="background: #06112c;"></span>
+              <span class="swatch-name">Deep Navy</span>
+              <span class="swatch-value">#06112C</span>
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <section id="type" aria-labelledby="type-title">
+        <div class="section-head">
+          <div class="number">03</div>
+          <div>
+            <h2 id="type-title">Typography</h2>
+            <p class="section-lede"><strong>Clear, large, and almost clinical.</strong> The source slides use Helvetica Now Display with tight structure and no decorative spacing. For web, keep the same tone with Helvetica Now Display when licensed and system sans fallbacks.</p>
+          </div>
+        </div>
+
+        <article class="card">
+          <div class="type-sample">
+            <div>
+              <div class="type-name">Helvetica Now Display</div>
+              <span class="type-pill">Regular</span>
+            </div>
+            <div>
+              <p class="label">Headings / Body / Descriptions</p>
+              <div class="alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789&?!/+-)]}@*</div>
+            </div>
+          </div>
+
+          <div class="type-sample">
+            <div>
+              <div class="type-name" style="font-weight: 600;">Helvetica Now Display</div>
+              <span class="type-pill">Medium</span>
+            </div>
+            <div>
+              <p class="label">Subheadings / Navigation / Buttons</p>
+              <div class="alphabet" style="font-weight: 600;">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789&?!/+-)]}@*</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" style="margin-top: 22px;">
+          <p class="label">Recommended web scale</p>
+          <div class="specimen">
+            <div class="scale-row">
+              <div class="mono">Hero / 104-142</div>
+              <div style="font-size: clamp(52px, 8vw, 104px); line-height: 0.94; font-weight: 500;">Human AI infrastructure.</div>
+              <div class="mono">line-height 0.92-1.00</div>
+            </div>
+            <div class="scale-row">
+              <div class="mono">Section / 52-74</div>
+              <div style="font-size: clamp(38px, 5vw, 64px); line-height: 0.96; font-weight: 500;">Private intelligence, made approachable.</div>
+              <div class="mono">use for major page breaks</div>
+            </div>
+            <div class="scale-row">
+              <div class="mono">Lead / 24-31</div>
+              <div style="font-size: 28px; line-height: 1.14; color: var(--muted);">Use grey to continue a sentence after the black opening idea.</div>
+              <div class="mono">editorial voice</div>
+            </div>
+            <div class="scale-row">
+              <div class="mono">Body / 15-18</div>
+              <div style="font-size: 17px; line-height: 1.55; color: var(--graphite);">Body copy should be direct, calm, and specific. Avoid breathless AI language.</div>
+              <div class="mono">content pages</div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="symbol" aria-labelledby="symbol-title">
+        <div class="section-head">
+          <div class="number">04</div>
+          <div>
+            <h2 id="symbol-title">Symbol and dot language</h2>
+            <p class="section-lede"><strong>The symbol is an organic network.</strong> Circles of varying sizes suggest distributed nodes, interconnected systems, and intelligence without a single dominant point.</p>
+          </div>
+        </div>
+
+        <div class="grid two">
+          <article class="card">
+            <p class="label">Primary mark</p>
+            <svg class="mark large" viewBox="0 0 120 120" aria-label="Fluso modular dot symbol">
+              <use href="#fluso-mark"></use>
+            </svg>
+            <table class="token-table">
+              <tr><th>Attribute</th><th>Guidance</th></tr>
+              <tr><td>Geometry</td><td>Organic circular dots, varied radius, arranged in a loose diamond network.</td></tr>
+              <tr><td>Meaning</td><td>Private distributed intelligence, no single point of control, modular scalability.</td></tr>
+              <tr><td>Usage</td><td>Use as a quiet anchor in navigation, loading states, document covers, and pattern masks.</td></tr>
+            </table>
+          </article>
+
+          <article class="dot-system">
+            <p class="label" style="color: rgba(255,255,255,0.56);">Topic and product icons</p>
+            <div class="dot-icon-grid" aria-label="Modular dot icon examples">
+              <div class="dot-icon-cell"><div class="pixel-icon" data-icon="circle"></div></div>
+              <div class="dot-icon-cell"><div class="pixel-icon" data-icon="frame"></div></div>
+              <div class="dot-icon-cell"><div class="pixel-icon" data-icon="split"></div></div>
+              <div class="dot-icon-cell"><div class="pixel-icon" data-icon="path"></div></div>
+              <div class="dot-icon-cell"><div class="pixel-icon" data-icon="cross"></div></div>
+              <div class="dot-icon-cell"><div class="pixel-icon" data-icon="flower"></div></div>
+              <div class="dot-icon-cell"><div class="pixel-icon" data-icon="focus"></div></div>
+              <div class="dot-icon-cell"><div class="pixel-icon" data-icon="window"></div></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="imagery" aria-labelledby="imagery-title">
+        <div class="section-head">
+          <div class="number">05</div>
+          <div>
+            <h2 id="imagery-title">Imagery and texture</h2>
+            <p class="section-lede"><strong>Natural imagery grounds the brand in warmth.</strong> Dither and dot treatments bridge the human and AI worlds, blending organic light with structured intelligence.</p>
+          </div>
+        </div>
+
+        <div class="image-mosaic" style="margin-bottom: 22px;">
+          <div class="image-tile wide"><img src="assets/visual-identity/Slide 16_9 - 405.png" alt="Warm natural imagery with mountains and dither texture"></div>
+          <div class="image-tile"><img src="assets/visual-identity/Slide 16_9 - 404.png" alt="Warm interior with dither texture"></div>
+          <div class="image-tile tall"><img src="assets/visual-identity/Slide 16_9 - 402.png" alt="Product family color bands with dot texture"></div>
+          <div class="image-tile"><img src="assets/visual-identity/Slide 16_9 - 403.png" alt="Black and white dither imagery examples"></div>
+          <div class="image-tile wide"><img src="assets/visual-identity/Slide 16_9 - 387.png" alt="Executed dark imagery examples"></div>
+        </div>
+
+        <div class="grid three">
+          <article class="card">
+            <p class="label">Basic imagery</p>
+            <h3>Raw natural forms</h3>
+            <p>Use mountains, trees, skies, rooms, materials, and people as the foundation. Keep them calm, credible, and spacious.</p>
+          </article>
+          <article class="card">
+            <p class="label">Executed light</p>
+            <h3>Soft color and subtle dots</h3>
+            <p>Light pages use washed color, quiet contrast, and dot overlays that nearly disappear into the canvas.</p>
+          </article>
+          <article class="card">
+            <p class="label">Executed dark</p>
+            <h3>Deeper atmosphere</h3>
+            <p>Dark moments should feel immersive and cinematic, but still structured by visible dot fields and clean geometry.</p>
+          </article>
+        </div>
+
+        <article class="card" style="margin-top: 22px;">
+          <p class="label">Painterly texture library for website moods</p>
+          <div class="texture-grid">
+            <div class="texture-card"><img src="assets/visual-identity/texture-sky.png" alt="Sky texture"><div class="caption">Sky / onboarding / openness</div></div>
+            <div class="texture-card"><img src="assets/visual-identity/texture-ocean.png" alt="Ocean texture"><div class="caption">Ocean / platform / intelligence</div></div>
+            <div class="texture-card"><img src="assets/visual-identity/texture-navy.png" alt="Navy texture"><div class="caption">Navy / security / depth</div></div>
+            <div class="texture-card"><img src="assets/visual-identity/texture-earth.png" alt="Earth texture"><div class="caption">Earth / trust / operations</div></div>
+            <div class="texture-card"><img src="assets/visual-identity/texture-ember.png" alt="Ember texture"><div class="caption">Ember / conversion / energy</div></div>
+            <div class="texture-card"><img src="assets/visual-identity/texture-violet.png" alt="Violet texture"><div class="caption">Violet / advanced AI / imagination</div></div>
+            <div class="texture-card"><img src="assets/visual-identity/texture-grove.png" alt="Grove texture"><div class="caption">Grove / studio / growth</div></div>
+          </div>
+        </article>
+
+        <div class="pattern-panels" style="margin-top: 22px;">
+          <div class="pattern-panel dark-dot" aria-label="Dark dot pattern sample"></div>
+          <div class="pattern-panel light light-dot" aria-label="Light dot pattern sample"></div>
+        </div>
+      </section>
+
+      <section id="products" aria-labelledby="products-title">
+        <div class="section-head">
+          <div class="number">06</div>
+          <div>
+            <h2 id="products-title">Product family</h2>
+            <p class="section-lede"><strong>Cohesive yet distinct.</strong> Each product inherits the dot system, typography, and neutral base, then shifts color temperature and texture to clarify purpose.</p>
+          </div>
+        </div>
+
+        <div class="product-row">
+          <div class="product-diagram">
+            <div class="brand-lockup" style="min-width: 178px;">
+              <svg class="mark" viewBox="0 0 120 120" aria-hidden="true"><use href="#fluso-mark"></use></svg>
+              <span class="brand-name">Fluso</span>
+            </div>
+            <div class="branch-lines" aria-hidden="true"></div>
+          </div>
+
+          <div class="product-bands">
+            <div class="product-band" style="background: var(--studio-soft); color: var(--studio);"><span>Studio</span></div>
+            <div class="product-band" style="background: var(--chat-soft); color: var(--chat);"><span>Chat</span></div>
+            <div class="product-band" style="background: var(--api-soft); color: var(--api);"><span>API</span></div>
+          </div>
+        </div>
+
+        <div class="grid three" style="margin-top: 22px;">
+          <article class="card">
+            <p class="label">Studio</p>
+            <h3 style="color: var(--studio);">Sage, calm, constructive</h3>
+            <p>Use for creation, workflows, teams, and workspaces. Pair sage with natural greens, paper white, and soft dot fields.</p>
+          </article>
+          <article class="card">
+            <p class="label">Chat</p>
+            <h3 style="color: var(--chat);">Clay, warm, conversational</h3>
+            <p>Use for human interaction, assistance, customer moments, and high-touch guidance. Pair clay with warm light and interior imagery.</p>
+          </article>
+          <article class="card">
+            <p class="label">API</p>
+            <h3 style="color: var(--api);">Blue-grey, precise, technical</h3>
+            <p>Use for developer surfaces, infrastructure, security, and docs. Pair blue-grey with crisp white space and denser dot grids.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="web" aria-labelledby="web-title">
+        <div class="section-head">
+          <div class="number">07</div>
+          <div>
+            <h2 id="web-title">Website composition</h2>
+            <p class="section-lede"><strong>The website should start as the product, not a brochure.</strong> Use large first-viewport identity, real texture, disciplined navigation, and a hint of the next section visible below the fold.</p>
+          </div>
+        </div>
+
+        <div class="composition-grid">
+          <article class="site-frame" aria-label="Website composition example">
+            <div class="site-nav">
+              <div class="brand-lockup" style="min-width: auto;">
+                <svg class="mark" style="width: 30px; height: 30px;" viewBox="0 0 120 120" aria-hidden="true"><use href="#fluso-mark"></use></svg>
+                <span>Fluso</span>
+              </div>
+              <div style="display: flex; gap: 18px; color: var(--muted);">
+                <span>Studio</span>
+                <span>Chat</span>
+                <span>API</span>
+              </div>
+            </div>
+            <div class="site-hero">
+              <div class="site-hero-content">
+                <h3>Proactive AI for real work.</h3>
+                <p>Structured intelligence that feels calm, human, and exact.</p>
+                <div class="button-row">
+                  <span class="btn">Start building</span>
+                  <span class="btn secondary">View system</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <p class="label">Composition rules</p>
+            <div class="rules">
+              <div class="rule">Hero headline should be literal and direct. Avoid abstract slogans that hide the product.</div>
+              <div class="rule">Use a real bitmap texture, natural image, or product state as the hero atmosphere. Avoid generic gradients.</div>
+              <div class="rule">Keep hero text unboxed. Do not put the primary message inside a floating card.</div>
+              <div class="rule">Create depth with dither masks, dot fields, and image contrast instead of glow effects.</div>
+              <div class="rule">Use one dominant accent family per page. Let other accents remain in tiny metadata or product switches.</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="motion" aria-labelledby="motion-title">
+        <div class="section-head">
+          <div class="number">08</div>
+          <div>
+            <h2 id="motion-title">Motion system</h2>
+            <p class="section-lede"><strong>Motion should clarify, not perform.</strong> Use Transitions.dev patterns for state changes and the DotMatrix primitives directly for loaders, dot fields, and dither-like interface texture.</p>
+          </div>
+        </div>
+
+        <div class="motion-grid">
+          <article class="motion-card dotmatrix-card">
+            <div class="motion-stage dotmatrix-stage">
+              <div class="dotmatrix-primitive-set" aria-label="DotMatrix primitive previews">
+                <div class="dotmatrix-primitive">
+                  <span class="dmx-root" data-dotmatrix-preview="square" aria-hidden="true"></span>
+                  <span>DotmSquare3</span>
+                </div>
+                <div class="dotmatrix-primitive">
+                  <span class="dmx-root" data-dotmatrix-preview="circular" aria-hidden="true"></span>
+                  <span>DotmCircular5</span>
+                </div>
+                <div class="dotmatrix-primitive">
+                  <span class="dmx-root" data-dotmatrix-preview="triangle" aria-hidden="true"></span>
+                  <span>DotmTriangle2</span>
+                </div>
+              </div>
+            </div>
+            <div class="motion-meta">
+              <p class="label">DotMatrix primitives</p>
+              <h3>Use the registry components directly</h3>
+              <p>Install the shadcn registry primitives and render them in product code. This static file only previews their role in the identity system.</p>
+              <pre class="motion-code"><code>npx shadcn@latest add @dotmatrix/dotm-square-3
+npx shadcn@latest add @dotmatrix/dotm-circular-5
+npx shadcn@latest add @dotmatrix/dotm-triangle-2
+import { DotmSquare3 } from "@/components/ui/dotm-square-3";
+&lt;DotmSquare3 size={18} dotSize={3} ariaLabel="Saving" /&gt;</code></pre>
+            </div>
+          </article>
+
+          <article class="motion-card" data-motion-text="idle">
+            <div class="motion-stage">
+              <button class="motion-button" type="button" data-motion-trigger="text" aria-live="polite">
+                <span class="text-swap">
+                  <span data-state="idle">Copy token</span>
+                  <span data-state="done">Copied</span>
+                </span>
+              </button>
+            </div>
+            <div class="motion-meta">
+              <p class="label">Text states swap</p>
+              <h3>Micro confirmation</h3>
+              <p>Use text swaps for copy, saved, synced, and completed states. The action stays in place while the label changes.</p>
+            </div>
+          </article>
+
+          <article class="motion-card" data-motion-badge="closed">
+            <div class="motion-stage">
+              <button class="bell-demo" type="button" data-motion-trigger="badge" aria-label="Toggle notification badge" aria-pressed="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 18h8M9 18a3 3 0 0 0 6 0M6 15h12l-1.2-2.2V9.5a4.8 4.8 0 0 0-9.6 0v3.3L6 15Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <span class="badge-dot" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div class="motion-meta">
+              <p class="label">Notification badge</p>
+              <h3>Small attention cue</h3>
+              <p>Use badge motion for rare alerts, unread states, and product signals. The diagonal pop should be quick and earned.</p>
+            </div>
+          </article>
+
+          <article class="motion-card" data-motion-panel="closed">
+            <div class="motion-stage">
+              <div class="panel-demo">
+                <button class="motion-button" type="button" data-motion-trigger="panel" aria-expanded="false">Reveal details</button>
+                <div class="reveal-panel" aria-hidden="true">
+                  <div class="panel-row" style="width: 84%;"></div>
+                  <div class="panel-row" style="width: 100%;"></div>
+                  <div class="panel-row"></div>
+                </div>
+              </div>
+            </div>
+            <div class="motion-meta">
+              <p class="label">Panel reveal</p>
+              <h3>Contextual detail</h3>
+              <p>Use panel reveals for filters, side details, and short explanations. The surface appears from its trigger.</p>
+            </div>
+          </article>
+
+          <article class="motion-card">
+            <div class="motion-stage">
+              <button class="motion-button" type="button" data-motion-trigger="number" aria-label="Animate usage metric">
+                <span class="metric-demo" aria-hidden="true">
+                  <span class="metric-digit">9</span><span class="metric-digit">6</span><span class="metric-digit">%</span>
+                </span>
+              </button>
+            </div>
+            <div class="motion-meta">
+              <p class="label">Number pop-in</p>
+              <h3>Metric emphasis</h3>
+              <p>Use for stats, pricing, usage, and performance. Keep digits tabular so the layout never jumps.</p>
+            </div>
+          </article>
+
+          <article class="motion-card" data-motion-icon="dots">
+            <div class="motion-stage">
+              <button class="motion-button" type="button" data-motion-trigger="icon" aria-label="Toggle icon state" aria-pressed="false">
+                <span class="icon-swap">
+                  <svg viewBox="0 0 52 52" data-icon="dots" aria-hidden="true">
+                    <circle cx="18" cy="18" r="4" fill="currentColor"></circle>
+                    <circle cx="26" cy="14" r="3" fill="currentColor"></circle>
+                    <circle cx="34" cy="18" r="4" fill="currentColor"></circle>
+                    <circle cx="14" cy="27" r="3" fill="currentColor"></circle>
+                    <circle cx="26" cy="26" r="5" fill="currentColor"></circle>
+                    <circle cx="38" cy="27" r="3" fill="currentColor"></circle>
+                    <circle cx="18" cy="36" r="4" fill="currentColor"></circle>
+                    <circle cx="34" cy="36" r="4" fill="currentColor"></circle>
+                  </svg>
+                  <svg viewBox="0 0 52 52" data-icon="check" aria-hidden="true">
+                    <circle cx="26" cy="26" r="20" fill="currentColor" opacity="0.14"></circle>
+                    <path d="M17 26.5l6.2 6.2L36 19.5" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </span>
+              </button>
+            </div>
+            <div class="motion-meta">
+              <p class="label">Icon swap</p>
+              <h3>Stateful tools</h3>
+              <p>Use for toggles, mode changes, and completed actions. Keep both icons in one stable square.</p>
+            </div>
+          </article>
+        </div>
+
+        <article class="motion-guidance">
+          <p class="label">Motion rules</p>
+          <div class="rules">
+            <div class="rule">Animate state, not decoration. Each movement should explain what changed.</div>
+            <div class="rule">Default to opacity and transform. Avoid large layout, blur, or background animations.</div>
+            <div class="rule">Use dot motion where it reinforces the Prem mark: loaders, reveals, atmospheric grids, and product transitions.</div>
+            <div class="rule">Keep all motion optional through `prefers-reduced-motion` and make static states look finished.</div>
+          </div>
+        </article>
+      </section>
+
+      <section id="rules" aria-labelledby="rules-title">
+        <div class="section-head">
+          <div class="number">09</div>
+          <div>
+            <h2 id="rules-title">Usage rules</h2>
+            <p class="section-lede"><strong>Consistency matters more than decoration.</strong> These rules keep the identity recognizable across landing pages, docs, product surfaces, and campaigns.</p>
+          </div>
+        </div>
+
+        <div class="dos">
+          <article class="do-card">
+            <h3>Do</h3>
+            <ul>
+              <li>Use black headline openings with grey continuation text for brand statements.</li>
+              <li>Use product colors as systems: sage for Studio, clay for Chat, blue-grey for API.</li>
+              <li>Build icons from modular dot grids and keep them visually related to the symbol.</li>
+              <li>Combine natural imagery with dither or dot overlays when a page needs emotional warmth.</li>
+              <li>Keep surfaces rectangular or subtly rounded, with 4px to 8px radius for most UI.</li>
+              <li>Leave generous margins and let large type create hierarchy.</li>
+            </ul>
+          </article>
+
+          <article class="do-card">
+            <h3>Do not</h3>
+            <ul>
+              <li>Do not turn the texture palette into a multicolor gradient system.</li>
+              <li>Do not use dots as random confetti. They should imply structure, image, or function.</li>
+              <li>Do not overuse cards inside cards or heavy dashboard chrome on brand pages.</li>
+              <li>Do not tint every icon. Product icons may be colored, topic icons should usually be monochrome.</li>
+              <li>Do not crop imagery so tightly that the natural setting becomes unreadable.</li>
+              <li>Do not use artificial glow, blur blobs, or decorative orbs as a substitute for image atmosphere.</li>
+            </ul>
+          </article>
+        </div>
+
+        <article class="card" style="margin-top: 22px;">
+          <p class="label">CSS token starter</p>
+          <pre class="mono" style="white-space: pre-wrap; margin: 0; color: var(--graphite);">:root {
+  --fluso-canvas: #F5F5F3;
+  --fluso-paper: #FFFFFF;
+  --fluso-ink: #111214;
+  --fluso-muted: #81817C;
+  --fluso-line: #D7D7D3;
+  --fluso-studio: #6E8063;
+  --fluso-chat: #9F5A31;
+  --fluso-api: #405B69;
+  --fluso-ocean: #588698;
+  --fluso-ember: #E45009;
+  --fluso-violet: #7B549E;
+  --fluso-grove: #32672D;
+}</pre>
+        </article>
+      </section>
+
+      <section id="sources" aria-labelledby="sources-title">
+        <div class="section-head">
+          <div class="number">10</div>
+          <div>
+            <h2 id="sources-title">Source extraction</h2>
+            <p class="section-lede"><strong>This file was built from the supplied references.</strong> Key observations: 1920x1080 slide grid, #F5F5F5 canvas, Helvetica Now Display, black modular dot mark, dithered natural imagery, and product color bands.</p>
+          </div>
+        </div>
+
+        <div class="source-grid">
+          <figure class="source-shot">
+            <img src="assets/visual-identity/Slide 16_9 - 392.png" alt="Symbol explanation source slide">
+            <figcaption>Symbol: distributed circular nodes</figcaption>
+          </figure>
+          <figure class="source-shot">
+            <img src="assets/visual-identity/typography-source.png" alt="Typography source slide">
+            <figcaption>Typography: Helvetica Now Display</figcaption>
+          </figure>
+          <figure class="source-shot">
+            <img src="assets/visual-identity/Slide 16_9 - 402.png" alt="Product family source slide">
+            <figcaption>Product family: sage, clay, blue-grey</figcaption>
+          </figure>
+          <figure class="source-shot">
+            <img src="assets/visual-identity/Slide 16_9 - 403.png" alt="Dither imagery source slide">
+            <figcaption>Dither-inspired imagery</figcaption>
+          </figure>
+          <figure class="source-shot">
+            <img src="assets/visual-identity/Slide 16_9 - 405.png" alt="Warm natural imagery source slide">
+            <figcaption>Natural imagery and warmth</figcaption>
+          </figure>
+          <figure class="source-shot">
+            <img src="assets/visual-identity/Slide 16_9 - 409.png" alt="Topic icon system source slide">
+            <figcaption>Topic icons from modular dot grids</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>Fluso Visual Identity System</span>
+        <span>Built as an HTML reference for design and web production.</span>
+      </footer>
+    </main>
+  </div>
+
+  <div class="copy-toast" id="copyToast" role="status" aria-live="polite">Copied</div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <g id="fluso-mark">
+        <circle cx="60.05" cy="12.27" r="5.27"></circle>
+        <circle cx="31.44" cy="21.48" r="4.95"></circle>
+        <circle cx="88.56" cy="21.50" r="3.94"></circle>
+        <circle cx="49.71" cy="21.74" r="3.62"></circle>
+        <circle cx="74.10" cy="22.94" r="3.90"></circle>
+        <circle cx="63.75" cy="27.36" r="3.85"></circle>
+        <circle cx="43.12" cy="31.67" r="3.62"></circle>
+        <circle cx="53.95" cy="33.39" r="3.71"></circle>
+        <circle cx="71.06" cy="34.99" r="3.94"></circle>
+        <circle cx="28.78" cy="35.07" r="4.77"></circle>
+        <circle cx="82.24" cy="35.54" r="4.04"></circle>
+        <circle cx="93.85" cy="38.68" r="4.27"></circle>
+        <circle cx="60.34" cy="40.01" r="3.12"></circle>
+        <circle cx="39.43" cy="41.77" r="3.58"></circle>
+        <circle cx="48.54" cy="43.50" r="2.98"></circle>
+        <circle cx="72.46" cy="44.22" r="3.30"></circle>
+        <circle cx="105.92" cy="44.91" r="4.31"></circle>
+        <circle cx="14.08" cy="44.92" r="4.63"></circle>
+        <circle cx="83.89" cy="46.24" r="3.16"></circle>
+        <circle cx="29.58" cy="46.55" r="3.44"></circle>
+        <circle cx="61.74" cy="49.42" r="3.21"></circle>
+        <circle cx="52.05" cy="52.57" r="3.03"></circle>
+        <circle cx="92.64" cy="53.19" r="4.27"></circle>
+        <circle cx="40.88" cy="53.34" r="3.58"></circle>
+        <circle cx="79.43" cy="54.25" r="3.44"></circle>
+        <circle cx="69.56" cy="55.61" r="2.94"></circle>
+        <circle cx="32.43" cy="57.59" r="3.35"></circle>
+        <circle cx="19.87" cy="58.02" r="4.45"></circle>
+        <circle cx="100.11" cy="61.98" r="4.45"></circle>
+        <circle cx="49.79" cy="62.14" r="2.98"></circle>
+        <circle cx="87.57" cy="62.42" r="3.35"></circle>
+        <circle cx="68.63" cy="65.28" r="3.07"></circle>
+        <circle cx="40.57" cy="65.75" r="3.44"></circle>
+        <circle cx="79.16" cy="66.68" r="3.58"></circle>
+        <circle cx="27.37" cy="66.82" r="4.27"></circle>
+        <circle cx="58.26" cy="69.96" r="3.21"></circle>
+        <circle cx="90.41" cy="73.45" r="3.39"></circle>
+        <circle cx="36.12" cy="73.76" r="3.16"></circle>
+        <circle cx="70.41" cy="74.87" r="2.98"></circle>
+        <circle cx="48.13" cy="74.93" r="3.26"></circle>
+        <circle cx="105.92" cy="75.08" r="4.63"></circle>
+        <circle cx="14.09" cy="75.08" r="4.31"></circle>
+        <circle cx="80.58" cy="78.23" r="3.58"></circle>
+        <circle cx="59.65" cy="79.99" r="3.12"></circle>
+        <circle cx="26.13" cy="81.31" r="4.22"></circle>
+        <circle cx="37.75" cy="84.50" r="4.04"></circle>
+        <circle cx="91.23" cy="84.96" r="4.77"></circle>
+        <circle cx="48.93" cy="85.00" r="3.90"></circle>
+        <circle cx="66.06" cy="86.61" r="3.67"></circle>
+        <circle cx="76.91" cy="88.34" r="3.62"></circle>
+        <circle cx="56.27" cy="92.64" r="3.85"></circle>
+        <circle cx="45.87" cy="97.07" r="3.90"></circle>
+        <circle cx="70.30" cy="98.27" r="3.62"></circle>
+        <circle cx="88.55" cy="98.52" r="5.00"></circle>
+        <circle cx="31.43" cy="98.53" r="4.04"></circle>
+        <circle cx="59.97" cy="107.73" r="5.27"></circle>
+      </g>
+    </defs>
+  </svg>
+
+  <script>
+    const icons = {
+      circle: [0,0,1,1,1,0,0,0,1,0,0,0,1,0,1,0,0,1,0,0,1,1,0,1,0,1,0,1,1,0,0,1,0,0,1,0,1,0,0,0,1,0,0,0,1,1,1,0,0],
+      frame: [1,1,1,1,1,1,1,1,0,0,0,0,0,1,1,0,1,1,1,0,1,1,0,1,0,1,0,1,1,0,1,1,1,0,1,1,0,0,0,0,0,1,1,1,1,1,1,1,1],
+      split: [1,1,1,0,0,0,0,1,1,1,1,1,0,0,1,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,1,0,0,1,1,1,1,1,0,0,0,0,1,1,1],
+      path: [0,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,1,1,0,0,0,0,1,1,1,1,0,0,1,1,0,0,1,0,0,1,1,0,0,1,0,0,1,1,0,0,0,0,0],
+      cross: [1,0,0,0,0,0,1,1,1,0,0,0,1,1,0,1,1,0,1,1,0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,1,1,0,1,1,0,1,1,1,1,0,0,0,1],
+      flower: [0,0,1,1,1,0,0,0,1,1,0,1,1,0,1,1,0,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1,0,1,1,0,1,1,0,1,1,0,0,0,1,1,1,0,0],
+      focus: [1,1,0,0,0,1,1,1,0,0,1,0,0,1,0,0,1,1,1,0,0,0,1,1,0,1,1,0,0,1,1,0,1,1,0,0,0,0,1,0,0,0,1,1,0,0,0,1,1],
+      window: [1,1,1,1,1,1,1,1,0,0,0,0,0,1,1,0,1,1,1,0,1,1,0,1,0,1,0,1,1,0,1,0,1,0,1,1,0,1,1,1,0,1,1,0,0,0,0,0,1]
+    };
+
+    document.querySelectorAll(".pixel-icon").forEach((icon) => {
+      const pattern = icons[icon.dataset.icon] || icons.circle;
+      pattern.forEach((value, index) => {
+        const dot = document.createElement("i");
+        if (value === 1) dot.className = "on";
+        if (value === 2) dot.className = "dim";
+        icon.appendChild(dot);
+      });
+    });
+
+    function getSpiralOrder(size) {
+      const order = new Map();
+      let top = 0;
+      let right = size - 1;
+      let bottom = size - 1;
+      let left = 0;
+      let value = 0;
+
+      while (top <= bottom && left <= right) {
+        for (let column = left; column <= right; column += 1) order.set(`${top},${column}`, value++);
+        top += 1;
+        for (let row = top; row <= bottom; row += 1) order.set(`${row},${right}`, value++);
+        right -= 1;
+        if (top <= bottom) {
+          for (let column = right; column >= left; column -= 1) order.set(`${bottom},${column}`, value++);
+          bottom -= 1;
+        }
+        if (left <= right) {
+          for (let row = bottom; row >= top; row -= 1) order.set(`${row},${left}`, value++);
+          left += 1;
+        }
+      }
+
+      return order;
+    }
+
+    document.querySelectorAll("[data-dotmatrix-preview]").forEach((root) => {
+      const type = root.dataset.dotmatrixPreview;
+      const size = type === "triangle" ? 7 : 5;
+      const grid = document.createElement("span");
+      const spiralOrder = getSpiralOrder(size);
+      const triangleCells = new Set(["1,3", "2,2", "2,4", "3,1", "3,3", "3,5", "4,0", "4,2", "4,4", "4,6"]);
+
+      grid.className = "dmx-grid";
+      grid.style.setProperty("--dmx-size", size);
+
+      for (let row = 0; row < size; row += 1) {
+        for (let column = 0; column < size; column += 1) {
+          const key = `${row},${column}`;
+          const dot = document.createElement("span");
+          dot.className = "dmx-dot";
+
+          if (type === "square") {
+            dot.classList.add("dmx-spiral-snake");
+            dot.style.setProperty("--dmx-spiral-order", spiralOrder.get(key));
+            dot.style.animationDelay = `${spiralOrder.get(key) * 42}ms`;
+          }
+
+          if (type === "circular") {
+            const distance = Math.hypot(row - 2, column - 2);
+            if (distance > 2.05) dot.classList.add("dmx-inactive");
+            dot.classList.add("dmx-ring-pulse");
+            dot.style.setProperty("--dmx-ring-order", Math.round(distance * 2));
+            dot.style.animationDelay = `${Math.round(distance * 110)}ms`;
+          }
+
+          if (type === "triangle") {
+            if (!triangleCells.has(key)) dot.classList.add("dmx-inactive");
+            dot.classList.add("dmx-triangle-wave");
+            dot.style.setProperty("--dmx-row-order", row);
+            dot.style.animationDelay = `${row * 78}ms`;
+          }
+
+          grid.appendChild(dot);
+        }
+      }
+
+      root.appendChild(grid);
+    });
+
+    function copyToken(value) {
+      const toast = document.getElementById("copyToast");
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(value);
+      }
+      toast.textContent = value + " copied";
+      toast.classList.add("show");
+      window.setTimeout(() => toast.classList.remove("show"), 1400);
+    }
+
+    document.querySelectorAll("[data-motion-trigger]").forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const card = trigger.closest(".motion-card");
+        const type = trigger.dataset.motionTrigger;
+
+        if (type === "text") {
+          card.dataset.motionText = "done";
+          window.setTimeout(() => {
+            card.dataset.motionText = "idle";
+          }, 1200);
+        }
+
+        if (type === "badge") {
+          const next = card.dataset.motionBadge !== "open";
+          card.dataset.motionBadge = next ? "open" : "closed";
+          trigger.setAttribute("aria-pressed", String(next));
+        }
+
+        if (type === "panel") {
+          const next = card.dataset.motionPanel !== "open";
+          card.dataset.motionPanel = next ? "open" : "closed";
+          trigger.setAttribute("aria-expanded", String(next));
+          const panel = card.querySelector(".reveal-panel");
+          if (panel) panel.setAttribute("aria-hidden", String(!next));
+        }
+
+        if (type === "number") {
+          const metric = trigger.querySelector(".metric-demo");
+          metric.classList.remove("is-animating");
+          void metric.offsetWidth;
+          metric.classList.add("is-animating");
+        }
+
+        if (type === "icon") {
+          const next = card.dataset.motionIcon !== "check";
+          card.dataset.motionIcon = next ? "check" : "dots";
+          trigger.setAttribute("aria-pressed", String(next));
+        }
+      });
+    });
+  </script>
+</body>
+</html>

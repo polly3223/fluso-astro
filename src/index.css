@@ -1,0 +1,411 @@
+@import "tailwindcss";
+
+/* Figtree (Erik Kennedy), OFL — the UI sans. Free stand-in for the licensed
+   Aeonik Pro it replaced: same cap height and descender, ~1.5% wider, so the
+   whole type scale carries over untouched. One variable master covers 300–900,
+   so font-weight 600/700 render real weights instead of faux-bold, and there
+   is a true italic master (no synthesized oblique). Latin and latin-ext ship
+   as separate subsets, split by unicode-range the way Google Fonts serves
+   them — pages that never hit an accented glyph only fetch the latin file. */
+@font-face {
+  font-family: "Figtree";
+  src: url("./assets/fonts/Figtree-Variable-latin.woff2") format("woff2");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Figtree";
+  src: url("./assets/fonts/Figtree-Variable-latin-ext.woff2") format("woff2");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Figtree";
+  src: url("./assets/fonts/Figtree-Italic-Variable-latin.woff2") format("woff2");
+  font-weight: 300 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Figtree";
+  src: url("./assets/fonts/Figtree-Italic-Variable-latin-ext.woff2")
+    format("woff2");
+  font-weight: 300 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Linden Hill (Goudy's Deepdene), OFL — single weight, roman + italic.
+   Kept for later, currently DISABLED. To try it again, uncomment the two
+   @font-face blocks below and point --font-sans / --font-serif at "Linden Hill".
+   (Weight range 400–700 maps to the one master so headings don't faux-bold.)
+
+@font-face {
+  font-family: "Linden Hill";
+  src:
+    url("./assets/fonts/LindenHill-Regular.woff") format("woff"),
+    url("./assets/fonts/LindenHill-Regular.ttf") format("truetype");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Linden Hill";
+  src:
+    url("./assets/fonts/LindenHill-Italic.woff") format("woff"),
+    url("./assets/fonts/LindenHill-Italic.ttf") format("truetype");
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+}
+*/
+
+/* Sorts Mill Goudy (Goudy Old Style revival), OFL — roman + italic.
+   Real italic master (no faux oblique), used for display italics like the
+   hero workspace greeting. Weight range 400–700 maps to the one master so it
+   never faux-bolds. */
+@font-face {
+  font-family: "Sorts Mill Goudy";
+  src:
+    url("./assets/fonts/SortsMillGoudy-Regular.woff") format("woff"),
+    url("./assets/fonts/SortsMillGoudy-Regular.ttf") format("truetype");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sorts Mill Goudy";
+  src:
+    url("./assets/fonts/SortsMillGoudy-Italic.woff") format("woff"),
+    url("./assets/fonts/SortsMillGoudy-Italic.ttf") format("truetype");
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Goudy Bookletter 1911 (Goudy's Kennerley Oldstyle), OFL — REGULAR ONLY.
+   No italic master ships with it, so italic text is browser-synthesized
+   (faux oblique). Weight range 400–700 maps to the one master, no faux-bold. */
+@font-face {
+  font-family: "Goudy Bookletter 1911";
+  src:
+    url("./assets/fonts/GoudyBookletter1911-Regular.woff") format("woff"),
+    url("./assets/fonts/GoudyBookletter1911-Regular.ttf") format("truetype");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme static {
+  --font-sans: "Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+
+  --font-chill: "Chillax", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+
+  --font-serif: "Goudy Bookletter 1911", Georgia, serif;
+
+  --color-ink: #0c0c0c;
+  --color-bone: #faf9f5;
+  --color-cream: #faf9f5;
+  --color-paper: #faf9f5;
+  --color-parchment: #f1efe7;
+  --color-charcoal: #161616;
+
+  --color-legal-100: #123a2f1f;
+  --color-legal-200: #123a2f3d;
+  --color-legal-300: #9ab8aa;
+  --color-legal-400: #1d5a49;
+  --color-legal-500: #123a2f;
+  --color-legal-600: #0f3028;
+  --color-legal-700: #0b261f;
+  --color-legal-900: #061914;
+
+  --color-red-50: #fef2f2;
+  --color-red-100: #d6564c1f;
+  --color-red-200: #d6564c3d;
+  --color-red-300: #eda5a0;
+  --color-red-400: #e47d76;
+  --color-red-500: #d6564c;
+  --color-red-600: #b2443a;
+  --color-red-700: #bf000f;
+  --color-red-800: #9f0712;
+  --color-red-900: #57201a;
+
+  --color-orange-50: #fff7ed;
+  --color-orange-100: #d385571f;
+  --color-orange-200: #d385573d;
+  --color-orange-300: #edc6a8;
+  --color-orange-400: #e2a880;
+  --color-orange-500: #d38557;
+  --color-orange-600: #a6613a;
+  --color-orange-900: #522f18;
+  --color-orange-950: #441306;
+
+  --color-yellow-400: #d6ca90;
+  --color-yellow-500: #c4b46a;
+
+  --color-green-100: #98b1881f;
+  --color-green-200: #98b1883d;
+  --color-green-300: #cedec4;
+  --color-green-400: #b5caa8;
+  --color-green-500: #98b188;
+  --color-green-600: #627c52;
+  --color-green-700: #008138;
+  --color-green-900: #2e3d26;
+
+  --color-blue-100: #54738c1f;
+  --color-blue-200: #54738c3d;
+  --color-blue-300: #a6bece;
+  --color-blue-400: #7e9cb2;
+  --color-blue-500: #54738c;
+  --color-blue-600: #3c586a;
+  --color-blue-700: #1447e6;
+  --color-blue-900: #1c2e3c;
+
+  --color-purple-100: #a68bb21f;
+  --color-purple-200: #a68bb23d;
+  --color-purple-300: #d6ccdc;
+  --color-purple-400: #c0aec8;
+  --color-purple-500: #a68bb2;
+  --color-purple-600: #806690;
+  --color-purple-900: #382c42;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  font-family: var(--font-sans);
+  color: #faf9f5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-sans);
+  background: #0c0c0c;
+}
+
+/* Safari may paint a large play overlay on paused background videos even
+   without the controls attribute. This video is decorative and non-interactive. */
+.prem-background-video {
+  -webkit-appearance: none;
+}
+
+.prem-background-video::-webkit-media-controls,
+.prem-background-video::-webkit-media-controls-enclosure,
+.prem-background-video::-webkit-media-controls-panel,
+.prem-background-video::-webkit-media-controls-overlay-play-button,
+.prem-background-video::-webkit-media-controls-start-playback-button,
+.prem-background-video::-webkit-media-controls-play-button {
+  display: none !important;
+  -webkit-appearance: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+::selection {
+  background-color: var(--color-ink);
+  color: var(--color-white);
+}
+
+.legal-page ::selection {
+  background-color: var(--color-blue-300);
+  color: var(--color-ink);
+}
+
+/* Brand focus ring — legal green, replaces the browser default everywhere. */
+:focus-visible {
+  outline: 2px solid var(--color-legal-500);
+  outline-offset: 2px;
+}
+
+/* On the Legal site the brand accent is blue — focus outline follows it. */
+.legal-page :focus-visible {
+  outline-color: var(--color-blue-500);
+}
+
+.legal-nav :focus-visible {
+  outline-color: var(--color-blue-500);
+}
+
+/* How-it-works step tabs: white (bone) focus ring, not legal-green. Kept here
+   (unlayered) so it beats the global :focus-visible rule — a Tailwind utility
+   sits in the `utilities` cascade layer and would lose to this unlayered rule. */
+.how-step:focus-visible {
+  outline-color: var(--text-primary, #faf9f5);
+}
+
+/* How-it-works accordion (see HowItWorks.tsx): on desktop only the active step
+   reveals its copy, animated by Motion via inline height/opacity. The stacked
+   mobile layout has no single "active cell", so force every reveal open below
+   981px. Unlayered !important beats Motion's non-important inline styles. */
+@media (max-width: 980px) {
+  .how-step-reveal {
+    height: auto !important;
+    opacity: 1 !important;
+  }
+}
+
+:root {
+  --bg-color: #0c0c0c;
+  --card-bg: #faf9f5;
+  --card-bg-dark: #161616;
+  --text-primary: #0c0c0c;
+  --text-muted: rgba(12, 12, 12, 0.6);
+  --border-color: rgba(12, 12, 12, 1);
+  --border-soft: rgba(12, 12, 12, 0.1);
+  --border-vsoft: rgba(12, 12, 12, 0.05);
+  --section-divider: rgba(12, 12, 12, 0.08);
+  --canvas-bg: #faf9f5;
+  --canvas-fg: #0c0c0c;
+  --legal-mark: var(--color-blue-500);
+
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-jbmono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo,
+    monospace;
+
+  --type-display-size: clamp(40px, 5vw, 76px);
+  --type-display-leading: 0.98;
+  --type-display-tracking: -0.04em;
+
+  --type-section-size: clamp(40px, calc(2.5vw + 24px), 64px);
+  --type-section-leading: 0.96;
+  --type-section-tracking: -0.04em;
+
+  --type-feature-size: clamp(28px, calc(1.5vw + 18px), 46px);
+  --type-feature-leading: 1.1;
+  --type-feature-tracking: -0.025em;
+
+  --type-card-title-size: clamp(21px, calc(0.7vw + 18px), 30px);
+  --type-card-title-leading: 1.2;
+  --type-card-title-tracking: -0.015em;
+
+  --type-lead-size: clamp(18px, calc(0.25vw + 17px), 20px);
+  --type-lead-leading: 1.55;
+  --type-lead-tracking: -0.005em;
+
+  --type-body-size: clamp(15.5px, calc(0.2vw + 14.5px), 17px);
+  --type-body-leading: 1.55;
+  --type-body-tracking: -0.005em;
+
+  --type-body-small-size: clamp(14px, calc(0.15vw + 13.5px), 15.5px);
+  --type-body-small-leading: 1.5;
+  --type-body-small-tracking: -0.003em;
+
+  --type-label-size: 11px;
+  --type-label-leading: 1.2;
+  --type-label-tracking: 0.16em;
+
+  --type-cta-size: clamp(14px, calc(0.2vw + 13.5px), 16px);
+  --type-cta-leading: 1.2;
+  --type-cta-tracking: -0.005em;
+
+  --dark-card-glow: radial-gradient(
+      circle at 18% 24%,
+      rgba(242, 241, 237, 0.06),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 82% 78%,
+      rgba(242, 241, 237, 0.045),
+      transparent 50%
+    );
+
+  --nav-h: 52px;
+  --frame-x: clamp(14px, 1.8vw + 4px, 28px);
+  --frame-y-top: calc(var(--nav-h) + clamp(10px, 1.4vh, 18px));
+  --frame-y-bot: clamp(16px, 2.4vh, 32px);
+  --card-h: auto;
+
+  --card-px-x: clamp(28px, 4.4vw + 4px, 60px);
+  --card-px-x-mobile: clamp(38px, 4.4vw + 4px, 60px);
+  --card-px-y: clamp(22px, 3.2vh + 4px, 40px);
+  --title-size: var(--type-section-size);
+  --subtitle-size: var(--type-lead-size);
+  --title-mt: clamp(10px, 1.2vh + 2px, 18px);
+  --layout-mt: clamp(14px, 1.8vh + 4px, 28px);
+  --step-py: clamp(7px, 1vh + 1px, 14px);
+  --step-title: var(--type-body-size);
+  --step-copy-mh: clamp(96px, 18vh + 8px, 200px);
+}
+@media (min-width: 1025px) {
+  :root {
+    --card-h: calc(100svh - var(--frame-y-top) - var(--frame-y-bot) - 8px);
+  }
+}
+@media (max-width: 768px) {
+  :root {
+    --nav-h: 50px;
+    --frame-x: 12px;
+  }
+}
+
+.theme-light {
+  --card-bg: #faf9f5;
+  --text-primary: #0c0c0c;
+  --text-muted: rgba(12, 12, 12, 0.6);
+  --border-color: rgba(12, 12, 12, 1);
+  --border-soft: rgba(12, 12, 12, 0.1);
+  --border-vsoft: rgba(12, 12, 12, 0.05);
+  --legal-mark: var(--color-blue-500);
+
+  /* Engine-flow diagram palette (light) */
+  --flow-panel: #fcfcfa;
+  --flow-surface: rgba(12, 12, 12, 0.035);
+  --flow-fill: rgba(84, 115, 140, 0.08);
+  --flow-shimmer: rgba(84, 115, 140, 0.11);
+  --flow-card-shimmer: rgba(84, 115, 140, 0.04);
+  --flow-glow: rgba(84, 115, 140, 0.9);
+  --flow-accent: #54738c;
+  --flow-dot: rgba(12, 12, 12, 0.7);
+  --flow-chip-border: rgba(84, 115, 140, 0.2);
+  --flow-text: #0c0c0c;
+  --flow-text-soft: rgba(12, 12, 12, 0.8);
+  --flow-text-note: rgba(12, 12, 12, 0.7);
+  --flow-logo-invert: 0;
+}
+.theme-dark {
+  --card-bg: #161616;
+  --text-primary: #faf9f5;
+  --text-muted: rgba(242, 241, 237, 0.6);
+  --border-color: rgba(242, 241, 237, 0.15);
+  --border-soft: rgba(242, 241, 237, 0.1);
+  --border-vsoft: rgba(242, 241, 237, 0.05);
+  --legal-mark: var(--color-blue-300);
+
+  /* Engine-flow diagram palette (dark, black & white) */
+  --flow-panel: #161616;
+  --flow-surface: rgba(242, 241, 237, 0.04);
+  --flow-fill: rgba(242, 241, 237, 0.1);
+  --flow-shimmer: rgba(242, 241, 237, 0.14);
+  --flow-card-shimmer: rgba(242, 241, 237, 0.06);
+  --flow-glow: rgba(242, 241, 237, 0.5);
+  --flow-accent: var(--color-blue-300);
+  --flow-dot: #faf9f5;
+  --flow-chip-border: rgba(166, 190, 206, 0.32);
+  --flow-text: #faf9f5;
+  --flow-text-soft: rgba(242, 241, 237, 0.78);
+  --flow-text-note: rgba(242, 241, 237, 0.7);
+  --flow-logo-invert: 1;
+}
+.main-card.theme-dark {
+  --text-muted: rgba(242, 241, 237, 0.65);
+  --border-color: rgba(242, 241, 237, 0.16);
+}

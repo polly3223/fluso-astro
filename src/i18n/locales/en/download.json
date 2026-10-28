@@ -1,0 +1,61 @@
+{
+  "hero": {
+    "title": "Get Fluso<br/>for your machine.",
+    "subtitle": "Pick your installer. Fluso runs as a desktop app — the web shell is just here to hand it to you."
+  },
+  "platforms": {
+    "footnote": "Windows 10/11 and macOS 13+ (Apple Silicon & Intel). Native iOS is on the roadmap — Telegram remote access works from any phone today.",
+    "detectedPrefix": "Detected",
+    "primary": {
+      "title": "Download for Mac",
+      "meta": "Apple Silicon · macOS 13+ · .dmg"
+    },
+    "downloads": {
+      "mac-arm64": {
+        "title": "Download for Mac",
+        "meta": "Apple Silicon · macOS 13+ · .dmg",
+        "prettyName": "Mac · Apple Silicon"
+      },
+      "mac-x64": {
+        "title": "Download for Mac (Intel)",
+        "meta": "Intel · macOS 13+ · .dmg",
+        "prettyName": "Mac · Intel"
+      },
+      "windows": {
+        "title": "Download for Windows",
+        "meta": "Windows 10 / 11 · .exe",
+        "prettyName": "Windows"
+      }
+    }
+  },
+  "install": {
+    "steps": {
+      "quit": "If Fluso is already running, <strong>quit it first</strong> with <kbd>⌘Q</kbd>. The installer can't replace a running app.",
+      "open": {
+        "mac": "Open the downloaded <strong>.dmg</strong>.",
+        "windows": "Open the downloaded <strong>.exe</strong>."
+      },
+      "place": {
+        "mac": "Drag <strong>Fluso</strong> into <strong>Applications</strong>.",
+        "windows": "Run the installer and follow the prompts."
+      },
+      "signIn": "Open Fluso. Sign in with the same account and your workspace catches up."
+    },
+    "help": "On a different machine? <switch>Switch platforms</switch> above. Trouble installing? Email <email>fluso@premai.io</email>."
+  },
+  "guarantee": "Signed, notarised, and auto-updating. If the connection drops or your laptop sleeps mid-answer, Fluso preserves the work and continues when it can. Your data stays in your dedicated EU sandbox. By downloading Fluso, you agree to our <terms>terms</terms> and <privacy>privacy notice</privacy>.",
+  "trust": [
+    {
+      "label": "Signed installers",
+      "body": "Mac builds are notarised, Windows builds are signed, and new desktop versions install quietly in the background."
+    },
+    {
+      "label": "EU data boundary",
+      "body": "Your workspace lives in your dedicated EU sandbox. The desktop app is just the window into it."
+    },
+    {
+      "label": "Syncs on sign-in",
+      "body": "New machine? Sign in with the same account and your projects, memory and connectors catch up. Sync history shows readable failures and prompts you when reconnect is needed."
+    }
+  ]
+}

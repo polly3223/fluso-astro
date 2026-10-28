@@ -1,0 +1,73 @@
+{
+    "name": "@premAI-io/cookie-consent",
+    "version": "1.0.0",
+    "description": "Self-contained, GDPR-compliant cookie consent plugin (wraps vanilla-cookieconsent). Usable from React, any bundler, or a plain <script> tag.",
+    "license": "MIT",
+    "type": "module",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/premAI-io/cookie-consent.git"
+    },
+    "sideEffects": [
+        "*.css"
+    ],
+    "files": [
+        "dist"
+    ],
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+        },
+        "./react": {
+            "types": "./dist/react.d.ts",
+            "import": "./dist/react.js"
+        },
+        "./styles.css": "./dist/prem-cookie-consent.css",
+        "./iife": "./dist/prem-cookie-consent.iife.global.js",
+        "./package.json": "./package.json"
+    },
+    "scripts": {
+        "build": "rm -rf dist && tsup",
+        "dev": "tsup --watch",
+        "typecheck": "tsc --noEmit",
+        "prepack": "npm run build"
+    },
+    "dependencies": {
+        "vanilla-cookieconsent": "^3.1.0"
+    },
+    "peerDependencies": {
+        "react": ">=18",
+        "react-dom": ">=18"
+    },
+    "peerDependenciesMeta": {
+        "react": {
+            "optional": true
+        },
+        "react-dom": {
+            "optional": true
+        }
+    },
+    "devDependencies": {
+        "@types/react": "^19.0.0",
+        "react": "^19.0.0",
+        "tsup": "^8.3.5",
+        "typescript": "^5.6.0"
+    },
+    "publishConfig": {
+        "access": "restricted",
+        "registry": "https://npm.pkg.github.com"
+    },
+    "keywords": [
+        "cookie-consent",
+        "gdpr",
+        "cookies",
+        "consent",
+        "banner",
+        "vanilla-cookieconsent",
+        "react"
+    ]
+}

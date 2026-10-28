@@ -1,0 +1,28 @@
+# Fluso
+
+> Fluso is a proactive AI workspace — a desktop app for macOS and Windows that brings an AI agent with full context, complete control, and deep focus to everything you do. It runs on open-weight models and keeps your data within your own boundary.
+
+## Product
+
+- [Home](https://fluso.ai/): Overview of Fluso — full context, complete control, deep focus, open-weight models.
+- [Download](https://fluso.ai/download): Get the Fluso desktop app for macOS or Windows.
+- [Get Started](https://fluso.ai/get-started): Install Fluso and put your proactive AI agent to work on your first project.
+- [Pricing](https://fluso.ai/pricing): Fluso plans and pricing.
+- [Enterprise](https://fluso.ai/enterprise): Fluso for enterprise teams.
+
+## Use Cases
+
+- [For Founders](https://fluso.ai/for-founders): An agent for founders — investor updates, hiring inbox, and data rooms handled while you build.
+- [For Sales Teams](https://fluso.ai/for-sales): An agent for sellers — account research, follow-ups, and CRM hygiene done before your first coffee.
+- [For Marketers](https://fluso.ai/for-marketers): An agent for marketers — briefs, performance reads, and asset trafficking handled off your plate.
+- [For Lawyers](https://fluso.ai/for-lawyers): An agent for lawyers, built around Fluso's proactive AI workspace.
+- [For Doctors](https://fluso.ai/for-doctors): An agent for doctors, built around Fluso's proactive AI workspace.
+- [For Researchers](https://fluso.ai/for-researchers): An agent for researchers — literature review, citation work, and formatting handed off so you can think.
+- [For Consultants](https://fluso.ai/for-consultants): An agent for consultants — decks, models, and the synthesis grind handled with rigor.
+- [For Investors](https://fluso.ai/for-investors): An agent for investors — sourcing, diligence, and portfolio monitoring running while you take the next meeting.
+- [For Operations Teams](https://fluso.ai/for-operations): An agent for operators — vendor reviews, invoice routing, and ticket triage across every tool you use.
+
+## Legal
+
+- [Privacy Policy](https://fluso.ai/privacy): How Fluso handles user data and privacy.
+- [Terms & Conditions](https://fluso.ai/terms): Terms of service for using Fluso.

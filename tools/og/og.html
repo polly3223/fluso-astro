@@ -1,0 +1,19 @@
+<!doctype html>
+<!--
+  Dev-only OG card harness. Standalone Vite page — NOT part of the SPA router
+  and NOT in the production build input (vite builds index.html only). Used to
+  regenerate the per-route Open Graph images. See tools/og/main.tsx.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>OG cards — dev only</title>
+    <style>
+      body { margin: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="og-root"></div>
+    <script type="module" src="./main.tsx"></script>
+  </body>
+</html>

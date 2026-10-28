@@ -1,0 +1,10 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Internal / non-marketing artifacts — keep out of the index.
+Disallow: /design-system.html
+Disallow: /fluso-building-blocks-video.html
+Disallow: /fluso-visual-identity-system.html
+
+Sitemap: https://fluso.ai/sitemap.xml

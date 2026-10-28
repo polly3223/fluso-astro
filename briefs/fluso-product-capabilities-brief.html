@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fluso Product Brief</title>
+  <style>
+    :root {
+      --canvas: #f5f5f3;
+      --paper: #ffffff;
+      --tile: #ece9e5;
+      --tile-soft: #f2f0ed;
+      --line: #d7d7d3;
+      --ink: #111214;
+      --graphite: #3f403e;
+      --muted: #81817c;
+      --ocean: #588698;
+      --studio: #6e8063;
+      --chat: #9f5a31;
+      --api: #405b69;
+      --ember: #e45009;
+      --radius: 8px;
+      --font-sans: "Helvetica Now Display", "Helvetica Neue", Arial, sans-serif;
+      --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--canvas);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+
+    body {
+      display: grid;
+      place-items: start center;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(90deg, rgba(17, 18, 20, 0.035) 1px, transparent 1px) 0 0 / 32mm 32mm,
+        linear-gradient(180deg, rgba(17, 18, 20, 0.026) 1px, transparent 1px) 0 0 / 32mm 32mm,
+        var(--canvas);
+      padding: 10mm 14mm 8mm;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 7mm;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .mark {
+      width: 22px;
+      height: 22px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2px;
+      transform: rotate(45deg);
+    }
+
+    .mark i {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: currentColor;
+      opacity: 0.32;
+    }
+
+    .mark i:nth-child(3),
+    .mark i:nth-child(7),
+    .mark i:nth-child(9),
+    .mark i:nth-child(11),
+    .mark i:nth-child(13),
+    .mark i:nth-child(15),
+    .mark i:nth-child(17),
+    .mark i:nth-child(19),
+    .mark i:nth-child(23) {
+      opacity: 1;
+    }
+
+    .doc-meta {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      line-height: 1.25;
+      letter-spacing: 0.02em;
+      color: var(--muted);
+      text-transform: uppercase;
+      text-align: right;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 48mm;
+      gap: 9mm;
+      align-items: stretch;
+      padding-bottom: 7mm;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 122mm;
+      font-size: 36px;
+      line-height: 0.94;
+      letter-spacing: 0;
+      font-weight: 500;
+      text-wrap: balance;
+    }
+
+    .hero p {
+      max-width: 118mm;
+      margin: 4.8mm 0 0;
+      font-size: 12px;
+      line-height: 1.36;
+      color: var(--graphite);
+    }
+
+    .hero strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .water {
+      min-height: 38mm;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(130deg, rgba(17, 18, 20, 0.18), rgba(255, 255, 255, 0.08)),
+        url("../assets/visual-identity/texture-grove.png") center / cover;
+    }
+
+    .water::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle, rgba(255, 255, 255, 0.42) 0 1px, transparent 1.4px) 0 0 / 18px 18px,
+        repeating-linear-gradient(112deg, rgba(255, 255, 255, 0.18) 0 1px, transparent 1px 96px);
+      opacity: 0.35;
+    }
+
+    .section {
+      margin-top: 6mm;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 3mm;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    .section-note {
+      margin: 0;
+      max-width: 80mm;
+      font-size: 9px;
+      line-height: 1.35;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3mm;
+    }
+
+    .card {
+      min-height: 31mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      border: 1px solid rgba(17, 18, 20, 0.05);
+      border-radius: var(--radius);
+      background: var(--tile);
+      padding: 3.2mm;
+    }
+
+    .card-copy {
+      margin-top: auto;
+    }
+
+    .card.has-logos .card-copy {
+      margin-top: 5.6mm;
+    }
+
+    .num {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      line-height: 1;
+      color: var(--muted);
+    }
+
+    .card h3 {
+      margin: 0 0 1.6mm;
+      font-size: 13.4px;
+      line-height: 1.04;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 8.9px;
+      line-height: 1.34;
+      color: var(--graphite);
+    }
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 3mm;
+      margin-bottom: 1.2mm;
+    }
+
+    .card > .logo-row {
+      margin-top: 4.4mm;
+      margin-bottom: 0;
+    }
+
+    .app-logo {
+      width: 16px;
+      height: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(17, 18, 20, 0.06);
+      padding: 2px;
+    }
+
+    .app-logo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .file-badge {
+      min-width: 25px;
+      height: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      border: 1px solid rgba(17, 18, 20, 0.08);
+      background: rgba(255, 255, 255, 0.68);
+      font-family: var(--font-mono);
+      font-size: 6.6px;
+      line-height: 1;
+      color: var(--graphite);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5mm;
+      margin-top: 6mm;
+      align-items: stretch;
+    }
+
+    .panel {
+      border-top: 1px solid var(--ink);
+      padding-top: 3.2mm;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .rows {
+      display: grid;
+      margin-top: 3mm;
+      border-top: 1px solid var(--line);
+    }
+
+    .row {
+      min-height: 9mm;
+      display: grid;
+      grid-template-columns: 33mm 1fr;
+      gap: 4mm;
+      align-items: start;
+      padding: 1.25mm 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .row strong {
+      font-size: 8.1px;
+      line-height: 1.15;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .row span {
+      font-size: 7.55px;
+      line-height: 1.31;
+      color: var(--graphite);
+    }
+
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 2.2mm;
+      margin-top: 3mm;
+      flex: 1;
+    }
+
+    .industry {
+      min-height: 0;
+      border-radius: var(--radius);
+      background: var(--tile-soft);
+      border: 1px solid rgba(17, 18, 20, 0.05);
+      padding: 2.2mm;
+      display: flex;
+      align-items: end;
+    }
+
+    .industry strong {
+      display: block;
+      margin-bottom: 0;
+      font-size: 10.3px;
+      line-height: 1.08;
+      font-weight: 500;
+    }
+
+    .industry span {
+      display: block;
+      font-size: 7.3px;
+      line-height: 1.3;
+      color: var(--muted);
+    }
+
+    .prem-logo {
+      width: 28mm;
+      height: auto;
+      opacity: 0.68;
+      align-self: center;
+    }
+
+    .trust {
+      margin-top: 5.5mm;
+      display: grid;
+      grid-template-columns: 34mm repeat(3, 1fr);
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--line);
+      min-height: 25mm;
+    }
+
+    .trust-title {
+      padding: 3mm 3mm 0 0;
+      font-size: 13px;
+      line-height: 1.05;
+      font-weight: 500;
+    }
+
+    .trust-item {
+      border-left: 1px solid var(--line);
+      padding: 3mm 2.8mm 2.8mm;
+    }
+
+    .trust-item h3 {
+      margin: 0 0 2mm;
+      font-size: 9.6px;
+      line-height: 1.08;
+      font-weight: 500;
+    }
+
+    .trust-item p {
+      margin: 0;
+      font-size: 7.8px;
+      line-height: 1.3;
+      color: var(--graphite);
+    }
+
+    .footer {
+      position: absolute;
+      left: 14mm;
+      right: 14mm;
+      bottom: 6.5mm;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      border-top: 1px solid var(--line);
+      padding-top: 2mm;
+      font-family: var(--font-mono);
+      font-size: 7.5px;
+      line-height: 1.2;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    @media screen {
+      .page {
+        margin: 24px 0;
+        box-shadow: 0 18px 80px rgba(17, 18, 20, 0.12);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page" aria-label="Fluso product capabilities one-page brief">
+    <header class="topbar">
+      <div class="brand">
+        <span class="mark" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i>
+        </span>
+        <span>Fluso</span>
+      </div>
+      <div class="doc-meta">Product one-pager<br>Partners / customers / investors</div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>AI workspaces for teams with too much context.</h1>
+        <p><strong>Fluso connects to your work apps, remembers project history, and turns scattered communication into tasks, research, files, and finished work.</strong> It is built for organizations where the hard part is not generating text - it is knowing what happened, what matters, and what needs to happen next.</p>
+      </div>
+      <div class="water" aria-hidden="true"></div>
+    </section>
+
+    <section class="section" aria-labelledby="features-title">
+      <div class="section-head">
+        <h2 id="features-title">Core capabilities</h2>
+        <p class="section-note">The practical feature set: connect, understand, act, and return with the right context.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="card has-logos">
+          <span class="num">01</span>
+          <div class="logo-row" aria-label="Connected app examples">
+            <span class="app-logo"><img src="../assets/connectors/gmail.svg" alt="Gmail"></span>
+            <span class="app-logo"><img src="../assets/connectors/slack.svg" alt="Slack"></span>
+            <span class="app-logo"><img src="../assets/connectors/google-drive.svg" alt="Google Drive"></span>
+            <span class="app-logo"><img src="../assets/connectors/github.svg" alt="GitHub"></span>
+            <span class="app-logo"><img src="../assets/connectors/linear.svg" alt="Linear"></span>
+          </div>
+          <div class="card-copy">
+            <h3>Connected work context</h3>
+            <p>Search and use Gmail, Calendar, Drive, Slack, GitHub, Linear, web research, files, meetings, and project history.</p>
+          </div>
+        </article>
+        <article class="card has-logos">
+          <span class="num">02</span>
+          <div class="card-copy">
+            <h3>Business context memory</h3>
+            <p>A private operating memory of people, projects, decisions, files, meetings, deadlines, and source-linked evidence.</p>
+          </div>
+        </article>
+        <article class="card">
+          <span class="num">03</span>
+          <div class="card-copy">
+            <h3>Proactive task detection</h3>
+            <p>Finds open loops in messages and meetings: follow-ups, approvals, waiting items, deadlines, and recurring work.</p>
+          </div>
+        </article>
+        <article class="card">
+          <span class="num">04</span>
+          <div class="card-copy">
+            <h3>Custom skills</h3>
+            <p>Package repeatable team workflows for research, reporting, analysis, follow-ups, operations, and specialist work.</p>
+          </div>
+        </article>
+        <article class="card">
+          <span class="num">05</span>
+          <div class="logo-row" aria-label="Artifact output examples">
+            <span class="file-badge">DOC</span>
+            <span class="file-badge">PDF</span>
+            <span class="file-badge">XLS</span>
+            <span class="file-badge">PPT</span>
+            <span class="file-badge">MD</span>
+          </div>
+          <div class="card-copy">
+            <h3>Artifact generation</h3>
+            <p>Creates research briefs, reports, documents, spreadsheets, presentations, drafts, tickets, and project files.</p>
+          </div>
+        </article>
+        <article class="card">
+          <span class="num">06</span>
+          <div class="card-copy">
+            <h3>Automations</h3>
+            <p>Schedules recurring checks, summaries, reminders, meeting follow-ups, monitoring, and preparation workflows.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="two-col" aria-label="Use cases and industries">
+      <div class="panel">
+        <h2>Use cases</h2>
+        <div class="rows">
+          <div class="row"><strong>Executive operations</strong><span>Daily attention queue, meeting briefs, follow-ups, board and investor prep.</span></div>
+          <div class="row"><strong>Research and analysis</strong><span>Market scans, competitor research, diligence memos, sourced reports, monitoring.</span></div>
+          <div class="row"><strong>Sales and customer work</strong><span>Account history, call summaries, renewal prep, personalized follow-ups, CRM hygiene.</span></div>
+          <div class="row"><strong>Product and engineering</strong><span>Customer feedback synthesis, Linear/GitHub context, specs, release notes, issue research.</span></div>
+          <div class="row"><strong>Finance and legal ops</strong><span>Document review, approval tracking, reporting packs, compliance reminders, audit trails.</span></div>
+          <div class="row"><strong>HR and recruiting</strong><span>Candidate packets, interview summaries, scheduling, policy answers, offer follow-ups.</span></div>
+          <div class="row"><strong>Supply and operations</strong><span>Vendor updates, exception tracking, planning notes, status summaries, escalation queues.</span></div>
+          <div class="row"><strong>Knowledge management</strong><span>Find past decisions, update project context, convert meetings and files into usable memory.</span></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Industries</h2>
+        <div class="industry-grid">
+          <div class="industry"><strong>Professional services</strong></div>
+          <div class="industry"><strong>Financial services</strong></div>
+          <div class="industry"><strong>Enterprise software</strong></div>
+          <div class="industry"><strong>Regulated enterprises</strong></div>
+          <div class="industry"><strong>Life sciences</strong></div>
+          <div class="industry"><strong>Manufacturing and supply chain</strong></div>
+          <div class="industry"><strong>Legal and compliance</strong></div>
+          <div class="industry"><strong>Real estate and construction</strong></div>
+          <div class="industry"><strong>Healthcare operations</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust" aria-label="Trust and deployment">
+      <div class="trust-title">Why Fluso fits sensitive work</div>
+      <article class="trust-item">
+        <h3>Open-source models</h3>
+        <p>Model choices are not tied to a closed black box, making Fluso better suited for private work memories and controlled customer environments.</p>
+      </article>
+      <article class="trust-item">
+        <h3>On-premise or VPC</h3>
+        <p>Deploy inside the boundary that matters: on-premises, customer VPC, cloud tenant, or private infrastructure stack.</p>
+      </article>
+      <article class="trust-item">
+        <h3>Built in Switzerland</h3>
+        <p>European product and infrastructure posture, powered by Prem AI infrastructure for customers who care where their intelligence layer runs.</p>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <span>Fluso - autonomous AI workspace</span>
+      <img class="prem-logo" src="../assets/visual-identity/prem_logo_hq-transparent.png" alt="Prem AI">
+      <span>Switzerland / Prem AI infrastructure / 2026</span>
+    </footer>
+  </main>
+</body>
+</html>

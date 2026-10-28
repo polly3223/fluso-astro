@@ -1,0 +1,18 @@
+{
+  "stamp": "GROWTH · PERFORMANCE · BRAND",
+  "title": "An agent for marketers.",
+  "lead": "Briefs, performance reads, asset trafficking. The work that pulls you off strategy, gone.",
+  "customSkills": [
+    { "title": "Campaign brief drafting", "desc": "Reads last quarter's wins. Drafts a new brief, hooks ranked by predicted CTR." },
+    { "title": "Channel diagnostic", "desc": "Reads cost and conversion across paid. Tells you which channel quietly broke this week." },
+    { "title": "Content repurposing", "desc": "One long-form post becomes LinkedIn variants, tweets, and a newsletter block, scheduled." }
+  ],
+  "automations": [
+    { "title": "Monday performance recap", "desc": "GA4 + ad platforms become a 9am Slack summary, with the three things to change." },
+    { "title": "Campaign launch checklist", "desc": "New campaign provisions UTMs, verifies tracking, routes creative to legal." },
+    { "title": "Lead-to-sales handoff", "desc": "New MQL gets enriched, scored, and routed to the right AE with a context note." }
+  ],
+  "footerMetaLabel": "Marketing operations",
+  "footerBlurb": "PII routed through your CDP, consent honoured per region. GDPR and CASL aware. Nothing leaves your warehouse or trains a public model.",
+  "ctaLabel": "Deploy for your team"
+}

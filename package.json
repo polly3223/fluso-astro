@@ -1,0 +1,40 @@
+{
+  "name": "fluso-current-astro",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "bun run scripts/sync-static.ts && bun --bun astro dev --host 127.0.0.1 --port 8902",
+    "build": "bun run scripts/sync-static.ts && bun --bun astro build",
+    "preview": "bun --bun astro preview --host 127.0.0.1 --port 8902",
+    "check": "bun --bun astro check"
+  },
+  "dependencies": {
+    "@premAI-io/cookie-consent": "file:vendor/cookie-consent",
+    "@types/three": "0.184.1",
+    "@vercel/analytics": "2.0.1",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "gsap": "3.15.0",
+    "i18next": "26.3.1",
+    "motion": "11.18.2",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "react-i18next": "17.0.8",
+    "react-router-dom": "7.17.0",
+    "tailwind-merge": "2.6.1",
+    "three": "0.184.0",
+    "astro": "7.4.2",
+    "@astrojs/react": "7.1.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.3.0",
+    "@types/node": "22.19.20",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "tailwindcss": "4.3.0",
+    "typescript": "5.9.3",
+    "@astrojs/check": "0.9.12",
+    "oxc-transform-react": "0.145.0"
+  },
+  "type": "module"
+}

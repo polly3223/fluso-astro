@@ -1,0 +1,18 @@
+{
+  "stamp": "HIPAA · PROTECTED HEALTH INFO",
+  "title": "An agent for doctors.",
+  "lead": "Charting, prior auth, the inbox. Handled, so you can stay with the patient.",
+  "customSkills": [
+    { "title": "Visit-note drafting", "desc": "Listens with consent. Drafts a SOAP note, pre-fills the codes you usually pick." },
+    { "title": "Prior-auth packets", "desc": "Pulls problem list and recent labs. Assembles the packet your payer accepts." },
+    { "title": "Inbox triage", "desc": "Reads patient messages and labs. Escalates the two or three that need you today." }
+  ],
+  "automations": [
+    { "title": "After-visit summary", "desc": "Closed encounter produces a patient-friendly summary, routed for your review." },
+    { "title": "Refill orchestration", "desc": "Refill requests get checked against PDMP and EHR. Draft for your sign-off." },
+    { "title": "Care-gap outreach", "desc": "Weekly run identifies patients overdue for screening and drafts outreach." }
+  ],
+  "footerMetaLabel": "Clinical workflow",
+  "footerBlurb": "Runs inside your clinical environment. PHI never leaves the tenant or trains a public model. BAA signed on deployment.",
+  "ctaLabel": "Deploy in your practice"
+}

@@ -1,0 +1,1024 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fluso Product Capabilities — Dark</title>
+  <style>
+    :root {
+      --canvas: #101311;
+      --paper: #141815;
+      --tile: #1c201d;
+      --tile-soft: #171b18;
+      --ink: #f4f2ea;
+      --graphite: #cfccc2;
+      --muted: #92978e;
+      --line: #2a2f2b;
+      --radius: 8px;
+      --font-sans: "Helvetica Now Display", "Helvetica Neue", Arial, sans-serif;
+      --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--canvas);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(244, 242, 234, 0.055) 1px, transparent 1px) 0 0 / 164px 164px,
+        linear-gradient(180deg, rgba(244, 242, 234, 0.04) 1px, transparent 1px) 0 0 / 164px 164px,
+        var(--canvas);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .page {
+      width: min(100% - 72px, 1440px);
+      margin: 0 auto;
+      padding: 56px 0 64px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 76px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 500;
+    }
+
+    .mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 3px;
+      transform: rotate(45deg);
+    }
+
+    .mark i {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: currentColor;
+      opacity: 0.26;
+    }
+
+    .mark i:nth-child(3),
+    .mark i:nth-child(7),
+    .mark i:nth-child(9),
+    .mark i:nth-child(11),
+    .mark i:nth-child(13),
+    .mark i:nth-child(15),
+    .mark i:nth-child(17),
+    .mark i:nth-child(19),
+    .mark i:nth-child(23) {
+      opacity: 1;
+    }
+
+    .meta {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      line-height: 1.25;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      text-align: right;
+      color: var(--muted);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 420px;
+      gap: 72px;
+      align-items: center;
+      padding-bottom: 72px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 920px;
+      font-size: clamp(58px, 6vw, 92px);
+      line-height: 0.95;
+      letter-spacing: 0;
+      font-weight: 500;
+      text-wrap: balance;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      margin: 32px 0 0;
+      font-size: 24px;
+      line-height: 1.32;
+      color: var(--graphite);
+    }
+
+    .hero-copy strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .texture {
+      width: 100%;
+      height: 220px;
+      justify-self: end;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background:
+        linear-gradient(130deg, rgba(5, 8, 6, 0.18), rgba(244, 242, 234, 0.05)),
+        url("../assets/visual-identity/texture-grove.png") center / cover;
+      box-shadow: inset 0 0 0 1px rgba(244, 242, 234, 0.12);
+    }
+
+    .section {
+      margin-top: 72px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 26px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 44px;
+      line-height: 1;
+      letter-spacing: 0;
+      font-weight: 500;
+    }
+
+    .section-note {
+      max-width: 520px;
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.35;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    .capability-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .capability {
+      min-height: 310px;
+      display: flex;
+      flex-direction: column;
+      border-radius: var(--radius);
+      border: 1px solid rgba(244, 242, 234, 0.08);
+      background: var(--tile);
+      padding: 28px;
+    }
+
+    .capability-top {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .num {
+      font-family: var(--font-mono);
+      font-size: 16px;
+      line-height: 1;
+      color: var(--muted);
+    }
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      flex-wrap: wrap;
+    }
+
+    .app-logo {
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 7px;
+      border: 1px solid rgba(244, 242, 234, 0.1);
+      background: rgba(244, 242, 234, 0.92);
+      padding: 6px;
+    }
+
+    .app-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .file-badge {
+      min-width: 54px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 7px;
+      border: 1px solid rgba(244, 242, 234, 0.1);
+      background: rgba(244, 242, 234, 0.08);
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--ink);
+    }
+
+    .capability-copy {
+      margin-top: auto;
+      max-width: 92%;
+    }
+
+    .capability h3 {
+      margin: 0 0 16px;
+      font-size: 30px;
+      line-height: 1.05;
+      letter-spacing: 0;
+      font-weight: 500;
+    }
+
+    .capability p {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.34;
+      color: var(--graphite);
+    }
+
+    .usecase-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .focus-split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(380px, 0.9fr);
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .focus-split .section-head {
+      min-height: 58px;
+    }
+
+    .focus-split .usecase-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .usecase-card {
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: var(--radius);
+      border: 1px solid rgba(244, 242, 234, 0.08);
+      background:
+        linear-gradient(180deg, rgba(244, 242, 234, 0.045), rgba(244, 242, 234, 0)),
+        var(--tile-soft);
+      padding: 24px;
+    }
+
+    .usecase-card.featured {
+      grid-column: span 2;
+      background:
+        linear-gradient(135deg, rgba(112, 141, 97, 0.24), rgba(244, 242, 234, 0.035)),
+        var(--tile);
+    }
+
+    .usecase-kicker {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--muted);
+    }
+
+    .usecase-card h3 {
+      max-width: 310px;
+      margin: 0 0 14px;
+      font-size: 27px;
+      line-height: 1.04;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    .usecase-card p {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.34;
+      color: var(--graphite);
+    }
+
+    .industry-sensitive-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .industry-panel {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .industry-sensitive-card {
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid rgba(244, 242, 234, 0.08);
+      background:
+        linear-gradient(135deg, rgba(244, 242, 234, 0.045), rgba(244, 242, 234, 0)),
+        var(--tile-soft);
+      padding: 24px;
+    }
+
+    .industry-sensitive-card::after {
+      content: "";
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--industry-accent, #6e8063);
+      opacity: 0.28;
+    }
+
+    .industry-sensitive-card span {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      line-height: 1;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .industry-sensitive-card strong {
+      max-width: 240px;
+      font-size: 26px;
+      line-height: 1.04;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    .privacy-band {
+      grid-column: 1 / -1;
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 2px solid var(--ink);
+    }
+
+    .privacy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 26px;
+    }
+
+    .privacy-card {
+      min-height: 230px;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid rgba(244, 242, 234, 0.1);
+      background:
+        radial-gradient(circle at 88% 18%, color-mix(in srgb, var(--accent, #6e8063), transparent 58%), transparent 98px),
+        linear-gradient(135deg, color-mix(in srgb, var(--accent, #6e8063), #141815 78%), rgba(244, 242, 234, 0.03)),
+        var(--tile);
+      padding: 26px;
+    }
+
+    .privacy-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 9px;
+      background: var(--accent, #6e8063);
+    }
+
+    .privacy-card::after {
+      content: "";
+      position: absolute;
+      right: 24px;
+      top: 24px;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--accent, #6e8063);
+      opacity: 0.24;
+    }
+
+    .privacy-logo-row {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 38px;
+    }
+
+    .cloud-logo,
+    .swiss-flag {
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: rgba(244, 242, 234, 0.92);
+      border: 1px solid rgba(244, 242, 234, 0.1);
+      padding: 8px;
+    }
+
+    .cloud-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .swiss-flag {
+      position: relative;
+      background: #d52b1e;
+      border-color: rgba(244, 242, 234, 0.14);
+      padding: 0;
+    }
+
+    .swiss-flag::before,
+    .swiss-flag::after {
+      content: "";
+      position: absolute;
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      border-radius: 1px;
+    }
+
+    .swiss-flag::before {
+      width: 22px;
+      height: 7px;
+    }
+
+    .swiss-flag::after {
+      width: 7px;
+      height: 22px;
+    }
+
+    .privacy-card h3 {
+      max-width: 320px;
+      margin: 34px 0 16px;
+      font-size: 28px;
+      line-height: 1.04;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    .privacy-card p {
+      max-width: 370px;
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.34;
+      color: var(--graphite);
+    }
+
+    .footer {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 28px;
+      margin-top: 54px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      font-family: var(--font-mono);
+      font-size: 13px;
+      line-height: 1.2;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .footer span:last-child {
+      text-align: right;
+    }
+
+    .prem-logo {
+      width: 140px;
+      opacity: 0.68;
+      filter: invert(1);
+    }
+
+    @media (max-width: 980px) {
+      .page {
+        width: min(100% - 36px, 720px);
+        padding-top: 28px;
+      }
+
+      .topbar,
+      .section-head,
+      .hero {
+        display: block;
+      }
+
+      .meta,
+      .section-note {
+        text-align: left;
+        margin-top: 18px;
+      }
+
+      .texture {
+        margin-top: 34px;
+      }
+
+      .capability-grid,
+      .usecase-grid,
+      .privacy-grid,
+      .focus-split,
+      .industry-sensitive-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .industry-sensitive-grid {
+        grid-template-rows: none;
+      }
+
+      .usecase-card.featured {
+        grid-column: auto;
+      }
+
+      .footer {
+        grid-template-columns: 1fr;
+      }
+
+      .footer span:last-child {
+        text-align: left;
+      }
+    }
+
+    @page {
+      size: A3 portrait;
+      margin: 0;
+    }
+
+    @media print {
+      html,
+      body {
+        background-color: var(--canvas);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page {
+        width: 100%;
+        padding: 7mm 10mm;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+      }
+
+      .meta {
+        margin-top: 0;
+        text-align: right;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 280px;
+        gap: 28px;
+        padding-bottom: 18px;
+      }
+
+      h1 {
+        max-width: 700px;
+        font-size: 48px;
+      }
+
+      .hero-copy {
+        max-width: 640px;
+        margin-top: 12px;
+        font-size: 15px;
+      }
+
+      .texture {
+        height: 96px;
+        margin-top: 0;
+      }
+
+      .section {
+        margin-top: 20px;
+      }
+
+      .section-head,
+      .focus-split .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        min-height: 0;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        font-size: 26px;
+      }
+
+      .capability-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .capability {
+        min-height: 154px;
+        padding: 13px;
+      }
+
+      .capability-top {
+        gap: 10px;
+      }
+
+      .num {
+        font-size: 11px;
+      }
+
+      .app-logo,
+      .file-badge {
+        width: 26px;
+        min-width: 42px;
+        height: 26px;
+        font-size: 9px;
+      }
+
+      .app-logo {
+        min-width: 26px;
+        padding: 5px;
+      }
+
+      .capability h3 {
+        margin-bottom: 6px;
+        font-size: 18px;
+      }
+
+      .capability p {
+        font-size: 11px;
+      }
+
+      .focus-split {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(380px, 0.9fr);
+        gap: 20px;
+      }
+
+      .focus-split .usecase-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .industry-sensitive-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(3, minmax(0, 1fr));
+      }
+
+      .focus-split .usecase-grid,
+      .industry-sensitive-grid {
+        gap: 10px;
+      }
+
+      .usecase-card.featured {
+        grid-column: span 2;
+      }
+
+      .usecase-card {
+        min-height: 118px;
+        padding: 12px;
+      }
+
+      .usecase-kicker,
+      .industry-sensitive-card span {
+        font-size: 9px;
+      }
+
+      .usecase-card h3 {
+        margin-bottom: 6px;
+        font-size: 17px;
+      }
+
+      .usecase-card p {
+        font-size: 10px;
+      }
+
+      .industry-sensitive-card {
+        padding: 14px;
+      }
+
+      .industry-sensitive-card::after {
+        width: 32px;
+        height: 32px;
+      }
+
+      .industry-sensitive-card strong {
+        font-size: 18px;
+      }
+
+      .privacy-band {
+        margin-top: 18px;
+        padding-top: 14px;
+      }
+
+      .privacy-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 14px;
+      }
+
+      .privacy-card {
+        min-height: 122px;
+        padding: 13px;
+      }
+
+      .privacy-card::before {
+        height: 6px;
+      }
+
+      .privacy-card::after {
+        width: 38px;
+        height: 38px;
+      }
+
+      .privacy-logo-row {
+        min-height: 28px;
+      }
+
+      .cloud-logo,
+      .swiss-flag {
+        width: 30px;
+        height: 30px;
+        padding: 6px;
+      }
+
+      .swiss-flag::before {
+        width: 16px;
+        height: 5px;
+      }
+
+      .swiss-flag::after {
+        width: 5px;
+        height: 16px;
+      }
+
+      .privacy-card h3 {
+        margin: 14px 0 6px;
+        font-size: 18px;
+      }
+
+      .privacy-card p {
+        font-size: 10.5px;
+      }
+
+      .footer {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        margin-top: 14px;
+        padding-top: 10px;
+        font-size: 9px;
+      }
+
+      .footer span:last-child {
+        text-align: right;
+      }
+
+      .prem-logo {
+        width: 96px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div class="brand">
+        <span class="mark" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i>
+        </span>
+        <span>Fluso</span>
+      </div>
+      <div class="meta">Product brief<br>Partners / customers / investors</div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>AI workspaces for teams with too much context.</h1>
+        <p class="hero-copy"><strong>Fluso connects to work apps, remembers project history, and turns scattered communication into tasks, research, files, and finished work.</strong></p>
+      </div>
+      <div class="texture" aria-hidden="true"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Core capabilities</h2>
+      </div>
+      <div class="capability-grid">
+        <article class="capability">
+          <div class="capability-top">
+            <span class="num">01</span>
+            <div class="logo-row" aria-label="Connected app examples">
+              <span class="app-logo"><img src="../assets/connectors/gmail.svg" alt="Gmail"></span>
+              <span class="app-logo"><img src="../assets/connectors/slack.svg" alt="Slack"></span>
+              <span class="app-logo"><img src="../assets/connectors/google-drive.svg" alt="Google Drive"></span>
+              <span class="app-logo"><img src="../assets/connectors/github.svg" alt="GitHub"></span>
+              <span class="app-logo"><img src="../assets/connectors/linear.svg" alt="Linear"></span>
+            </div>
+          </div>
+          <div class="capability-copy">
+            <h3>Connected work context</h3>
+            <p>Search and use Gmail, Calendar, Drive, Slack, GitHub, Linear, web research, files, meetings, and project history.</p>
+          </div>
+        </article>
+
+        <article class="capability">
+          <div class="capability-top"><span class="num">02</span></div>
+          <div class="capability-copy">
+            <h3>Business context memory</h3>
+            <p>A private operating memory of people, projects, decisions, files, meetings, deadlines, and source-linked evidence.</p>
+          </div>
+        </article>
+
+        <article class="capability">
+          <div class="capability-top"><span class="num">03</span></div>
+          <div class="capability-copy">
+            <h3>Proactive task detection</h3>
+            <p>Finds open loops in messages and meetings: follow-ups, approvals, waiting items, deadlines, and recurring work.</p>
+          </div>
+        </article>
+
+        <article class="capability">
+          <div class="capability-top"><span class="num">04</span></div>
+          <div class="capability-copy">
+            <h3>Custom skills</h3>
+            <p>Package repeatable team workflows for research, reporting, analysis, follow-ups, operations, and specialist work.</p>
+          </div>
+        </article>
+
+        <article class="capability">
+          <div class="capability-top">
+            <span class="num">05</span>
+            <div class="logo-row" aria-label="Artifact output examples">
+              <span class="file-badge">DOC</span>
+              <span class="file-badge">PDF</span>
+              <span class="file-badge">XLS</span>
+              <span class="file-badge">PPT</span>
+              <span class="file-badge">MD</span>
+            </div>
+          </div>
+          <div class="capability-copy">
+            <h3>Artifact generation</h3>
+            <p>Create research briefs, reports, documents, spreadsheets, presentations, drafts, tickets, and project files.</p>
+          </div>
+        </article>
+
+        <article class="capability">
+          <div class="capability-top"><span class="num">06</span></div>
+          <div class="capability-copy">
+            <h3>Automations</h3>
+            <p>Schedule recurring checks, summaries, reminders, meeting follow-ups, monitoring, and preparation workflows.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section focus-split">
+      <div>
+        <div class="section-head">
+          <h2>Use cases</h2>
+        </div>
+        <div class="usecase-grid">
+          <article class="usecase-card featured">
+            <span class="usecase-kicker">Professional services</span>
+            <div>
+              <h3>Client context to deliverable</h3>
+              <p>Turn meetings, files, inbox threads, and research into proposals, recaps, decks, reports, and next-step plans.</p>
+            </div>
+          </article>
+          <article class="usecase-card">
+            <span class="usecase-kicker">Investors</span>
+            <div>
+              <h3>Diligence memo prep</h3>
+              <p>Collect company context, market notes, meeting history, open questions, and source-linked evidence.</p>
+            </div>
+          </article>
+          <article class="usecase-card">
+            <span class="usecase-kicker">Customer teams</span>
+            <div>
+              <h3>Account follow-up</h3>
+              <p>Summarize history, draft renewal notes, surface risks, and prepare personalized customer follow-ups.</p>
+            </div>
+          </article>
+          <article class="usecase-card">
+            <span class="usecase-kicker">Product teams</span>
+            <div>
+              <h3>Feedback to spec</h3>
+              <p>Convert customer calls, Slack threads, tickets, and roadmap discussion into specs and release notes.</p>
+            </div>
+          </article>
+          <article class="usecase-card">
+            <span class="usecase-kicker">Operations</span>
+            <div>
+              <h3>Open-loop tracking</h3>
+              <p>Detect waiting items, approvals, vendor updates, escalations, and recurring commitments across channels.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="industry-panel">
+        <div class="section-head">
+          <h2>Industries</h2>
+        </div>
+        <div class="industry-sensitive-grid">
+          <article class="industry-sensitive-card" style="--industry-accent: #405b69;"><span>01</span><strong>Banking and financial services</strong></article>
+          <article class="industry-sensitive-card" style="--industry-accent: #6e8063;"><span>02</span><strong>Healthcare operations</strong></article>
+          <article class="industry-sensitive-card" style="--industry-accent: #9f5a31;"><span>03</span><strong>Manufacturing</strong></article>
+          <article class="industry-sensitive-card" style="--industry-accent: #7b549e;"><span>04</span><strong>Legal and compliance</strong></article>
+          <article class="industry-sensitive-card" style="--industry-accent: #588698;"><span>05</span><strong>Life sciences and research</strong></article>
+          <article class="industry-sensitive-card" style="--industry-accent: #884a20;"><span>06</span><strong>Public sector and education</strong></article>
+        </div>
+      </div>
+
+      <div class="privacy-band">
+        <div class="section-head">
+          <h2>Privacy and deployment</h2>
+          <p class="section-note">Built for teams that need AI close to their data, infrastructure, and compliance boundaries.</p>
+        </div>
+        <div class="privacy-grid">
+          <article class="privacy-card" style="--accent: #6e8063;">
+            <div class="privacy-logo-row" aria-hidden="true">
+              <span class="file-badge">OSS</span>
+              <span class="file-badge">LLM</span>
+            </div>
+            <h3>Powered by OSS models</h3>
+            <p>Open-source model choices keep Fluso suitable for private work memories and controlled customer environments.</p>
+          </article>
+          <article class="privacy-card" style="--accent: #405b69;">
+            <div class="privacy-logo-row" aria-label="Cloud deployment options">
+              <span class="cloud-logo"><img src="../assets/cloud/aws.svg" alt="AWS"></span>
+              <span class="cloud-logo"><img src="../assets/cloud/google-cloud.svg" alt="Google Cloud"></span>
+              <span class="cloud-logo"><img src="../assets/cloud/azure.svg" alt="Azure"></span>
+            </div>
+            <h3>On-premise / VPC deployable</h3>
+            <p>Deploy inside the boundary that matters: on-premises, customer VPC, cloud tenant, or private infrastructure stack.</p>
+          </article>
+          <article class="privacy-card" style="--accent: #9f5a31;">
+            <div class="privacy-logo-row" aria-label="Switzerland">
+              <span class="swiss-flag"></span>
+            </div>
+            <h3>Prem infrastructure in Switzerland</h3>
+            <p>European product and infrastructure posture for teams that care where their intelligence layer runs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Fluso - autonomous AI workspace</span>
+      <img class="prem-logo" src="../assets/visual-identity/prem_logo_hq-transparent.png" alt="Prem AI">
+      <span>Switzerland / Prem AI infrastructure / 2026</span>
+    </footer>
+  </main>
+</body>
+</html>

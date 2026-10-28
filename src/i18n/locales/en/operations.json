@@ -1,0 +1,18 @@
+{
+  "stamp": "OPERATIONS BACKBONE",
+  "title": "An agent for operators.",
+  "lead": "Vendor reviews, invoice routing, ticket triage. Running across every tool you bought.",
+  "customSkills": [
+    { "title": "Renewal review", "desc": "Reads contracts and usage. Tells you which renewal to renegotiate before it auto-renews." },
+    { "title": "Invoice handling", "desc": "Reads PDF invoices, GL-codes by historical pattern, queues for Bill.com approval." },
+    { "title": "Ticket triage", "desc": "Classifies inbound Zendesk tickets, routes, drafts replies your team approves verbatim." }
+  ],
+  "automations": [
+    { "title": "Onboarding & offboarding", "desc": "New hire provisions accounts in Okta, Slack, GitHub, Notion. Offboarding reverses cleanly." },
+    { "title": "Month-end close", "desc": "Reconciles across Quickbooks, Stripe, Mercury. Flags variances for the controller." },
+    { "title": "Incident response", "desc": "Pagerduty fires; war-room in Slack, status doc drafted, comms templates ready." }
+  ],
+  "footerMetaLabel": "Operations workflow",
+  "footerBlurb": "Vendor contracts, payroll data, and incident logs stay in your systems. Enterprise controls and an immutable audit trail on every action.",
+  "ctaLabel": "Deploy for your team"
+}

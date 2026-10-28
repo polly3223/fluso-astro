@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "title": "Start with one<br/>serious project.",
+    "subtitle": "Available on macOS and Windows today. Telegram remote access works from any phone; native mobile is on the roadmap."
+  },
+  "steps": [
+    {
+      "title": "Install Fluso",
+      "copy": "Download the Mac or Windows app. Mac installs from a DMG; Windows runs from the signed installer and updates quietly in the background."
+    },
+    {
+      "title": "Build project recall",
+      "copy": "Connect your apps and drop in your files. Fluso starts indexing the context, shows readable sync history, and prompts you when a connector needs reconnecting."
+    },
+    {
+      "title": "Work from anywhere",
+      "copy": "Use the desktop app at your desk. Message Fluso from anywhere via Telegram."
+    }
+  ],
+  "support": {
+    "label": "Support"
+  },
+  "download": {
+    "mac": {
+      "title": "Download for Mac",
+      "meta": "Apple Silicon · macOS 13+"
+    },
+    "windows": {
+      "title": "Download for Windows",
+      "meta": "Windows 10 / 11 · .exe"
+    },
+    "moreOptions": "Intel Mac, version history, install help"
+  },
+  "guarantee": {
+    "label": "Guarantee",
+    "body": "Signed installers, quiet background updates, offline recovery, and a dedicated EU sandbox. By downloading Fluso, you agree to our <terms>terms of service</terms>."
+  }
+}

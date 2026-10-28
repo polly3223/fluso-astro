@@ -1,0 +1,18 @@
+{
+  "stamp": "PEER-REVIEW READY",
+  "title": "An agent for researchers.",
+  "lead": "Literature review, citation work, the formatting tax. Handed off so you can think.",
+  "customSkills": [
+    { "title": "Literature search", "desc": "Pulls papers from PubMed, arXiv, Scholar. Clusters by method, ranks by relevance." },
+    { "title": "Citation manager", "desc": "Maintains Zotero, dedupes entries, inserts properly-formatted cites into Overleaf." },
+    { "title": "Methods comparison", "desc": "Produces a matrix of datasets, sample sizes, and stated limitations across papers." }
+  ],
+  "automations": [
+    { "title": "Weekly alert digest", "desc": "New papers matching saved queries arrive Monday 8am with a two-line 'why this matters'." },
+    { "title": "Manuscript prep", "desc": "Checks figure resolution, reference completeness, and journal formatting in Overleaf." },
+    { "title": "Co-author sync", "desc": "Edits in shared Overleaf become a diff summary, reviewer responses tracked." }
+  ],
+  "footerMetaLabel": "Research workflow",
+  "footerBlurb": "Subject data, unpublished manuscripts, and IRB documents stay inside your institutional storage. HIPAA and FERPA aware where applicable.",
+  "ctaLabel": "Deploy in your lab"
+}

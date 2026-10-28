@@ -1,0 +1,18 @@
+{
+  "stamp": "REVENUE OPS",
+  "title": "An agent for sellers.",
+  "lead": "Account research, follow-ups, and CRM hygiene. Done before your first coffee.",
+  "customSkills": [
+    { "title": "Account brief", "desc": "Pulls news, 10-Q signals, hiring patterns. One-page brief in Slack before the meeting." },
+    { "title": "Follow-up drafting", "desc": "Reads the call recording. Drafts the follow-up in your voice, with a clear next step." },
+    { "title": "Deal-stage hygiene", "desc": "Reads thread sentiment and activity. Flags deals likely to slip the quarter." }
+  ],
+  "automations": [
+    { "title": "Inbound enrichment", "desc": "New lead gets enriched via Apollo and ZoomInfo, then routed by territory." },
+    { "title": "Sequence orchestration", "desc": "Outreach fires the moment a prospect engages on LinkedIn or opens a DocuSign." },
+    { "title": "Forecast reconciliation", "desc": "Pulls Salesforce, Gong, rep notes. Surfaces deals where reality doesn't match." }
+  ],
+  "footerMetaLabel": "Revenue workflow",
+  "footerBlurb": "Pipeline data, call recordings, and contracts stay in your CRM and storage. Enterprise controls and audit logs on every action.",
+  "ctaLabel": "Deploy for your sellers"
+}

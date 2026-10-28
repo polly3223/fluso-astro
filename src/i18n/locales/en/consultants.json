@@ -1,0 +1,18 @@
+{
+  "stamp": "CLIENT CONFIDENTIAL",
+  "title": "An agent for consultants.",
+  "lead": "Decks, models, and the synthesis grind. Handled with the rigor your principal expects.",
+  "customSkills": [
+    { "title": "Slide drafting", "desc": "Reads interview notes. Drafts slides in your firm's master, same structure as last time." },
+    { "title": "Expert-call synthesis", "desc": "Pulls calls from AlphaSights and GLG, clusters by theme, drafts the synthesis." },
+    { "title": "Benchmarking pulls", "desc": "Pulls from CapIQ and Pitchbook. Renders a comparable-set with consistent normalization." }
+  ],
+  "automations": [
+    { "title": "Engagement startup", "desc": "New matter provisions a Teams workspace, folders, templates, and a tracker." },
+    { "title": "Friday status note", "desc": "Pulls task list and timesheets. Drafts the client email at 3pm for EM sign-off." },
+    { "title": "Interview note normalizer", "desc": "Raw transcript becomes anonymized, tagged, and filed into the engagement folder." }
+  ],
+  "footerMetaLabel": "Engagement workflow",
+  "footerBlurb": "Client-bound material stays inside the engagement workspace. Cross-client leakage blocked at the data layer. Partner access review on every install.",
+  "ctaLabel": "Deploy on your engagement"
+}

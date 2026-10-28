@@ -1,0 +1,56 @@
+{
+  "items": [
+    {
+      "q": "What is Fluso, exactly?",
+      "a": "A proactive AI workspace that remembers your work: projects, decisions, the way you write. It produces real artifacts: drafted decks, populated sheets, briefing memos, saved straight into your projects."
+    },
+    {
+      "q": "How is it different from ChatGPT or Claude?",
+      "a": "Fluso is connected and persistent. It pulls from your tools, remembers your voice, takes action, and produces structured outputs. Chat-style assistants forget you between conversations and live in a single text box."
+    },
+    {
+      "q": "Who is Fluso for?",
+      "a": "Founders, lawyers, investors, marketers, researchers, doctors, consultants, sales execs, ops leaders. Anyone whose work is built from connected context. See the Professionals dropdown for role-specific pages."
+    },
+    {
+      "q": "What does Fluso desktop cost?",
+      "a": "Fluso desktop offers <strong>Free at $0</strong>, <strong>Plus at $10/user/month</strong>, <strong>Pro at $30/user/month</strong>, and <strong>Enterprise</strong> with custom pricing. Prices are in USD. Eligible new subscribers can start a <strong>30-day Pro trial</strong> with a payment card; it renews at $30/month unless canceled. Free requires no card. The <pricing>Pricing page</pricing> has the full breakdown."
+    },
+    {
+      "q": "What's new in the current desktop app?",
+      "a": "The current desktop app is powered by <strong>GLM 5.2</strong>, with per-chat <strong>Fast mode</strong>, thread search from the sidebar, inline editing for delivered Markdown/doc/code files, local-time handling for phrases like \"tomorrow at 9\", and cleaner finished states when a reply is done. See <download>Downloads</download> for current installers."
+    },
+    {
+      "q": "How do connectors and Gmail work now?",
+      "a": "Gmail stays <strong>draft-first</strong>: Fluso writes to drafts and sends only after you confirm. Outbound emails and messages now use stricter confirmation guardrails before tool-calls run. It can read across recent messages for context, upload files to Google Drive from chat, show readable sync failures, recover stalled OAuth, and reconnect tools like Linear or Supabase without dropping the current connection."
+    },
+    {
+      "q": "What happens if the app loses connection mid-task?",
+      "a": "Recent desktop releases added background auto-updates, sync recovery, offline recovery, and provider-hiccup recovery. If your connection drops or the laptop sleeps mid-response, Fluso preserves the answer and continues when it can instead of leaving the task stranded on \"Working\"."
+    },
+    {
+      "q": "What's the difference between Plus and Pro on Fluso desktop?",
+      "a": "Plus includes <strong>10× the weekly usage of Free</strong>. Pro includes <strong>unlimited token usage</strong> and <strong>confidential mode</strong>. Free and Plus usage resets weekly. All three plans share the core workspace features. Fluso desktop plan changes are handled outside the mobile app; your workspace, projects, history and connectors carry across. No migration needed."
+    },
+    {
+      "q": "Where does my data live, and how is it protected?",
+      "a": "In Europe. Every Fluso desktop tier (Free, Plus, Pro, Enterprise) runs on European datacentres, encrypted at rest and GDPR-aligned, and <strong>your data is never used to train shared models</strong>. On Pro and Enterprise, sensitive prompts and artifacts run inside <strong>confidential-computing enclaves</strong>: hardware-isolated execution where nobody (including us) can read the memory while inference is happening — the work goes in encrypted, runs encrypted, and comes out the other side."
+    },
+    {
+      "q": "What models does Fluso run on?",
+      "a": "Only <strong>open-source and open-weight models</strong>, never proprietary APIs in the pipeline. You can audit the stack, mirror the weights where licensing allows, and on Enterprise deploy inside your own infrastructure."
+    },
+    {
+      "q": "What do I get with Enterprise?",
+      "a": "Run Fluso inside your perimeter — VPC, on-premise, or fully air-gapped, with data anchored to the region you need. <strong>SSO and audit logs</strong> are included, SOC 2 Type II is in place, and ISO 27001 is in progress. The team builds <strong>custom skills and connectors</strong> for your CRM, data warehouse, internal tools, and operating style. <contact>Talk to our team</contact> for the current attestation report and a security review."
+    },
+    {
+      "q": "When do Windows and iOS ship?",
+      "a": "The <strong>Windows app is live now</strong> — <download>download</download> it today. Native iOS is on the roadmap. <strong>Telegram remote access</strong> works from any phone today."
+    },
+    {
+      "q": "Are there discounts for non-profits or startups?",
+      "a": "Yes. Special Fluso desktop arrangements are available for registered non-profits, early-stage startups (under €5M raised), and accredited education. Send us a quick note with your details and we'll get you set up."
+    }
+  ]
+}

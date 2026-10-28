@@ -1,0 +1,59 @@
+---
+import Website from '../../src/Website';
+import '../../src/index.css';
+import {seoForPath} from '../../src/seo/config';
+const {path = Astro.url.pathname} = Astro.props;
+const seo = seoForPath(path);
+---
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/svg+xml" href="/assets/fluso-favicon.svg" />
+    <link rel="icon" href="/assets/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=chillax@400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{seo.title}</title>
+    <!-- Astro generates per-route metadata; the React router updates it on navigation. -->
+    <meta
+      name="description"
+      content={seo.description}
+    />
+    <link rel="canonical" href={seo.canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Fluso" />
+    <meta property="og:url" content={seo.canonical} />
+    <meta property="og:title" content={seo.title} />
+    <meta
+      property="og:description"
+      content={seo.description}
+    />
+    <meta property="og:image" content={seo.ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={seo.title} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={seo.title} />
+    <meta
+      name="twitter:description"
+      content={seo.description}
+    />
+    <meta name="twitter:image" content={seo.ogImage} />
+
+<meta name="robots" content="noindex, nofollow" />
+</head>
+<body><div id="root"><Website client:only="react" /></div></body>
+</html>

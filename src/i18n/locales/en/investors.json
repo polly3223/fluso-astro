@@ -1,0 +1,18 @@
+{
+  "stamp": "FOR INVESTMENT PROFESSIONALS",
+  "title": "An agent for investors.",
+  "lead": "Sourcing, diligence, and portfolio monitoring. Running while you take the next meeting.",
+  "customSkills": [
+    { "title": "Inbound triage", "desc": "Reads decks, scores against your thesis, drafts a three-line response in your voice." },
+    { "title": "Diligence packs", "desc": "Pulls financials, traffic, and founder background. Assembles the draft memo." },
+    { "title": "Portfolio monitoring", "desc": "Watches portcos for updates, news, and key hires. Weekly digest before Monday." }
+  ],
+  "automations": [
+    { "title": "Pipeline hygiene", "desc": "Email pitch becomes an Affinity record. Reminder set for partner intro decision." },
+    { "title": "LP letter drafting", "desc": "Quarter end pulls IRR and MOIC plus portco updates. Drafts the LP letter." },
+    { "title": "Reference call notes", "desc": "Records reference calls and pins quotes to the founder's diligence page." }
+  ],
+  "footerMetaLabel": "Investor mode",
+  "footerBlurb": "Founder decks, MNDA-bound diligence, and LP correspondence stay inside your fund tenancy. No third-party training. Audit log on every action.",
+  "ctaLabel": "Deploy for your fund"
+}

@@ -1,0 +1,18 @@
+{
+  "stamp": "FOUNDER · OPERATING SYSTEM",
+  "title": "An agent for founders.",
+  "lead": "Investor updates, hiring inbox, data rooms. The compounding work, handled while you build.",
+  "customSkills": [
+    { "title": "Investor memo drafting", "desc": "Reads Stripe, Mixpanel, your last update. Drafts the board email in your voice." },
+    { "title": "Hiring inbox triage", "desc": "Scores replies against your JD. Drafts shortlist notes and rejections before standup." },
+    { "title": "Data room curation", "desc": "Watches Drive, redacts customer names, freezes a clean snapshot when an LP asks." }
+  ],
+  "automations": [
+    { "title": "Weekly board snapshot", "desc": "Pulls ARR and churn, ships a Loom + PDF to investors every Friday at 4pm." },
+    { "title": "Pipeline-to-CRM sync", "desc": "New customer call becomes a HubSpot opportunity, stage suggested from the call." },
+    { "title": "Burn watcher", "desc": "Checks Brex daily. Pings Slack the day spend starts trending past runway." }
+  ],
+  "footerMetaLabel": "Founder mode",
+  "footerBlurb": "Runs inside your Google Workspace. Customer names, financials, and cap table data never leave your tenancy or train a third-party model.",
+  "ctaLabel": "Start as a founder"
+}

@@ -1,0 +1,80 @@
+{
+  "hero": {
+    "title": "Built for the<br/>enterprise.",
+    "subtitle": "Designed for high-performing organizations. Fluso runs within your secure boundaries, with SSO, audit logs, custom retention, and no proprietary APIs in the pipeline.",
+    "ctaPrimary": "Talk to our team",
+    "ctaSecondary": "Explore pricing",
+    "trust": [
+      "EU sovereign hosting",
+      "Customer VPC or air-gapped",
+      "Confidential computing",
+      "SOC 2 Type II in place"
+    ],
+    "live": "Live",
+    "vizLabel": "Inference contours"
+  },
+  "capabilities": {
+    "title": "Designed to be<br/>personalised.",
+    "subtitle": "Fluso fits how you already operate: <strong>connectors</strong> to your systems, <strong>skills</strong> your team codifies, and <strong>deployment</strong> matched to your compliance posture.",
+    "connectors": {
+      "kicker": "01 / Connectors",
+      "title": "Wire Fluso to<br/>your stack.",
+      "desc": "500+ canonical connectors plus the systems behind your firewall. <strong>REST, GraphQL, SOAP</strong>. We write the schema mapping. You keep auth in your hands.",
+      "moreLabel": "more",
+      "moreTitle": "Custom connectors on request"
+    },
+    "skills": {
+      "kicker": "02 / Skills",
+      "title": "Codify how<br/>your team works.",
+      "desc": "A skill is a saved instruction Fluso runs the way you taught it. <strong>Plain English</strong>, versioned like code, promoted team-wide with permissions and audit.",
+      "items": [
+        { "label": "Friday board memo", "meta": "scheduled" },
+        { "label": "Contract redline", "meta": "on-demand" },
+        { "label": "Quarterly investor update", "meta": "scheduled" },
+        { "label": "Pipeline brief", "meta": "webhook" },
+        { "label": "Internal-audit pack", "meta": "scheduled" },
+        { "label": "Risk register", "meta": "on-demand" }
+      ]
+    },
+    "deployment": {
+      "kicker": "03 / Deployment",
+      "title": "Pick where<br/>data lives.",
+      "desc": "Three deployment modes, one product, full feature parity. Pick the perimeter that maps to your <strong>compliance posture</strong>.",
+      "modes": [
+        { "name": "EU managed cloud.", "spec": "Confidential compute" },
+        { "name": "Customer VPC.", "spec": "" },
+        { "name": "On-prem, air-gapped.", "spec": "Offline-capable" }
+      ]
+    }
+  },
+  "confidential": {
+    "title": "Workloads no one<br/>can read. Including us.",
+    "subtitle": "Enterprise tenants run inside hardware-isolated trusted execution environments on <strong>Prem AI's confidential compute</strong>. Memory is encrypted while in use, and remote attestation lets you verify the runtime before any plaintext enters.",
+    "poweredBy": "Powered by",
+    "poweredByAria": "Powered by Prem AI",
+    "items": [
+      {
+        "name": "Hardware-isolated TEE.",
+        "tag": "Confidential GPU",
+        "spec": ["Memory sealed in silicon", "per-tenant boundaries"]
+      },
+      {
+        "name": "Remote attestation.",
+        "tag": "Verifiable",
+        "spec": ["Prove the runtime", "before secrets cross the boundary"]
+      },
+      {
+        "name": "Encrypted in use.",
+        "tag": "Always-on",
+        "spec": ["Operator-blind", "plaintext never leaves the enclave"]
+      }
+    ]
+  },
+  "closing": {
+    "title": "Run Fluso inside<br/>your perimeter.",
+    "subtitle": "Tell us about your stack and your compliance posture. We will come back with a deployment plan, SSO and audit-log scope, and the current SOC 2 Type II attestation.",
+    "ctaPrimary": "Talk to our team",
+    "ctaSecondary": "Explore pricing",
+    "footnote": "Or <try>try Fluso free</try> first. No card required."
+  }
+}

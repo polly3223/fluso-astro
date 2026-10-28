@@ -1,0 +1,188 @@
+{
+  "hero": {
+    "badge": "Engineered in Switzerland, hosted in the EU",
+    "title": "Your proactive<br/>AI workspace",
+    "lead": "Fluso brings proactive AI to everything you do. Full context. Complete control. Deep focus.",
+    "downloadMac": "Download for Mac",
+    "downloadIphone": "Download for iPhone",
+    "otherPlatforms": "Other platforms",
+    "checks": [
+      "Private by design",
+      "Connected context",
+      "Open-source models"
+    ],
+    "syncsWith": "Syncs with",
+    "foundation": "The decision's in a Slack thread, the numbers are in a sheet, the deadline came up on a call. Fluso pulls it all into one workspace that remembers, in your own secure environment."
+  },
+  "howItWorks": {
+    "title": "From scattered intent<br/>to finished work.",
+    "subtitle": "With Fluso, context switching is a thing of the past.",
+    "tablistLabel": "How Fluso works, in five steps",
+    "steps": [
+      {
+        "title": "Tracks outstanding work",
+        "copy": "Reads across Gmail, Slack, Drive, and Calendar, including recent email context instead of only the latest message. Pulls out the actual commitments and stamps each one with an owner, a deadline, and where it came from."
+      },
+      {
+        "title": "Performs complex multi-step tasks",
+        "copy": "Breaks the work into steps: research, draft, check, revise. GLM 5.2 powers the deep work, and per-chat Fast mode keeps simpler turns quick."
+      },
+      {
+        "title": "Builds artifacts in formats you work with",
+        "copy": "Docs, sheets, slides, Word, Excel, PowerPoint, PDFs. Delivered files open in chat for Markdown, documents, and code; edits are handed back without losing your manual changes."
+      },
+      {
+        "title": "Plugs into tools you already use",
+        "copy": "Gmail, Outlook, Drive, Calendar, Slack, Teams, Notion, Linear. Connect, review per-tool permissions, upload to Drive from chat, and recover stalled OAuth from one place."
+      },
+      {
+        "title": "Flows through your communications",
+        "copy": "Replies, follow-ups, recaps. Drafted in your voice, polished before sending, and kept draft-first in Gmail until you approve."
+      }
+    ]
+  },
+  "capabilities": {
+    "title": "Designed to automate<br/>knowledge work.",
+    "subtitle": "The repetitive thinking work, done. Research, drafting, reporting, outreach, across the tools you already use.",
+    "ariaLabel": "Capabilities",
+    "tiles": {
+      "buildDocuments": {
+        "title": "Build documents.",
+        "desc": "Sheets, decks, memos, contracts, briefs — drafted from your context, editable after delivery, exported without losing manual edits."
+      },
+      "automateCommunications": {
+        "title": "Automate communications.",
+        "desc": "Replies in your voice. Follow-ups queued. Gmail stays draft-first and asks before outbound email or messages. Across email, Slack, and your CRM."
+      },
+      "captureMeetings": {
+        "title": "Capture meetings.",
+        "desc": "Show up. Walk out with the recap, action items, and follow-up drafted."
+      },
+      "buildAutomations": {
+        "title": "Build automations.",
+        "desc": "Set a Friday board memo or a 9am pipeline brief once. Relative times resolve to your local timezone. Plain English. No code."
+      },
+      "organiseProjects": {
+        "title": "Organise projects.",
+        "desc": "A workspace that searches past threads, highlights matches, preserves attachments per chat, and shows what's blocking the next step."
+      },
+      "installSkills": {
+        "title": "Install skills.",
+        "desc": "100+ saved instructions, one click away. Connected tools keep encrypted credentials and can be reconnected cleanly."
+      },
+      "exploreUseCases": {
+        "title": "Explore use cases.",
+        "desc": "Nine industries. Each one uses Fluso differently. Pick the closest to your work."
+      }
+    },
+    "skills": [
+      "Daily brief",
+      "Board memo",
+      "Pipeline brief",
+      "Contract redline",
+      "1:1 prep",
+      "Inbox triage"
+    ],
+    "useCasesTags": [
+      "Founders",
+      "Lawyers",
+      "Investors",
+      "+6 more"
+    ],
+    "mobileFeatures": [
+      {
+        "title": "Build documents",
+        "desc": "Sheets, decks, memos, contracts, briefs: drafted from your context and editable after delivery."
+      },
+      {
+        "title": "Automate communications",
+        "desc": "Replies in your voice. Follow-ups queued. Gmail stays draft-first and asks before outbound sends."
+      },
+      {
+        "title": "Capture meetings",
+        "desc": "Walk out with the recap, action items, and follow-up drafted."
+      },
+      {
+        "title": "Organise projects",
+        "desc": "A workspace that searches threads, keeps chat attachments, and shows what blocks next."
+      },
+      {
+        "title": "Build automations",
+        "desc": "Set a Friday board memo once. Relative times use your local timezone."
+      },
+      {
+        "title": "Install skills",
+        "desc": "100+ saved instructions. Or compose your own in plain English."
+      },
+      {
+        "title": "Explore use cases",
+        "desc": "Nine industries. Pick the closest to your work."
+      }
+    ]
+  },
+  "connectors": {
+    "title": "A memory of<br/>how you work.",
+    "subtitle": "Fluso builds a private graph of how you actually operate: people, projects, decisions, and what's owed to whom.",
+    "hubAriaLabel": "Activate Fluso network",
+    "dragSourceAriaLabel": "Drag {{source}} connector",
+    "cards": [
+      {
+        "title": "Everything captured,<br/>still yours.",
+        "body": "Mail, calendar, docs, meetings, pulled in continuously and indexed inside your boundary. Never trained on."
+      },
+      {
+        "title": "Everything connected.",
+        "body": "People, projects, threads, and commitments stitched into one graph. Sharpens with every meeting you take."
+      },
+      {
+        "title": "Answers<br/>with receipts.",
+        "body": "Ask anything. Get the answer plus the threads, docs, and meetings it actually came from. Auditable, every time."
+      }
+    ],
+    "researchLink": "Read our open research on AI memory at <strong>prem-research</strong>"
+  },
+  "privacy": {
+    "title": "Private by design.<br/>Transparent by default.",
+    "subtitle": "Open models, auditable boundaries, your deployment. Your data never trains anything.",
+    "deploymentOptions": "Deployment options",
+    "commitments": [
+      {
+        "eyebrow": "Models",
+        "heading": "Open-source<br/>intelligence.",
+        "body": "Built on open-source models. Inspect every layer. Your data never enters training."
+      },
+      {
+        "eyebrow": "Infrastructure",
+        "heading": "Deployable<br/>boundaries.",
+        "body": "Choose your boundary: our secure cloud, your VPC, or fully air-gapped on premise. Same workspace, your rules."
+      },
+      {
+        "eyebrow": "Jurisdiction",
+        "heading": "EU<br/>data protection.",
+        "body": "Hosted on Prem AI's confidential compute in the EU. GDPR-bound and sovereign by design."
+      },
+      {
+        "eyebrow": "Isolation",
+        "heading": "Dedicated<br/>sandbox.",
+        "body": "Every workspace runs in its own isolated environment. No shared tenants, no cross-leakage, no training on anyone else's corpus."
+      },
+      {
+        "eyebrow": "Portability",
+        "heading": "Recoverable<br/>workflows.",
+        "body": "Auto-updates, offline recovery, provider hiccup recovery, and preserved in-progress answers keep long-running work from getting stranded."
+      },
+      {
+        "eyebrow": "Standards",
+        "heading": "No vendor<br/>lock-in.",
+        "body": "Connectors are standards-based. Models are swappable. Your data lives in open formats you can take to any other system."
+      }
+    ]
+  },
+  "faq": {
+    "title": "What everyone<br/>asks first.",
+    "subtitle": "The things people want to know before they download. If there's something we missed, we're around.",
+    "downloadMac": "Download for Mac",
+    "allInstallers": "All installers (Mac Intel · Windows)",
+    "enterpriseLine": "Or <contact>tell us about your team</contact> for enterprise."
+  }
+}

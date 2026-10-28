@@ -1,0 +1,133 @@
+{
+  "plans": {
+    "title": "Fluso desktop plans,<br/>serious capacity.",
+    "subtitle": "These plans apply to Fluso desktop. Start with Free, get 10× the usage with Plus, or choose unlimited token usage and confidential mode with Pro. Enterprise covers SSO, audit logs, and custom deployments.",
+    "mostPopular": "Most popular",
+    "items": [
+      {
+        "name": "Free",
+        "desc": "Enough to try Fluso desktop on real work.",
+        "price": "$0",
+        "period": "forever",
+        "includes": "Includes",
+        "features": [
+          "Enough usage to get started",
+          "Standard models",
+          "Projects, chats and files",
+          "Connectors and skills",
+          "Artifact generation",
+          "Meeting notes",
+          "Dedicated sandbox",
+          "European hosting"
+        ],
+        "cta": "Start for free"
+      },
+      {
+        "name": "Plus",
+        "desc": "For Fluso desktop as your daily assistant. Most people start here.",
+        "period": "/user/month",
+        "includes": "Everything in Free, plus",
+        "features": [
+          "<strong>10× the weekly usage</strong> of Free",
+          "Usage resets weekly",
+          "All core workspace features"
+        ],
+        "cta": "Get Plus"
+      },
+      {
+        "name": "Pro",
+        "desc": "For intensive work and confidential inference on Fluso desktop.",
+        "period": "/user/month",
+        "includes": "Everything in Plus, plus",
+        "features": [
+          "<strong>Unlimited token usage</strong>",
+          "<strong>Confidential mode</strong> included",
+          "All core workspace features"
+        ],
+        "cta": "Get Pro"
+      },
+      {
+        "name": "Enterprise",
+        "desc": "For organisations with custom needs.",
+        "price": "Custom",
+        "period": "quote",
+        "includes": "Everything in Pro, plus",
+        "features": [
+          "<strong>SSO</strong> (Single Sign-On)",
+          "Dedicated account executive",
+          "Dedicated customer support",
+          "Custom obligation detection, tailored to your workflows",
+          "Encrypted sandbox environment",
+          "Custom data retention controls",
+          "Audit logs",
+          "Custom skills",
+          "SOC 2 Type II in place; ISO 27001 in progress"
+        ],
+        "cta": "Get in touch with us"
+      }
+    ],
+    "billingNote": "Prices are in USD. Plus and Pro are billed monthly. Free and Plus usage resets weekly.",
+    "trialNote": "Eligible new subscribers can start a 30-day Pro trial. A payment card is required; after the trial, Pro renews at $30/month unless canceled. Free requires no card."
+  },
+  "trust": {
+    "title": "Four things every Fluso desktop plan<br/>gets by default.",
+    "subtitle": "Every Fluso desktop plan shares the same core workspace, open models and European hosting. Choose the usage and privacy level you need.",
+    "items": [
+      {
+        "label": "Usage",
+        "heading": "Room for your work",
+        "body": "Free gives you enough to get started. Plus includes 10× the weekly usage of Free. Pro has unlimited token usage."
+      },
+      {
+        "label": "Models",
+        "heading": "Open-source, always",
+        "body": "Open-source models only, hosted in Europe. No proprietary APIs in the pipeline."
+      },
+      {
+        "label": "Hosting",
+        "heading": "Hosted in Europe",
+        "body": "Compute, storage and orchestration all run from European datacentres. GDPR-aligned, sovereign by design."
+      },
+      {
+        "label": "Privacy",
+        "heading": "Your data, your boundary",
+        "body": "Your work never trains shared models. Confidential computing on Pro and Enterprise, encrypted sandboxes for organisations that ask."
+      }
+    ]
+  },
+  "compare": {
+    "title": "All the details,<br/>side by side.",
+    "subtitle": "Compare usage, privacy and workspace features across Fluso desktop plans.",
+    "swipeHint": "Swipe to compare",
+    "headers": ["Feature", "Free", "Plus", "Pro", "Enterprise"],
+    "included": "Included",
+    "notIncluded": "Not included",
+    "rows": [
+      { "label": "Weekly token usage", "cells": ["Enough to get started", "10× Free", "Unlimited", "Custom"] },
+      { "label": "Confidential mode" },
+      { "label": "Projects, chats and files" },
+      { "label": "Standard models" },
+      { "label": "Sandbox", "cells": ["Dedicated", "Dedicated", "Dedicated", "Encrypted"] },
+      { "label": "Skills Marketplace" },
+      { "label": "Artifact generation" },
+      { "label": "Connectors" },
+      { "label": "Dedicated support & AE" },
+      { "label": "SSO" },
+      { "label": "Audit logs" },
+      { "label": "Custom data retention" },
+      { "label": "Custom skills" },
+      { "label": "Hosting", "cells": ["Europe", "Europe", "Europe", "Europe"] }
+    ]
+  },
+  "faq": {
+    "title": "Questions<br/>before you switch.",
+    "subtitle": "The things teams ask before moving their day-to-day work onto Fluso. If we missed something, reach out.",
+    "cta": "Talk to our team",
+    "tryFree": "Or <tryfree>try Fluso free</tryfree>. No card required."
+  },
+  "closing": {
+    "title": "Experience each<br/>Fluso desktop plan.",
+    "subtitle": "Free is forever for Fluso desktop. Plus, Pro and Enterprise are available when you're ready. The mobile app does not sell or manage Fluso desktop plans.",
+    "ctas": ["Explore Fluso desktop plans", "Talk to our team"]
+  }
+}

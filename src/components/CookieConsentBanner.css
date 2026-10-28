@@ -1,0 +1,376 @@
+/* Theme override for @premAI-io/cookie-consent, matched to fluso.ai's dark
+   surface (--color-charcoal) rather than the app's shadcn-style semantic
+   tokens — this site doesn't have those, and is dark-only. Typography
+   mirrors the "Everything captured, still yours." card (title) and its body
+   copy in home/sections/Connectors.tsx (see typography.ts's
+   TYPE_CARD_TITLE / TYPE_BODY_SMALL); buttons mirror the "Get Pro" /
+   "Get Plus" plan CTAs in pricing/sections/Plans.tsx. */
+#cc-main {
+  --cc-font-family: var(--font-sans);
+  --cc-modal-border-radius: 0.75rem;
+  /* NOT just a "button" radius despite the name — the library also reuses
+     this token for the preferences modal's category blocks, their expanded
+     accordion panel, and section titles (see #cc-main .pm__section,
+     .pm__section--toggle, .pm__section-title, .pm__section-desc-wrapper in
+     the package's dist CSS). Leaving it at a pill value there stretched
+     those rectangular blocks into odd stadium shapes when expanded, so it
+     stays modest here; .cm__btn/.pm__btn get their own explicit pill
+     radius below instead of relying on this shared token. */
+  --cc-btn-border-radius: 0.5rem;
+  --cc-modal-margin: 1rem;
+
+  --cc-bg: #161616;
+  --cc-primary-color: #faf9f5;
+  --cc-secondary-color: rgba(242, 241, 237, 0.65);
+  --cc-link-color: #faf9f5;
+
+  /* Get Pro (featured plan CTA): bone fill, ink text, brightens on hover. */
+  --cc-btn-primary-bg: #faf9f5;
+  --cc-btn-primary-color: #0c0c0c;
+  --cc-btn-primary-border-color: #faf9f5;
+  --cc-btn-primary-hover-bg: #ffffff;
+  --cc-btn-primary-hover-color: #0c0c0c;
+  --cc-btn-primary-hover-border-color: #ffffff;
+
+  /* "Save preferences" keeps its original quiet/outline look — the ink-fill
+     "Get Plus" treatment made it read as a second bold CTA next to "Accept
+     all", which is the wrong emphasis for a secondary action. */
+  --cc-btn-secondary-bg: transparent;
+  --cc-btn-secondary-color: #faf9f5;
+  --cc-btn-secondary-border-color: rgba(242, 241, 237, 0.2);
+  --cc-btn-secondary-hover-bg: rgba(242, 241, 237, 0.08);
+  --cc-btn-secondary-hover-color: #faf9f5;
+  --cc-btn-secondary-hover-border-color: rgba(242, 241, 237, 0.3);
+
+  --cc-separator-border-color: rgba(242, 241, 237, 0.12);
+
+  --cc-toggle-on-bg: #faf9f5;
+  --cc-toggle-off-bg: rgba(242, 241, 237, 0.16);
+  --cc-toggle-on-knob-bg: #0c0c0c;
+  --cc-toggle-off-knob-bg: #faf9f5;
+  --cc-toggle-enabled-icon-color: #0c0c0c;
+  --cc-toggle-disabled-icon-color: #faf9f5;
+  --cc-toggle-readonly-bg: rgba(242, 241, 237, 0.28);
+  --cc-toggle-readonly-knob-bg: #faf9f5;
+  --cc-toggle-readonly-knob-icon-color: #161616;
+
+  --cc-cookie-category-block-bg: rgba(242, 241, 237, 0.05);
+  --cc-cookie-category-block-border: rgba(242, 241, 237, 0.1);
+  --cc-cookie-category-block-hover-bg: rgba(242, 241, 237, 0.08);
+  --cc-cookie-category-block-hover-border: rgba(242, 241, 237, 0.15);
+  --cc-cookie-category-expanded-block-bg: transparent;
+  --cc-cookie-category-expanded-block-hover-bg: rgba(242, 241, 237, 0.08);
+
+  --cc-overlay-bg: rgba(12, 12, 12, 0.6);
+  --cc-webkit-scrollbar-bg: rgba(242, 241, 237, 0.1);
+  --cc-webkit-scrollbar-hover-bg: rgba(242, 241, 237, 0.3);
+
+  --cc-footer-bg: rgba(242, 241, 237, 0.04);
+  --cc-footer-color: rgba(242, 241, 237, 0.65);
+  --cc-footer-border-color: rgba(242, 241, 237, 0.1);
+}
+
+#cc-main .cm,
+#cc-main .pm {
+  border: 1px solid rgba(242, 241, 237, 0.12);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.45),
+    0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+#cc-main .pm__header {
+  border-bottom: none;
+}
+
+#cc-main .pm__footer,
+#cc-main .cm__btns {
+  border-top: none;
+}
+
+#cc-main .pm__header,
+#cc-main .pm__body,
+#cc-main .pm__footer {
+  padding: 0.25rem 1.5rem 0.25rem 1.5rem;
+}
+
+#cc-main .pm__body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#cc-main .pm__header {
+  padding-top: 1.5rem;
+}
+
+#cc-main .pm__footer {
+  padding-bottom: 1.5rem;
+}
+
+#cc-main .cm__title,
+#cc-main .pm__title {
+  font-weight: 500;
+  font-size: clamp(21px, calc(0.7vw + 18px), 30px);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+#cc-main .cm__desc,
+#cc-main .pm__section-desc {
+  font-weight: 400;
+  font-size: clamp(14px, calc(0.15vw + 13.5px), 15.5px);
+  line-height: 1.5;
+  letter-spacing: -0.003em;
+  color: var(--cc-secondary-color);
+}
+
+#cc-main .pm__section-title-wrapper + .pm__section-desc-wrapper {
+  margin-top: 0;
+}
+
+#cc-main .pm__section:first-child {
+  margin-bottom: 0;
+}
+
+#cc-main .cm__title,
+#cc-main .cm__desc {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+#cc-main .cm__btns,
+#cc-main .cm__links {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+#cc-main .cm__btn {
+  border-radius: 999px;
+}
+
+#cc-main .pm__close-btn,
+#cc-main .cm__btn--close {
+  background: transparent;
+  border: none;
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
+  transition: opacity 0.15s ease;
+}
+
+#cc-main .pm__close-btn:hover,
+#cc-main .cm__btn--close:hover {
+  background: transparent;
+  opacity: 1;
+}
+
+#cc-main .pm__close-btn svg,
+#cc-main .cm__btn--close svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--cc-primary-color);
+  stroke-width: 2px;
+  transform: none;
+}
+
+#cc-main .pm__section-toggles {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#cc-main .pm__section--toggle {
+  margin-bottom: 0;
+}
+
+#cc-main .pm__section--toggle .pm__section-title {
+  min-height: 36px;
+  padding: 0.5rem 1rem 0.5rem 2.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+#cc-main .pm__section--expandable .pm__section-arrow {
+  left: 0.75rem;
+  background: rgba(242, 241, 237, 0.08);
+}
+
+#cc-main .pm__section--expandable .pm__section-arrow svg {
+  stroke: rgba(242, 241, 237, 0.65);
+}
+
+#cc-main .pm__section--toggle .pm__section-desc-wrapper {
+  display: flex;
+  max-height: 0;
+  opacity: 0;
+  transition:
+    max-height 300ms ease,
+    opacity 300ms ease;
+}
+
+#cc-main .pm__section--toggle.is-expanded .pm__section-desc-wrapper {
+  max-height: 400px;
+  opacity: 1;
+}
+
+#cc-main .pm__section--expandable .pm__section-arrow svg {
+  transition: transform 300ms ease;
+}
+
+#cc-main .toggle__icon svg {
+  display: none;
+}
+
+#cc-main .section__toggle,
+#cc-main .section__toggle-wrapper,
+#cc-main .toggle__icon,
+#cc-main .toggle__label {
+  width: 32px;
+  height: 18px;
+}
+
+#cc-main .toggle__icon-circle {
+  width: 14px;
+  height: 14px;
+  top: 2px;
+  left: 2px;
+  box-shadow: none;
+}
+
+#cc-main .section__toggle:checked ~ .toggle__icon .toggle__icon-circle {
+  transform: translateX(14px);
+}
+
+#cc-main .toggle-service,
+#cc-main .toggle-service .section__toggle,
+#cc-main .toggle-service .toggle__icon,
+#cc-main .toggle-service .toggle__label {
+  width: 32px;
+  height: 18px;
+}
+
+#cc-main .toggle-service .toggle__icon-circle {
+  width: 14px;
+  height: 14px;
+}
+
+#cc-main
+  .toggle-service
+  .section__toggle:checked
+  ~ .toggle__icon
+  .toggle__icon-circle {
+  transform: translateX(14px);
+}
+
+#cc-main .pm__service {
+  min-height: 36px;
+}
+
+/* Per-service brand icons (Google/Vercel logos) clashed with the site's
+   black-and-white design language, so services show as plain text rows —
+   no icon slot at all. Hiding it collapses the 26px of left margin it used
+   to carry, so the title text is nudged back over with its own padding
+   instead of sitting flush against the row's edge. */
+#cc-main .pm__service-icon {
+  display: none;
+}
+
+#cc-main .pm__service-header {
+  padding-left: 1.5rem;
+}
+
+#cc-main .pm__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  border-radius: 999px;
+  font-size: 14.5px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  height: 2.25rem;
+  min-height: 0;
+  min-width: 0;
+  padding: 0.5rem 1.125rem;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
+  background: var(--cc-btn-primary-bg);
+  color: var(--cc-btn-primary-color);
+  border-color: var(--cc-btn-primary-border-color);
+}
+
+#cc-main .pm__btn:hover {
+  background: var(--cc-btn-primary-hover-bg);
+  border-color: var(--cc-btn-primary-hover-border-color);
+  color: var(--cc-btn-primary-hover-color);
+}
+
+#cc-main .pm__btn:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+#cc-main .pm__btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(242, 241, 237, 0.35);
+}
+
+#cc-main .pm__btn--secondary {
+  background: var(--cc-btn-secondary-bg);
+  color: var(--cc-btn-secondary-color);
+  border-color: var(--cc-btn-secondary-border-color);
+}
+
+#cc-main .pm__btn--secondary:hover {
+  background: var(--cc-btn-secondary-hover-bg);
+  color: var(--cc-btn-secondary-hover-color);
+  border-color: var(--cc-btn-secondary-hover-border-color);
+}
+
+@media screen and (max-width: 640px) {
+  #cc-main .pm,
+  #cc-main .cm {
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translate(-50%, -50%) !important;
+    width: calc(100% - 2rem) !important;
+    max-width: calc(100% - 2rem) !important;
+    max-height: calc(100% - 2rem) !important;
+    height: auto !important;
+    border-radius: 0.75rem !important;
+    margin: 0 !important;
+  }
+
+  #cc-main .pm__header,
+  #cc-main .pm__body,
+  #cc-main .pm__footer {
+    padding: 0.25rem 1.5rem 0.25rem 1.5rem !important;
+  }
+
+  #cc-main .pm__header {
+    padding-top: 1.5rem !important;
+  }
+
+  #cc-main .pm__footer {
+    padding-bottom: 1.5rem !important;
+  }
+
+  #cc-main .cm__title,
+  #cc-main .cm__desc,
+  #cc-main .cm__btns,
+  #cc-main .cm__links {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  .show--preferences #cc-main .cc--anim .pm,
+  .show--consent #cc-main .cc--anim .cm {
+    transform: translate(-50%, -50%) !important;
+  }
+}

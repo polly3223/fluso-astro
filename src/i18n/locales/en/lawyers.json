@@ -1,0 +1,169 @@
+{
+  "wordmarkSuffix": "Legal",
+  "nav": {
+    "homeLabel": "Fluso home",
+    "sectionsLabel": "Fluso for Legal sections",
+    "mobileSectionsLabel": "Fluso for Legal mobile sections",
+    "openNav": "Open navigation",
+    "closeNav": "Close navigation",
+    "requestPrefix": "Request ",
+    "earlyAccess": "Early Access",
+    "anchors": {
+      "practice": "Practice",
+      "security": "Security",
+      "useCases": "Use cases",
+      "enterprise": "Enterprise"
+    }
+  },
+  "hero": {
+    "eyebrow": "Fluso Legal",
+    "title": ["A companion", "for legal strategy."],
+    "tagline": "The legal AI that verifies before it answers.",
+    "cta": "Request Early Access",
+    "quote": "The best lawyers are strategists. They read the client, the regulator, the court. Fluso clears everything in the way of that work."
+  },
+  "pillars": [
+    {
+      "title": "<em>It reasons like a lawyer</em>.",
+      "body": "A reasoning engine built for legal strategy. Every authority is checked against the governing source, unsupported statements are surfaced, and every conclusion traces to the material it rests on. \n You see the path, not just the answer."
+    },
+    {
+      "title": "<em>It works on privileged information.</em>",
+      "body": "Fluso ingests and operates on privileged information inside a hardware-encrypted perimeter. Your infrastructure provider can’t read it. Neither can we."
+    }
+  ],
+  "practice": {
+    "title": "For your practice.",
+    "features": [
+      {
+        "title": "<em>Research</em> you can build on",
+        "body": "Ask a legal question and receive a structured analysis with every proposition sourced and the primary materials attached."
+      },
+      {
+        "title": "<em>Strategy</em> for the room",
+        "body": "Counterarguments, jurisdictional conflicts, and reasoning gaps are surfaced before they surface in front of a counterparty."
+      },
+      {
+        "title": "<em>Honest</em> about uncertainty",
+        "body": "If the law is unsettled, you are told it is unsettled, and you decide how to proceed."
+      },
+      {
+        "title": "<em>Jurisdiction</em>-aware",
+        "body": "Fluso knows which source governs for each jurisdiction, and checks against it."
+      }
+    ]
+  },
+  "practiceAreas": {
+    "title": ["Multi-jurisdictional work", "across 12+ practice areas."],
+    "lead": "For your firm’s own precedent, we build custom connectors to your DMS and knowledge systems, so the workspace reasons over your institutional knowledge, inside your perimeter.",
+    "carouselLabel": "Practice areas carousel",
+    "showAriaLabel": "Show {{areas}}",
+    "and": "and",
+    "areas": {
+      "litigation": "Litigation",
+      "contracts": "Contracts",
+      "ma": "M&A",
+      "dueDiligence": "Due diligence",
+      "ip": "IP",
+      "employment": "Employment",
+      "privacyData": "Privacy & data",
+      "regulatory": "Regulatory",
+      "crossBorder": "Cross-border",
+      "ventureCapital": "Venture capital",
+      "criminal": "Criminal",
+      "tax": "Tax"
+    }
+  },
+  "security": {
+    "title": ["Confidentiality is", "the precondition."],
+    "fragments": [
+      {
+        "title": "Confidential compute",
+        "body": "A hardware-encrypted perimeter. Your provider can’t read your data in use. Neither can we."
+      },
+      {
+        "title": "Deploy where your obligations require",
+        "body": "Your cloud, your VPC, on-premise, or air-gapped."
+      },
+      {
+        "title": "Your data is yours",
+        "body": "Never trains shared models. Isolated workspaces. Full audit trail. Export anytime."
+      },
+      {
+        "title": "Built for privileged work",
+        "body": "Designed for the most sensitive matters a firm holds."
+      }
+    ],
+    "matterTypesLabel": "Matter types",
+    "matterTypes": [
+      "Government & Classified",
+      "NDA-Protected Deals",
+      "IP-Sensitive Material",
+      "Data Residency"
+    ]
+  },
+  "useCases": {
+    "title": ["From first review", "to final deliverable."],
+    "items": [
+      {
+        "term": "Litigation & Briefing",
+        "line": "Upload the complaint. Get a verified, citation-backed brief at associate depth."
+      },
+      {
+        "term": "Contract Review & Redlining",
+        "line": "A tracked-changes redline with clause-level authority linking."
+      },
+      {
+        "term": "Multi-Jurisdictional Due Diligence",
+        "line": "One data room, multiple jurisdictions. Reads, categorizes, flags, drafts."
+      },
+      {
+        "term": "Regulatory Gap Analysis",
+        "line": "EU AI Act, GDPR, DORA, SOX, D.Lgs. 231. Mapped against your documents."
+      },
+      {
+        "term": "IP Portfolio & FTO",
+        "line": "Trademarks, patents, IP clauses, OSS compliance. Verified at every step."
+      },
+      {
+        "term": "Employment & Cross-Border",
+        "line": "The correct framework per jurisdiction."
+      }
+    ]
+  },
+  "enterprise": {
+    "title": ["Enterprise deployment,", "tailored to you."],
+    "lead": "Our team deploys custom connectors and plug-ins, shaping <fluso>Fluso Legal</fluso> around how your firm works.",
+    "items": [
+      {
+        "title": "Jurisdictional coverage",
+        "body": "Custom coverage shaped to your firm’s footprint."
+      },
+      {
+        "title": "Your knowledge, connected",
+        "body": "Integration with your precedents and document management."
+      },
+      {
+        "title": "Bespoke workflows",
+        "body": "Built for your high-volume practice areas and house standards."
+      },
+      {
+        "title": "Dedicated deployment",
+        "body": "Your cloud, your perimeter, your configuration."
+      }
+    ]
+  },
+  "demo": {
+    "title": ["Schedule a demo"],
+    "lead": "The conversation starts with what your firm actually does.",
+    "cta": "Talk to us"
+  },
+  "engineFlow": {
+    "ariaLabel": "Fluso collects legal sources, analyzes authorities, verifies citations, and produces a verified draft.",
+    "sources": ["Westlaw", "Lexis+", "EUR-Lex", "National registries", "Your DMS"],
+    "stages": ["Collecting sources", "Analyzing authorities", "Verifying citations", "Drafting the deliverable"],
+    "chips": ["Authorities checked", "Citations linked"],
+    "panelStages": ["Source material", "Selected authority", "Citation review", "Verified draft"],
+    "stageNotes": ["", "Selecting the governing authority…", "Checking each citation against its source…", "Drafting — every line traces to its source."]
+  }
+}
