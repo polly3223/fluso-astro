@@ -1,12 +1,10 @@
 import {localePath} from "@/i18n";
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense, useEffect, type ReactNode } from "react";
 import { motion, stagger, useAnimate, useReducedMotion, type Variants } from "motion/react";
 import { Trans, useTranslation } from "react-i18next";
 import { cn } from "@/utils/styles";
 import { TYPE_BODY_SMALL, TYPE_CTA, TYPE_DISPLAY, TYPE_LEAD } from "@/components/typography";
 import { useMorphingShape } from "@/hooks/useMorphingShape";
-import HeroAppMockup from "./HeroAppMockup";
-import HeroPhoneMockup from "./HeroPhoneMockup";
 
 // TEMPORARY dev-only hero font picker. import.meta.env.DEV folds to false in
 // prod, so the lazy import is dead-code-eliminated and nothing ships.
@@ -89,7 +87,7 @@ const checkItem: Variants = {
   show: { opacity: 1, x: 0, transition: { duration: 0.85, ease: EASE } },
 };
 
-export default function Hero() {
+export default function Hero({children}: {children?: ReactNode}) {
   const { t } = useTranslation("home");
   const checks = t("hero.checks", { returnObjects: true }) as string[];
   const ctaShape = useMorphingShape<HTMLAnchorElement>({
@@ -122,7 +120,7 @@ export default function Hero() {
   }, [reduced, animateWorksWith]);
 
   return (
-    <section id="hero" className="max-md:h-auto relative h-dvh overflow-hidden">
+    <section id="hero" className="relative min-h-dvh overflow-hidden">
       {HeroFontPicker && (
         <Suspense fallback={null}>
           <HeroFontPicker />
@@ -144,7 +142,7 @@ export default function Hero() {
 
       <main
         className={cn(
-          "relative z-[1] flex h-full w-full flex-col overflow-hidden theme-light text-(--text-primary)",
+          "relative z-[1] flex min-h-dvh w-full flex-col overflow-hidden theme-light text-(--text-primary)",
           "px-(--card-px-x) max-md:px-(--card-px-x-mobile) pb-[clamp(40px,3.8vh,40px)] pt-[calc(var(--nav-h)+clamp(30px,5vh,68px))]",
         )}
       >
@@ -288,31 +286,12 @@ export default function Hero() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 36 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: EASE, delay: 0.15 }}
-              className="relative flex min-w-0 items-center justify-center max-lg:hidden"
-              style={{ perspective: 1400 }}
+              className="relative flex min-w-0 items-center justify-center"
             >
-
-              <div
-                aria-hidden="true"
-                className="absolute inset-x-[8%] bottom-[4%] h-[24%] rounded-xl bg-ink/25 blur-3xl"
-              />
-              <div className="relative w-full lg:translate-x-[clamp(4px,1vw,16px)] [filter:drop-shadow(0_40px_80px_rgba(12,12,12,0.32))_drop-shadow(0_8px_20px_rgba(12,12,12,0.16))]">
-                <div className="relative mx-auto w-full max-w-[840px]">
-                  <HeroAppMockup />
-                  {/* iPhone app, leaning against the desktop mockup's corner */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 24 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: EASE, delay: 0.55 }}
-                    className="absolute -bottom-[14px] -right-[clamp(12px,1.4vw,26px)] w-[clamp(148px,15.5vw,190px)]"
-                  >
-                    <HeroPhoneMockup />
-                  </motion.div>
-                </div>
-              </div>
+              {children}
             </motion.div>
           </div>
 

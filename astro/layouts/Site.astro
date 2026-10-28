@@ -1,4 +1,5 @@
 ---
+import AppReplica from '../components/app-replica/AppReplica.astro';
 import AgentReplica from '../components/app-replica/AgentReplica.astro';
 import Website from '../../src/Website';
 import '../../src/index.css';
@@ -59,5 +60,5 @@ const seo = seoForPath(path, locale);
 
 <meta name="robots" content="noindex, nofollow" />
 </head>
-<body><div id="root"><Website client:only="react"><AgentReplica locale={locale} /></Website></div></body>
+<body><div id="root"><Website client:only="react"><AppReplica slot="chatDemo" locale={locale} /><AgentReplica locale={locale} /></Website></div></body>
 </html>

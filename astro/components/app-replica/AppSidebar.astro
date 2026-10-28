@@ -1,0 +1,50 @@
+---
+// Left panel of the desktop app, with the macOS window buttons. Positions are measured from the real app window.
+import Icon from "./Icon.astro";
+import { REPLICA } from "./content";
+
+const { project, chats, homeChats, user } = REPLICA;
+const chatRow = "flex h-8 items-center rounded-lg pl-10 text-[14px] leading-5 text-[#0c0d0d]/90";
+const row = "absolute left-2 flex h-8 w-[282px] items-center gap-[10px] rounded-lg px-[10px] text-[14px] leading-5";
+---
+
+<div class="absolute left-2 top-[7px] h-[728px] w-[298px] rounded-2xl border border-[#dadadb] bg-[#f5f6f7] text-[#666667]">
+  <!-- macOS window buttons -->
+  <span class="absolute left-[10px] top-[18px] size-[13px] rounded-full bg-[#ff5f57] shadow-[inset_0_0_0_1px_rgb(0_0_0/0.12)]"></span>
+  <span class="absolute left-[30px] top-[18px] size-[13px] rounded-full bg-[#febc2e] shadow-[inset_0_0_0_1px_rgb(0_0_0/0.12)]"></span>
+  <span class="absolute left-[51px] top-[18px] size-[13px] rounded-full bg-[#28c840] shadow-[inset_0_0_0_1px_rgb(0_0_0/0.12)]"></span>
+  <Icon name="sidebar" class="absolute right-4 top-[17px]" />
+
+  <!-- Desktop sidebar names the workspace past the window buttons; the Chats | Agents switch is in the top bar. -->
+  <p data-sidebar-label class="absolute left-[80px] top-[15px] text-[14px] font-medium leading-5 text-[#0c0d0d]/90">Chats</p>
+
+  <div class:list={[row, "top-[107px] bg-[#e7e8e9] text-[#0c0d0d] transition-colors duration-500 group-data-[view=chat]/app:bg-transparent"]}><Icon name="plus" />New Chat</div>
+  <div class:list={[row, "top-[140px] text-[#0c0d0d]/80"]}><Icon name="tasks" />Tasks</div>
+  <div class:list={[row, "top-[173px] text-[#0c0d0d]/80"]}><Icon name="plugins" />Plugins</div>
+  <div class:list={[row, "top-[206px] text-[#0c0d0d]/80"]}><Icon name="projects" />Projects</div>
+  <div class:list={[row, "top-[248px]"]}><Icon name="search" />Search chats</div>
+
+  <p class="absolute left-[22px] top-[347px] text-[12px] leading-4">Projects</p>
+  <Icon name="filters" class="absolute right-[22px] top-[346px]" />
+
+  <!-- Projects and their chats. Rows flow, so the new chat can slide in and push the rest down. -->
+  <div class="absolute left-2 top-[373px] w-[282px]">
+    <div class="mb-px flex h-8 items-center gap-[10px] rounded-lg px-[14px] text-[14px] leading-5 text-[#0c0d0d]"><Icon name="folderOpen" />{project}</div>
+
+    <!-- added when the first message is sent -->
+    <div class="h-0 overflow-hidden opacity-0 transition-[height,opacity] duration-500 group-data-[view=chat]/app:h-[33px] group-data-[view=chat]/app:opacity-100">
+      <div class:list={[chatRow, "mb-px bg-[#e7e8e9] text-[#0c0d0d]"]}>{REPLICA.chat.title}</div>
+    </div>
+    {chats.map((chat) => <div class:list={[chatRow, "mb-px"]}>{chat.title}</div>)}
+
+    <div class="mb-px flex h-8 items-center gap-[10px] rounded-lg px-[14px] text-[14px] leading-5 text-[#0c0d0d]"><Icon name="home" />Home</div>
+    {homeChats.map((chat) => <div class:list={[chatRow, "mb-px"]}>{chat.title}</div>)}
+  </div>
+
+  <div class="absolute inset-x-0 top-[679px] h-px bg-[#dadadb]"></div>
+  <p class="absolute left-[16px] top-[695px] text-[12px] font-medium leading-4 text-[#0c0d0d]/70">{user.initials}</p>
+  <p class="absolute left-[44px] top-[694px] text-[14px] leading-5 text-[#0c0d0d]/90">{user.name}</p>
+  <Icon name="chevronDown" size={12} class="absolute left-[208px] top-[698px]" />
+  <Icon name="command" class="absolute left-[238px] top-[696px]" />
+  <Icon name="bug" class="absolute left-[275px] top-[696px]" />
+</div>

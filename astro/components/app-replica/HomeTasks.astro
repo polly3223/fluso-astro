@@ -1,0 +1,30 @@
+---
+// "Recent tasks": three cards. Example tasks only.
+import Icon from "./Icon.astro";
+import BrandLogo from "./BrandLogo.astro";
+import { REPLICA } from "./content";
+---
+
+<p class="absolute left-[349px] top-[492px] flex items-center gap-2 text-[12px] leading-4 text-[#0c0d0d]">
+  Recent tasks <span class="text-[#979899]">{REPLICA.tasks.length}</span>
+</p>
+<p class="absolute right-[33px] top-[492px] flex items-center gap-1.5 text-[12px] leading-4 text-[#979899]">
+  View all tasks <Icon name="arrowRight" size={12} stroke={1.75} />
+</p>
+
+{
+  REPLICA.tasks.map((task, i) => (
+    <div
+      class="absolute top-[522px] h-[108px] w-[231px] rounded-xl border border-[#dadadb] bg-white"
+      style={`left:${349 + i * 244}px`}
+    >
+      <p class="absolute left-[14px] top-[12px] flex items-center gap-2 text-[12px] leading-4 text-[#979899]">
+        <BrandLogo name="gmail" size={12} />
+        Gmail
+      </p>
+      <p class="absolute right-[14px] top-[12px] text-[12px] leading-4 text-[#979899]/80">{task.meta}</p>
+      <p class="absolute left-[14px] right-[14px] top-[36px] text-[13px] leading-4 text-[#0c0d0d]">{task.title}</p>
+      <p class="absolute bottom-[12px] left-[14px] text-[12px] leading-4 text-[#979899]/80">{task.age}</p>
+    </div>
+  ))
+}

@@ -1,0 +1,22 @@
+---
+// Chats | Agents pill, centred in the app top bar of the desktop window (not on phones, where the drawer owns the switch).
+// Purely illustrative: not focusable, not a control. Sized as in the app: 36px pill, 88px segments, 13px labels.
+import Icon from "./Icon.astro";
+
+interface Props {
+  selected: "chats" | "agents";
+  class?: string;
+}
+const { selected, class: className } = Astro.props;
+const segment = "relative z-10 flex h-full w-[88px] items-center justify-center gap-1.5 rounded-full text-[13px] font-medium";
+---
+
+<div
+  data-workspace-switch={selected}
+  aria-hidden="true"
+  class:list={["flex h-9 shrink-0 items-center rounded-full border p-[3px]", "border-[#dadadb] bg-[#f5f6f7]/70", className]}
+>
+  <span class:list={["absolute bottom-[3px] left-[3px] top-[3px] w-[88px] rounded-full shadow-sm", "bg-[#0c0d0d]", { "translate-x-full": selected === "agents" }]}></span>
+  <span class:list={[segment, selected === "chats" ? "text-white" : "text-[#666667]"]}><Icon name="chats" size={14} stroke={1.7} />Chats</span>
+  <span class:list={[segment, selected === "agents" ? "text-white" : "text-[#666667]"]}><Icon name="agents" size={14} stroke={1.7} />Agents</span>
+</div>

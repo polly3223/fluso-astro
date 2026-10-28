@@ -3,11 +3,11 @@ import { cn } from "@/utils/styles";
 import { IconPrem } from "@/components/IconPrem";
 import { PremLogoThinking } from "@/components/PremLogoThinking";
 
-import gmailLogo from "../../../../assets/connectors/gmail.svg?url";
-import gcalLogo from "../../../../assets/connectors/google-calendar.svg?url";
-import notionLogo from "../../../../assets/connectors/notion.svg?url";
-import slackLogo from "../../../../assets/connectors/slack.svg?url";
-import gdriveLogo from "../../../../assets/connectors/google-drive.svg?url";
+import gmailLogo from "../../../assets/connectors/gmail.svg?url";
+import gcalLogo from "../../../assets/connectors/google-calendar.svg?url";
+import notionLogo from "../../../assets/connectors/notion.svg?url";
+import slackLogo from "../../../assets/connectors/slack.svg?url";
+import gdriveLogo from "../../../assets/connectors/google-drive.svg?url";
 
 /* ------------------------------------------------------------------ *
  * An abstract, stylized rendering of the Fluso workspace — NOT a 1:1
@@ -163,7 +163,7 @@ const CHATS = [
   "Post-event survey",
 ];
 
-export default function HeroAppMockup() {
+export default function LegacyAppMockup() {
   const reduced = useReducedMotion() ?? false;
 
   return (

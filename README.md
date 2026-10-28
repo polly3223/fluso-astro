@@ -22,6 +22,7 @@ bun run preview
 ## Current work
 
 - Free $0, Plus $10/month (10× Free), Pro $30/month (10× Plus); weekly usage allowances, no absolute token quotas. Pro includes confidential mode. The eligible 30-day card-required Pro trial is preserved.
+- Updated light desktop/iPhone chat demo from the Ragnarok landing, including the Chats/Agents top bar, a looping example conversation, responsive scaling and reduced-motion support.
 - Homepage Agents section, setup explanation and three selectable workflow examples. The actual `AgentReplica`/`AgentSurface` components are reused from the previous Fluso landing, with desktop and phone layouts and synthetic example content.
 - English at `/`; Italian marketing pages at `/it/`. The URL determines the language. Header flags and footer language links preserve the current page, query and section.
 - Localized canonical/alternate metadata and sitemap. Privacy and terms retain their existing published English versions; their Italian URLs redirect to English.
@@ -31,7 +32,7 @@ bun run preview
 
 - `astro/pages/[...path].astro` and `astro/pages/it/[...path].astro` generate the routes; `astro/layouts/Site.astro` owns their HTML metadata.
 - `src/Website.tsx` mounts the existing React application as an Astro client island. This preserves the original visual behavior; the components have not all been rewritten as native Astro templates.
-- `src/pages/home/sections/Agents.tsx` contains the new section. `astro/components/app-replica/` contains the reused native Astro demo, passed into React through a slot.
+- `src/pages/home/sections/Agents.tsx` contains the new section. `astro/components/app-replica/` contains the reused native Astro demo, passed into React through slots; the chat demo is mounted in the hero.
 - `src/pages/home/sections/` contains the other homepage sections and animations.
 - `src/components/SiteNav.tsx` contains desktop and mobile navigation.
 - `src/i18n/locales/en/` and `it/` contain localized copy. `src/i18n/index.ts` selects the language from the URL; the React router uses the same locale base.

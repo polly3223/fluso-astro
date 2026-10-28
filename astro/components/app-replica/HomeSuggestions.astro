@@ -1,0 +1,31 @@
+---
+// Suggestion pills and the "Connect your apps" row under the message box.
+import Icon from "./Icon.astro";
+import BrandLogo from "./BrandLogo.astro";
+import { REPLICA } from "./content";
+---
+
+<div class="absolute left-[349px] top-[372px] flex w-[720px] justify-center gap-[11px]">
+  {
+    REPLICA.suggestions.map((item) => (
+      <span class="flex h-[30px] items-center gap-2 rounded-full border border-[#dadadb] px-[14px] text-[13px] text-[#0c0d0d]/80">
+        <Icon name={item.icon} size={14} stroke={1.8} class="text-[#979899]" />
+        {item.label}
+      </span>
+    ))
+  }
+</div>
+
+<div class="absolute left-[349px] top-[424px] flex w-[720px] items-center justify-center gap-4 text-[13px] text-[#0c0d0d]/80">
+  <span class="flex -space-x-[5px]">
+    {
+      REPLICA.apps.map((app) => (
+        <span class="flex size-[22px] items-center justify-center rounded-full border border-white bg-[#eceeef] text-[#0c0d0d]">
+          <BrandLogo name={app} size={12} />
+        </span>
+      ))
+    }
+  </span>
+  Connect your apps
+  <Icon name="chevronRight" size={14} stroke={2} class="-ml-2 text-[#979899]" />
+</div>

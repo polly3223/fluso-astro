@@ -77,7 +77,7 @@ function NotFound() {
   );
 }
 
-export default function App({ children }: { children?: ReactNode }) {
+export default function App({ children, chatDemo }: { children?: ReactNode; chatDemo?: ReactNode }) {
   // Prefetch the /for-lawyers hero (poster + video) on first hover/focus of any
   // link to it, so the heavy video is cached before the user gets there.
   useEffect(() => armLegalHeroPrefetch(), []);
@@ -97,7 +97,7 @@ export default function App({ children }: { children?: ReactNode }) {
       </Suspense>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Home agentDemo={children} />} />
+          <Route path="/" element={<Home agentDemo={children} chatDemo={chatDemo} />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/enterprise" element={<Enterprise />} />
           <Route path="/download" element={<Download />} />

@@ -1,0 +1,68 @@
+---
+// The app's home screen on iPhone (390 x 844 screen).
+import Icon from "./Icon.astro";
+import Mark from "./Mark.astro";
+import PhoneChat from "./PhoneChat.astro";
+import { REPLICA } from "./content";
+
+const { actions, placeholder } = REPLICA.phone;
+const greeting = REPLICA.greeting;
+---
+
+<div
+  data-replica-phone
+  data-view="home"
+  data-request={REPLICA.chat.request}
+  class="group/app relative h-[844px] w-[390px] overflow-hidden bg-white text-[#0c0d0d]"
+>
+  <!-- status bar -->
+  <p class="absolute left-[38px] top-[20px] text-[16px] font-semibold leading-none">9:41</p>
+  <div class="absolute left-1/2 top-[11px] h-[34px] w-[122px] -translate-x-1/2 rounded-full bg-black"></div>
+  <div class="absolute right-[34px] top-[21px] flex items-center gap-[6px]">
+    <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx="1"></rect><rect x="5" y="5.5" width="3" height="6.5" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1"></rect></svg>
+    <svg width="17" height="12" viewBox="0 0 17 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M1.5 4.2a10 10 0 0 1 14 0"></path><path d="M4 7a6.5 6.5 0 0 1 9 0"></path><circle cx="8.5" cy="10" r="1" fill="currentColor" stroke="none"></circle></svg>
+    <svg width="27" height="13" viewBox="0 0 27 13" fill="none" aria-hidden="true"><rect x="0.5" y="0.5" width="23" height="12" rx="3.5" stroke="currentColor" opacity="0.4"></rect><rect x="2" y="2" width="20" height="9" rx="2.2" fill="currentColor"></rect><rect x="25" y="4.2" width="1.6" height="4.6" rx="0.8" fill="currentColor" opacity="0.4"></rect></svg>
+  </div>
+
+  <!-- top bar -->
+  <div class="absolute left-[20px] right-[20px] top-[64px] flex items-center">
+    <span class="flex size-10 items-center justify-center rounded-full border border-[#dadadb] bg-white text-[#0c0d0d]/80"><Icon name="menu" size={18} /></span>
+    <span class="relative ml-2 flex h-10 items-center gap-2 rounded-full border border-[#dadadb] bg-white px-4 text-[15px] text-[#0c0d0d]/90"><Icon name="folder" size={16} /><span class="group-data-[view=chat]/app:hidden">Home</span><span class="hidden group-data-[view=chat]/app:inline">{REPLICA.project}</span></span>
+    <span class="ml-auto flex size-10 items-center justify-center rounded-full border border-[#dadadb] bg-white text-[#0c0d0d]/80"><Icon name="plus" size={18} /></span>
+  </div>
+
+  <div class="absolute inset-0 transition-opacity duration-500 group-data-[view=chat]/app:pointer-events-none group-data-[view=chat]/app:opacity-0">
+  <!-- greeting -->
+  <div class="absolute left-0 right-0 top-[250px] flex flex-col items-center px-14 text-center">
+    <Mark class="size-[52px] text-[#0c0d0d]/90" />
+    <p class="mt-6 font-['Fluso_Demo_Newsreader',Georgia,serif] text-[24px] italic leading-[1.3] tracking-[-0.02em]">{greeting}</p>
+  </div>
+
+  <!-- suggestions -->
+  <ul class="absolute left-[24px] right-[24px] top-[500px] space-y-[18px] text-[15px] text-[#0c0d0d]/75">
+    {
+      actions.map((action) => (
+        <li class="flex items-center gap-3">
+          <Icon name={action.icon} size={16} stroke={1.8} class="text-[#0c0d0d]/70" />
+          {action.label}
+        </li>
+      ))
+    }
+  </ul>
+
+  </div>
+
+  <PhoneChat />
+
+  <!-- composer -->
+  <div class="absolute bottom-[34px] left-[16px] right-[16px] h-[150px] rounded-[26px] border border-[#dadadb] bg-white">
+    <p class="absolute left-5 top-[22px] text-[15px] text-[#979899]/70 transition-opacity duration-200 group-data-[typing=on]/app:opacity-0">{placeholder}</p>
+    <p class="absolute left-5 right-5 top-[22px] text-[15px] leading-[22px] text-[#0c0d0d]"><span data-typed></span><span class="ml-px inline-block h-[16px] w-px translate-y-[3px] bg-[#0c0d0d] opacity-0 group-data-[typing=on]/app:opacity-100 motion-safe:animate-pulse"></span></p>
+    <span class="absolute bottom-[14px] left-[14px] flex size-9 items-center justify-center rounded-full border border-[#dadadb] text-[#979899]"><Icon name="paperclip" size={16} /></span>
+    <span class="absolute bottom-[14px] left-[58px] flex h-9 items-center gap-2 rounded-full border border-[#dadadb] px-3 text-[14px] text-[#979899]"><Icon name="sparkles" size={14} />High</span>
+    <Icon name="mic" size={18} class="absolute bottom-[23px] right-[64px] text-[#979899]" />
+    <span class="absolute bottom-[12px] right-[12px] flex size-10 items-center justify-center rounded-full bg-[#e7e8e9] text-[#979899] transition-colors duration-300 group-data-[send=on]/app:bg-[#0c0d0d] group-data-[send=on]/app:text-white"><Icon name="arrowUp" size={18} stroke={2} /></span>
+  </div>
+
+  <div class="absolute bottom-[10px] left-1/2 h-[5px] w-[140px] -translate-x-1/2 rounded-full bg-[#0c0d0d]/80"></div>
+</div>

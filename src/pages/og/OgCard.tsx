@@ -1,11 +1,11 @@
 import FlusoWordmark from "@/components/FlusoWordmark";
-import HeroAppMockup from "@/pages/home/sections/HeroAppMockup";
+import LegacyAppMockup from "./LegacyAppMockup";
 import { TYPE_DISPLAY } from "@/components/typography";
 import { cn } from "@/utils/styles";
 import { OG_DATA, OG_DEFAULT_BADGE, slugForRoute, type OgEntry } from "./ogData";
 
 // A 1200×630 Open Graph card built from the real site primitives — the actual
-// FlusoWordmark, the real HeroAppMockup, the hero badge + Swiss flag, the
+// FlusoWordmark, the legacy app illustration, the hero badge + Swiss flag, the
 // cream-on-radial-gradient hero treatment and the shared type tokens.
 //
 // This is NOT wired into the SPA router — it is rendered only by the dev-only
@@ -72,7 +72,7 @@ export default function OgCard({ route }: { route: string }) {
         <div className="relative h-full">
           <div className="absolute top-1/2 left-0 w-[860px] -translate-y-1/2">
             <div className="rounded-[18px] shadow-[0_50px_120px_-40px_rgba(12,12,12,0.5)]">
-              <HeroAppMockup />
+              <LegacyAppMockup />
             </div>
           </div>
         </div>

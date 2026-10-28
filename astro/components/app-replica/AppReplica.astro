@@ -1,0 +1,109 @@
+---
+// HTML replica of the Fluso app (desktop window with the phone app in front), built from the real app's measurements.
+// Everything is drawn at fixed design sizes and scaled with CSS, so text stays sharp and needs no JavaScript.
+import AppWindow from "./AppWindow.astro";
+import PhoneFrame from "./PhoneFrame.astro";
+import PhoneHome from "./PhoneHome.astro";
+
+// Design canvas for the wide layout.
+const W = 1290;
+const H = 800;
+const PHONE_SCALE = 0.72;
+const {locale = "en"} = Astro.props;
+---
+
+<fluso-chat-demo style="display:block;width:100%"><figure
+  class="replica mx-auto w-full max-w-[1612px] select-none"
+  style="font-family: system-ui, -apple-system, 'Segoe UI', ui-sans-serif, sans-serif"
+>
+  <div class="hidden md:block" role="img" aria-label={locale === "it" ? "Demo animata di Fluso su desktop e iPhone, con una conversazione di esempio in inglese." : "Animated demo of Fluso on desktop and iPhone, with an example conversation."}>
+    <div class="stage" data-replica-stage data-w={W}>
+      <div class="sizer" style={`--w:${W}px;--h:${H}px`}>
+        <div class="canvas" style={`width:${W}px;height:${H}px`}>
+          <div class="absolute left-0 top-0 z-10 hover:z-30"><AppWindow /></div>
+          <div class="absolute right-0 top-[150px] z-20 origin-top-right hover:z-40" style={`transform:scale(${PHONE_SCALE})`}>
+            <PhoneFrame><PhoneHome /></PhoneFrame>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phone only below tablet width: scaled by the same script, capped at 0.6 so it shrinks to fit narrow screens. -->
+  <div class="md:hidden" role="img" aria-label={locale === "it" ? "Fluso su iPhone, con una conversazione di esempio in inglese." : "Fluso on iPhone, with an example conversation."}>
+    <div data-replica-stage data-w="410" data-max="0.6" style="--s:0.6">
+      <div class="sizer mx-auto" style="width:calc(410px * var(--s));--h:864px">
+        <div class="canvas" style="width:410px;height:864px">
+          <PhoneFrame><PhoneHome /></PhoneFrame>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <figcaption class="mt-4 text-center text-xs text-ink/50">{locale === "it" ? "Interfaccia Fluso, con contenuti di esempio." : "Fluso’s interface, shown with example content."}</figcaption>
+</figure></fluso-chat-demo>
+
+<style is:global>
+  /* The app's own greeting and file-name fonts, used only inside the replica. */
+  @font-face {
+    font-family: "Fluso Demo Newsreader";
+    src: url("/assets/app-demo/newsreader-italic.woff2") format("woff2");
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Fluso Demo Mono";
+    src: url("/assets/app-demo/space-mono.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+  }
+  /* --s is the scale (container width / design width), set by the script below. */
+  .replica .sizer {
+    height: calc(var(--h) * var(--s, 1));
+  }
+  .replica .canvas {
+    position: relative;
+    transform-origin: top left;
+    transform: scale(var(--s, 1));
+  }
+  /* Parts of the chat that appear one after another (see animation.ts). */
+  .replica [data-replica-reveal] {
+    opacity: 0;
+    transform: translateY(6px);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
+  }
+  .replica [data-replica-reveal][data-in] {
+    opacity: 1;
+    transform: none;
+  }
+</style>
+
+<script>
+  import { animateChatDemo } from "./animation";
+
+  class FlusoChatDemo extends HTMLElement {
+    frame = 0;
+    cleanup?: () => void;
+    connectedCallback() {
+      this.frame = requestAnimationFrame(() => {
+        if (!this.isConnected) return;
+        const stages = this.querySelectorAll<HTMLElement>("[data-replica-stage]");
+        const resize = () => stages.forEach(stage => stage.style.setProperty("--s", String(Math.min(Number(stage.dataset.max ?? 1.25), stage.clientWidth / Number(stage.dataset.w)))));
+        const observer = new ResizeObserver(resize);
+        stages.forEach(stage => observer.observe(stage));
+        resize();
+        const stop = animateChatDemo(this);
+        this.cleanup = () => { observer.disconnect(); stop(); };
+      });
+    }
+    disconnectedCallback() {
+      cancelAnimationFrame(this.frame);
+      this.cleanup?.();
+      this.cleanup = undefined;
+    }
+  }
+  if (!customElements.get("fluso-chat-demo")) customElements.define("fluso-chat-demo", FlusoChatDemo);
+</script>

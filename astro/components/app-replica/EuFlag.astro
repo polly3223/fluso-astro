@@ -1,0 +1,12 @@
+---
+interface Props {
+  size?: number;
+}
+const { size = 16 } = Astro.props;
+const stars = [[12,6],[15,6.8],[17.2,9],[18,12],[17.2,15],[15,17.2],[12,18],[9,17.2],[6.8,15],[6,12],[6.8,9],[9,6.8]];
+---
+
+<svg viewBox="0 0 24 24" width={size} height={size} aria-hidden="true">
+  <circle cx="12" cy="12" r="11" fill="#003399"></circle>
+  <g fill="#FFCC00">{stars.map(([cx, cy]) => <circle cx={cx} cy={cy} r="1.05"></circle>)}</g>
+</svg>

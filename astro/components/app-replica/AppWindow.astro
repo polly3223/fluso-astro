@@ -1,0 +1,29 @@
+---
+// The desktop app in its Electron window, at its real size (1102 x 743): rounded corners, macOS window buttons,
+// sidebar and the New Chat page.
+import AppSidebar from "./AppSidebar.astro";
+import AppHome from "./AppHome.astro";
+import WorkspaceSwitch from "./WorkspaceSwitch.astro";
+import { REPLICA } from "./content";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div
+  data-replica-app
+  data-view="home"
+  data-request={REPLICA.chat.request}
+  class:list={[
+    "group/app relative h-[743px] w-[1102px] overflow-hidden rounded-[14px] border border-[#dadadb] bg-white text-[#0c0d0d] shadow-[0_30px_70px_-25px_rgb(0_0_0/0.4)]",
+    className,
+  ]}
+>
+  <AppSidebar />
+  <AppHome />
+  <!-- Persistent top bar: centred in the main area (306 to 1102), so it stays put when the animation changes phase. -->
+  <WorkspaceSwitch selected="chats" class="absolute left-[612px] top-[14px] z-20" />
+</div>

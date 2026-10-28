@@ -1,0 +1,23 @@
+---
+import { LOGOS, type LogoName } from "./logos";
+
+interface Props {
+  name: LogoName;
+  size?: number;
+  class?: string;
+}
+
+const { name, size = 14, class: className } = Astro.props;
+const logo = LOGOS[name];
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox={logo.viewBox}
+  width={size}
+  height={size}
+  fill={logo.fill ?? undefined}
+  aria-hidden="true"
+  class={className}
+  set:html={logo.body}
+/>

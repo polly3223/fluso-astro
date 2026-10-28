@@ -1,0 +1,59 @@
+---
+// The conversation view, used by the animation: breadcrumb, request, "thinking / working / worked" line, the answer
+// and its sources. Parts marked data-replica-reveal are shown one after another by the script.
+import Icon from "./Icon.astro";
+import Mark from "./Mark.astro";
+import { REPLICA } from "./content";
+
+const { project } = REPLICA;
+const { title, request, workedFor, tool, intro, points, sources } = REPLICA.chat;
+const phaseLine = "absolute inset-0 flex items-center gap-2 opacity-0 transition-opacity duration-300";
+---
+
+<div class="absolute inset-0 opacity-0 transition-opacity duration-500 group-data-[view=chat]/app:opacity-100 group-data-[view=chat]/app:delay-300">
+  <div data-topbar-title class="absolute left-[330px] top-[24px] flex h-4 w-[266px] items-center gap-[6px] overflow-hidden text-[14px] leading-none text-[#979899]">
+    <Icon name="folder" class="shrink-0" />
+    <span class="shrink-0">{project}</span>
+    <span class="mx-1 text-[#979899]/60">›</span>
+    <span class="min-w-0 truncate">{title}</span>
+    <Icon name="link" class="ml-1 shrink-0" />
+  </div>
+
+  <div class="absolute left-[340px] top-[100px] w-[600px] text-[14px] leading-[23px] text-[#0c0d0d]">
+    <div data-replica-reveal class="ml-auto w-fit max-w-[480px] rounded-[24px] border border-[#dadadb] bg-white px-4 py-3">{request}</div>
+
+    <div class="relative mt-6 h-5 text-[14px] font-medium text-[#979899]/85">
+      <span class:list={[phaseLine, "group-data-[phase=thinking]/app:opacity-100"]}>
+        <Mark class="size-4 text-[#0c0d0d]/80 motion-safe:animate-spin" />
+        <span class="font-normal text-[#0c0d0d]/80">Thinking it through</span>
+      </span>
+      <span class:list={[phaseLine, "group-data-[phase=working]/app:opacity-100"]}>Working for 12s <Icon name="chevronRight" size={14} stroke={2} /></span>
+      <span class:list={[phaseLine, "group-data-[phase=answer]/app:opacity-100"]}>
+        {workedFor} <Icon name="chevronRight" size={14} stroke={2} />
+        <span class="ml-1 h-px flex-1 bg-[#dadadb]"></span>
+      </span>
+    </div>
+    <p class="mt-1 h-5 pl-5 text-[12px] leading-5 text-[#979899] opacity-0 transition-opacity duration-300 group-data-[phase=working]/app:opacity-100">
+      {tool}
+    </p>
+
+    <p data-replica-reveal class="-mt-6">{intro}</p>
+    <ul class="mt-3 list-disc space-y-2 pl-6 marker:text-[#0c0d0d]/70">
+      {
+        points.map((point) => (
+          <li data-replica-reveal>
+            <strong class="font-semibold">{point.lead}:</strong> {point.text}
+          </li>
+        ))
+      }
+    </ul>
+    <p data-replica-reveal class="mt-4">
+      {sources.label}
+      <code class="mx-1 rounded-md border border-[#dadadb] bg-[#f5f6f7] px-1.5 py-[2px] font-['Fluso_Demo_Mono',ui-monospace,monospace] text-[12px]">{sources.file}</code>
+      {sources.note}
+    </p>
+    <div data-replica-reveal class="mt-4 flex items-center gap-4 text-[#979899]">
+      <Icon name="copy" stroke={2} /><Icon name="thumbsUp" stroke={2} /><Icon name="thumbsDown" stroke={2} />
+    </div>
+  </div>
+</div>
