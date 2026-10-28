@@ -1,3 +1,4 @@
+import {localePath} from "@/i18n";
 import { Trans, useTranslation } from "react-i18next";
 import { cn } from "@/utils/styles";
 import BloomCard from "@/components/BloomCard";
@@ -71,7 +72,7 @@ export default function Capabilities() {
               ))}
               <a
                 className="inline-flex aspect-square flex-col items-center justify-center gap-px rounded-lg border border-dashed border-[rgba(12,12,12,0.22)] text-(--text-primary) no-underline transition-[border-color,background] duration-[0.18s] ease-[ease] hover:border-solid hover:border-[rgba(12,12,12,0.5)] hover:bg-white/60"
-                href="/get-started"
+                href={localePath("/get-started")}
                 title={t("capabilities.connectors.moreTitle")}
               >
                 <span className="text-[22px] font-medium leading-none tracking-[-0.02em]">500</span>

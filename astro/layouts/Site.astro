@@ -1,12 +1,13 @@
 ---
+import AgentReplica from '../components/app-replica/AgentReplica.astro';
 import Website from '../../src/Website';
 import '../../src/index.css';
 import {seoForPath} from '../../src/seo/config';
-const {path = Astro.url.pathname} = Astro.props;
-const seo = seoForPath(path);
+const {path = Astro.url.pathname, locale = 'en'} = Astro.props;
+const seo = seoForPath(path, locale);
 ---
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -33,6 +34,9 @@ const seo = seoForPath(path);
       content={seo.description}
     />
     <link rel="canonical" href={seo.canonical} />
+    <link rel="alternate" hreflang="en" href={seoForPath(path, "en").canonical} />
+    {!["/privacy", "/terms"].includes(path) && <link rel="alternate" hreflang="it" href={seoForPath(path, "it").canonical} />}
+    <link rel="alternate" hreflang="x-default" href={seoForPath(path, "en").canonical} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Fluso" />
     <meta property="og:url" content={seo.canonical} />
@@ -55,5 +59,5 @@ const seo = seoForPath(path);
 
 <meta name="robots" content="noindex, nofollow" />
 </head>
-<body><div id="root"><Website client:only="react" /></div></body>
+<body><div id="root"><Website client:only="react"><AgentReplica locale={locale} /></Website></div></body>
 </html>

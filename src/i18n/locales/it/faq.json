@@ -1,0 +1,56 @@
+{
+  "items": [
+    {
+      "q": "Cos'è esattamente Fluso?",
+      "a": "Uno spazio di lavoro AI privato che ricorda il tuo lavoro: progetti, decisioni, il modo in cui scrivi. Produce artefatti reali: presentazioni redatte, fogli compilati, memo di briefing, salvati direttamente nei tuoi progetti."
+    },
+    {
+      "q": "In cosa è diverso da ChatGPT o Claude?",
+      "a": "Fluso riunisce conversazioni, file e app collegate nello stesso spazio di lavoro. Gli agenti conservano istruzioni e sessioni per un compito e possono eseguirlo di nuovo con una routine."
+    },
+    {
+      "q": "A chi si rivolge Fluso?",
+      "a": "Amministratori delegati, avvocati, investitori, venditori, ricercatori, medici, consulenti, responsabili vendite, personale operativo. Chiunque costruisca il proprio lavoro su un contesto connesso. Consulta il menu Professionisti per le pagine dedicate a ciascun ruolo."
+    },
+    {
+      "q": "Quanto costa Fluso desktop?",
+      "a": "Fluso desktop offre <strong>Free a $0</strong>, <strong>Plus a $10/utente/mese</strong>, <strong>Pro a $30/utente/mese</strong> ed <strong>Enterprise</strong> con prezzi personalizzati. I prezzi sono in USD. I nuovi abbonati idonei possono attivare una <strong>prova Pro di 30 giorni</strong> con una carta di pagamento; si rinnova a $30/mese salvo disdetta. Free non richiede una carta. La <pricing>pagina Prezzi</pricing> contiene tutti i dettagli."
+    },
+    {
+      "q": "Come funzionano gli agenti?",
+      "a": "Descrivi un compito, rivedi le istruzioni e scegli i file e le app che l’agente può utilizzare. Torna nella stessa conversazione per affinare il lavoro. Aggiungi una routine per eseguirlo una volta, ogni giorno, nei giorni feriali o ogni settimana. Gli agenti sono inclusi in tutti i piani e utilizzano la capacità del piano."
+    },
+    {
+      "q": "Come funzionano ora connettori e Gmail?",
+      "a": "Collega le app che ti servono e scegli i permessi degli strumenti: consenti, chiedi prima o nega. Per esempio, puoi permettere la lettura di Gmail e la creazione di bozze, mantenendo l’invio soggetto ad approvazione."
+    },
+    {
+      "q": "Cosa succede se l'app perde la connessione durante un task?",
+      "a": "Le release desktop recenti hanno aggiunto aggiornamenti automatici in background, recupero della sync, recupero offline e recupero dai problemi del provider. Se la connessione cade o il laptop va in stop durante una risposta, Fluso conserva la risposta e continua quando può invece di lasciare il task bloccato su \"Working\"."
+    },
+    {
+      "q": "Qual è la differenza tra Plus e Pro su Fluso desktop?",
+      "a": "Plus include <strong>10× l’utilizzo settimanale di Free</strong>. Pro include <strong>10× quello di Plus</strong> e la <strong>modalità confidenziale</strong>. La capacità di tutti e tre i piani si rinnova ogni settimana. Le funzionalità principali e gli agenti sono inclusi in tutti i piani. Nell’app trovi la percentuale utilizzata e il prossimo rinnovo."
+    },
+    {
+      "q": "Dove risiedono i miei dati e come sono protetti?",
+      "a": "Lo spazio di lavoro è ospitato in Europa e i tuoi dati non vengono usati per addestrare modelli condivisi. Ogni spazio di lavoro ha un ambiente isolato. Pro ed Enterprise includono la modalità confidenziale per l’inferenza dei modelli, con protezione hardware dei dati durante l’elaborazione."
+    },
+    {
+      "q": "Su quali modelli gira Fluso?",
+      "a": "Solo <strong>modelli open-source e open-weight</strong>, mai API proprietarie nella pipeline. Puoi verificare lo stack, replicare i pesi dove la licenza lo consente e, su Enterprise, distribuirli all'interno della tua infrastruttura."
+    },
+    {
+      "q": "Cosa ottengo con Enterprise?",
+      "a": "Esegui Fluso all'interno del tuo perimetro — <strong>VPC, on-premise o completamente air-gapped</strong>, con i dati ancorati a una regione specifica. <strong>SSO e log di audit</strong> sono inclusi, SOC 2 Type II è in essere e ISO 27001 è in corso. Il nostro team costruisce <strong>competenze e connettori personalizzati su misura per il tuo stack</strong>: CRM, data warehouse, strumenti interni e stile aziendale. <contact>Parla con il nostro team</contact> per il report di attestazione attuale e una revisione di sicurezza."
+    },
+    {
+      "q": "Dove posso usare Fluso?",
+      "a": "Fluso è disponibile su macOS, Windows, sul web e su iPhone. Usa lo stesso account per accedere al tuo spazio di lavoro. Trovi i link aggiornati nella pagina <download>Download</download>."
+    },
+    {
+      "q": "Ci sono sconti per organizzazioni non-profit o startup?",
+      "a": "Sì. Sono disponibili accordi Fluso desktop dedicati per organizzazioni non-profit registrate, startup in fase iniziale (con meno di €5M raccolti) ed enti educativi accreditati. Inviaci una breve nota con i tuoi dettagli e ti aiuteremo a iniziare."
+    }
+  ]
+}

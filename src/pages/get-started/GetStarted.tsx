@@ -1,3 +1,4 @@
+import {localePath} from "@/i18n";
 import { Link } from "react-router-dom";
 import { Trans, useTranslation } from "react-i18next";
 import { cn } from "@/utils/styles";
@@ -238,7 +239,7 @@ export default function GetStarted() {
                     "transition-[color,border-color] duration-180 ease-[ease] motion-reduce:transition-none",
                     "hover:border-b-[rgba(12,12,12,0.4)] hover:text-[rgba(12,12,12,0.85)]",
                   )}
-                  href="/download"
+                  href={localePath("/download")}
                 >
                   {t("download.moreOptions")}{" "}
                   <span

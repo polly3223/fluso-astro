@@ -1,0 +1,18 @@
+{
+  "stamp": "PRONTO PER LA PEER-REVIEW",
+  "title": "Un agente per i ricercatori.",
+  "lead": "Revisione della letteratura, gestione dei riferimenti, la tassa della formattazione. Delegati, così puoi pensare.",
+  "customSkills": [
+    { "title": "Ricerca bibliografica", "desc": "Estrae paper da PubMed, arXiv, Scholar. Li raggruppa per metodo, li ordina per rilevanza." },
+    { "title": "Gestione delle citazioni", "desc": "Mantiene Zotero, deduplica le voci e inserisce citazioni formattate correttamente in Overleaf." },
+    { "title": "Confronto dei metodi", "desc": "Produce una matrice di dataset, dimensioni del campione e limiti dichiarati tra i vari paper." }
+  ],
+  "automations": [
+    { "title": "Digest settimanale degli alert", "desc": "I nuovi paper che corrispondono alle query salvate arrivano lunedì alle 8:00 con due righe sul 'perché è importante'." },
+    { "title": "Preparazione del manoscritto", "desc": "Verifica la risoluzione delle figure, la completezza dei riferimenti e la formattazione della rivista in Overleaf." },
+    { "title": "Sincronizzazione tra co-autori", "desc": "Le modifiche nell'Overleaf condiviso diventano un riepilogo delle differenze, con le risposte ai revisori tracciate." }
+  ],
+  "footerMetaLabel": "Flusso di lavoro della ricerca",
+  "footerBlurb": "Dati dei soggetti, manoscritti non pubblicati e documenti IRB restano dentro lo storage della tua istituzione. Conforme a HIPAA e FERPA dove applicabile.",
+  "ctaLabel": "Attiva nel tuo laboratorio"
+}

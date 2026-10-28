@@ -1,4 +1,5 @@
-import { lazy, Suspense, useEffect } from "react";
+import { locale } from "@/i18n";
+import { lazy, Suspense, useEffect, type ReactNode } from "react";
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { armLegalHeroPrefetch } from "@/utils/heroPrefetch";
@@ -51,12 +52,17 @@ const GtmConsentGate = lazy(() =>
   })),
 );
 
+function EnglishLegal({path}: {path: string}) {
+  useEffect(() => { window.location.replace(path + window.location.search + window.location.hash); }, [path]);
+  return null;
+}
+
 function NotFound() {
   // Safety net for legacy `*.html` links. The pre-React site shipped
   // download.html, pricing.html, for-lawyers.html, … and those URLs are out in
   // the wild (download.html especially). Production 308-redirects them to the
   // clean route at the Vercel edge before the SPA loads (see
-  // astro.config.mjs), so this normally never runs — it's the
+  // vercel.json), so this normally never runs — it's the
   // fallback for the dev server (no edge redirects) or any stray `.html` URL
   // that reaches the client: strip the extension, keep the query, hand off to
   // the matching clean route.
@@ -71,7 +77,7 @@ function NotFound() {
   );
 }
 
-export default function App() {
+export default function App({ children }: { children?: ReactNode }) {
   // Prefetch the /for-lawyers hero (poster + video) on first hover/focus of any
   // link to it, so the heavy video is cached before the user gets there.
   useEffect(() => armLegalHeroPrefetch(), []);
@@ -81,7 +87,7 @@ export default function App() {
   useEffect(() => armClickTracking(), []);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={locale === "it" ? "/it" : undefined}>
       <Suspense fallback={null}>
         <VercelAnalyticsGate />
         <GoogleAnalyticsGate />
@@ -91,13 +97,13 @@ export default function App() {
       </Suspense>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home agentDemo={children} />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/enterprise" element={<Enterprise />} />
           <Route path="/download" element={<Download />} />
           <Route path="/get-started" element={<GetStarted />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={locale === "it" ? <EnglishLegal path="/privacy" /> : <Privacy />} />
+          <Route path="/terms" element={locale === "it" ? <EnglishLegal path="/terms" /> : <Terms />} />
           <Route path="/for-founders" element={<Founders />} />
           <Route path="/for-lawyers" element={<Lawyers />} />
           <Route path="/for-investors" element={<Investors />} />

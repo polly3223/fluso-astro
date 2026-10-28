@@ -1,3 +1,4 @@
+import {locale} from "@/i18n";
 import { useCallback, useRef, useState } from "react";
 import { useAnimationFrame } from "motion/react";
 import { ManageCookiesButton } from "@premAI-io/cookie-consent/react";
@@ -69,7 +70,7 @@ export function CookieConsentManageButton() {
   return (
     <div ref={wrapperRef} className="fixed bottom-5 right-8 z-40">
       <ManageCookiesButton
-        aria-label="Cookie settings"
+        aria-label={locale === "it" ? "Preferenze cookie" : "Cookie settings"}
         className={cn(
           "group flex h-10 w-10 cursor-pointer items-center justify-end gap-2 overflow-hidden rounded-full border px-2.5 shadow-[0_4px_16px_rgba(0,0,0,0.35)] backdrop-blur-sm transition-[width,background-color,color,border-color] duration-300 ease-out hover:w-[10.5rem]",
           theme === "light"
@@ -78,7 +79,7 @@ export function CookieConsentManageButton() {
         )}
       >
         <span className="whitespace-nowrap text-base font-normal leading-[1.2] tracking-[.01em] opacity-0 transition-opacity delay-100 duration-200 group-hover:opacity-100">
-          Cookie settings
+          {locale === "it" ? "Preferenze cookie" : "Cookie settings"}
         </span>
         <IconCookie className="h-5 w-5 shrink-0" />
       </ManageCookiesButton>

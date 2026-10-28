@@ -1,3 +1,4 @@
+import {locale} from "@/i18n";
 import { Suspense, useLayoutEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -16,7 +17,7 @@ import legalHeroPoster from "../../assets/video/hero-main-poster.webp?url";
 export default function Layout() {
   const { t } = useTranslation("common");
   const { pathname, hash } = useLocation();
-  useSeo(seoForPath(pathname));
+  useSeo(seoForPath(pathname, locale));
   const cleanPath = pathname.replace(/\/$/, "") || "/";
   const isLegal = cleanPath === "/for-lawyers";
   const isAppReviewLegal = cleanPath === "/terms" || cleanPath === "/privacy";

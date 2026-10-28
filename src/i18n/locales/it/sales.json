@@ -1,0 +1,18 @@
+{
+  "stamp": "REVENUE OPS",
+  "title": "Un agente per i venditori.",
+  "lead": "Ricerca sugli account, follow-up e igiene del CRM. Fatti prima del tuo primo caffè.",
+  "customSkills": [
+    { "title": "Brief sull'account", "desc": "Recupera notizie, segnali dai 10-Q e dinamiche di assunzione. Un brief di una pagina su Slack prima della riunione." },
+    { "title": "Bozze di follow-up", "desc": "Ascolta la registrazione della call. Redige il follow-up con la tua voce, con un passo successivo chiaro." },
+    { "title": "Igiene delle fasi di trattativa", "desc": "Legge il sentiment dei thread e l'attività. Segnala le trattative che rischiano di slittare al trimestre successivo." }
+  ],
+  "automations": [
+    { "title": "Arricchimento dei lead in entrata", "desc": "Un nuovo lead viene arricchito tramite Apollo e ZoomInfo, poi instradato per territorio." },
+    { "title": "Orchestrazione delle sequenze", "desc": "L'outreach parte nel momento in cui un prospect interagisce su LinkedIn o apre un DocuSign." },
+    { "title": "Riconciliazione del forecast", "desc": "Recupera dati da Salesforce, Gong e dagli appunti dei rep. Fa emergere le trattative in cui la realtà non corrisponde." }
+  ],
+  "footerMetaLabel": "Flusso di lavoro delle vendite",
+  "footerBlurb": "I dati della pipeline, le registrazioni delle call e i contratti restano nel tuo CRM e nel tuo storage. Controlli enterprise e log di audit su ogni azione.",
+  "ctaLabel": "Attiva per i tuoi venditori"
+}

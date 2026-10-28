@@ -1,0 +1,169 @@
+{
+  "wordmarkSuffix": "Legal",
+  "nav": {
+    "homeLabel": "Home di Fluso",
+    "sectionsLabel": "Sezioni di Fluso for Legal",
+    "mobileSectionsLabel": "Sezioni mobile di Fluso for Legal",
+    "openNav": "Apri la navigazione",
+    "closeNav": "Chiudi la navigazione",
+    "requestPrefix": "Richiedi ",
+    "earlyAccess": "l'accesso anticipato",
+    "anchors": {
+      "practice": "Studio",
+      "security": "Sicurezza",
+      "useCases": "Casi d'uso",
+      "enterprise": "Enterprise"
+    }
+  },
+  "hero": {
+    "eyebrow": "Fluso Legal",
+    "title": ["Un alleato", "per la strategia legale."],
+    "tagline": "L'AI per il settore legale che verifica prima di rispondere.",
+    "cta": "Richiedi l'accesso anticipato",
+    "quote": "I migliori avvocati sono strateghi. Sanno leggere il cliente, il regolatore, il giudice. Fluso elimina tutto ciò che ostacola questo lavoro."
+  },
+  "pillars": [
+    {
+      "title": "<em>Ragiona come un avvocato</em>.",
+      "body": "Un motore di ragionamento costruito per la strategia legale. Ogni fonte normativa viene confrontata con la fonte di riferimento, le affermazioni prive di fondamento vengono evidenziate e ogni conclusione risale al materiale su cui si basa. Vedi il percorso, non solo la risposta."
+    },
+    {
+      "title": "<em>Lavora su informazioni riservate.</em>",
+      "body": "Fluso acquisisce ed elabora informazioni coperte da segreto all'interno di un perimetro cifrato a livello hardware. Il tuo provider di infrastruttura non può leggerle. E nemmeno noi."
+    }
+  ],
+  "practice": {
+    "title": "Per il tuo studio.",
+    "features": [
+      {
+        "title": "<em>Ricerca</em> su cui costruire",
+        "body": "Poni una domanda giuridica e ricevi un'analisi strutturata con ogni tesi documentata e i materiali primari allegati."
+      },
+      {
+        "title": "<em>Strategia</em> per l'aula",
+        "body": "Controdeduzioni, conflitti di giurisdizione e lacune nel ragionamento emergono prima che emergano davanti alla controparte."
+      },
+      {
+        "title": "<em>Onesto</em> sull'incertezza",
+        "body": "Se il diritto è incerto, ti viene detto che è incerto, e decidi tu come procedere."
+      },
+      {
+        "title": "Consapevole della <em>giurisdizione</em>",
+        "body": "Fluso sa quale fonte è applicabile per ciascuna giurisdizione e la confronta con essa."
+      }
+    ]
+  },
+  "practiceAreas": {
+    "title": ["Lavoro multi-giurisdizionale", "in oltre 12 aree di pratica."],
+    "lead": "Per i precedenti del tuo studio, costruiamo connettori personalizzati verso il tuo DMS e i tuoi sistemi di conoscenza, così che lo spazio di lavoro ragioni sul tuo patrimonio di conoscenze, all'interno del tuo perimetro.",
+    "carouselLabel": "Carosello delle aree di pratica",
+    "showAriaLabel": "Mostra {{areas}}",
+    "and": "e",
+    "areas": {
+      "litigation": "Contenzioso",
+      "contracts": "Contratti",
+      "ma": "M&A",
+      "dueDiligence": "Due diligence",
+      "ip": "Proprietà intellettuale",
+      "employment": "Diritto del lavoro",
+      "privacyData": "Privacy e dati",
+      "regulatory": "Compliance e regolamentare",
+      "crossBorder": "Transfrontaliero",
+      "ventureCapital": "Venture capital",
+      "criminal": "Penale",
+      "tax": "Fiscale"
+    }
+  },
+  "security": {
+    "title": ["La riservatezza è", "il presupposto."],
+    "fragments": [
+      {
+        "title": "Elaborazione confidenziale",
+        "body": "Un perimetro cifrato a livello hardware. Il tuo provider non può leggere i tuoi dati mentre li usi. E nemmeno noi."
+      },
+      {
+        "title": "Distribuisci dove i tuoi obblighi lo richiedono",
+        "body": "Il tuo cloud, la tua VPC, on-premise o air-gapped (isolato dalla rete)."
+      },
+      {
+        "title": "I tuoi dati sono tuoi",
+        "body": "Non addestra mai modelli condivisi. Spazi di lavoro isolati. Audit trail completo. Esportazione in qualsiasi momento."
+      },
+      {
+        "title": "Costruito per il lavoro coperto da segreto",
+        "body": "Progettato per le pratiche più sensibili che uno studio gestisce."
+      }
+    ],
+    "matterTypesLabel": "Tipi di pratica",
+    "matterTypes": [
+      "Governativo e classificato",
+      "Operazioni protette da NDA",
+      "Materiale sensibile sotto il profilo IP",
+      "Residenza dei dati"
+    ]
+  },
+  "useCases": {
+    "title": ["Dalla prima analisi", "al documento finale."],
+    "items": [
+      {
+        "term": "Contenzioso e memorie",
+        "line": "Carica l'atto di citazione. Ottieni una memoria verificata e corredata di citazioni, al livello di un associate."
+      },
+      {
+        "term": "Revisione contratti e redline",
+        "line": "Una redline con revisioni tracciate e collegamento alle fonti normative a livello di clausola."
+      },
+      {
+        "term": "Due diligence multi-giurisdizionale",
+        "line": "Una data room, più giurisdizioni. Legge, categorizza, segnala, redige."
+      },
+      {
+        "term": "Analisi degli scostamenti normativi",
+        "line": "EU AI Act, GDPR, DORA, SOX, D.Lgs. 231. Mappati sui tuoi documenti."
+      },
+      {
+        "term": "Portafoglio IP e FTO",
+        "line": "Marchi, brevetti, clausole IP, conformità OSS. Verificati a ogni passaggio."
+      },
+      {
+        "term": "Lavoro e transfrontaliero",
+        "line": "Il quadro normativo corretto per ciascuna giurisdizione."
+      }
+    ]
+  },
+  "enterprise": {
+    "title": ["Distribuzione enterprise,", "su misura per te."],
+    "lead": "Il nostro team distribuisce connettori e plug-in personalizzati, modellando <fluso>Fluso Legal</fluso> sul modo in cui lavora il tuo studio.",
+    "items": [
+      {
+        "title": "Copertura giurisdizionale",
+        "body": "Copertura personalizzata sulla presenza del tuo studio."
+      },
+      {
+        "title": "La tua conoscenza, connessa",
+        "body": "Integrazione con i tuoi precedenti e la gestione documentale."
+      },
+      {
+        "title": "Flussi di lavoro su misura",
+        "body": "Costruiti per le tue aree di pratica ad alto volume e per gli standard interni."
+      },
+      {
+        "title": "Distribuzione dedicata",
+        "body": "Il tuo cloud, il tuo perimetro, la tua configurazione."
+      }
+    ]
+  },
+  "demo": {
+    "title": ["Prenota una demo"],
+    "lead": "La conversazione parte da ciò che il tuo studio fa davvero.",
+    "cta": "Parla con noi"
+  },
+  "engineFlow": {
+    "ariaLabel": "Fluso raccoglie le fonti normative, analizza le fonti, verifica le citazioni e produce una bozza verificata.",
+    "sources": ["Westlaw", "Lexis+", "EUR-Lex", "Registri nazionali", "Il tuo DMS"],
+    "stages": ["Raccolta delle fonti", "Analisi delle fonti normative", "Verifica delle citazioni", "Redazione del documento finale"],
+    "chips": ["Fonti verificate", "Citazioni collegate"],
+    "panelStages": ["Materiale di origine", "Fonte selezionata", "Revisione delle citazioni", "Bozza verificata"],
+    "stageNotes": ["", "Selezione della fonte normativa applicabile…", "Verifica di ogni citazione rispetto alla sua fonte…", "In redazione: ogni riga risale alla sua fonte."]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "title": "Inizia con un<br/>progetto serio.",
+    "subtitle": "Disponibile su macOS, Windows, sul web e su iPhone. Accedi con lo stesso account per ritrovare il tuo spazio di lavoro."
+  },
+  "steps": [
+    {
+      "title": "Installa Fluso",
+      "copy": "Scarica l'app per Mac o Windows. Mac si installa dal DMG; Windows usa l'installer firmato e si aggiorna silenziosamente in background."
+    },
+    {
+      "title": "Costruisci la memoria del progetto",
+      "copy": "Collega le tue app e trascina i tuoi file. Fluso indicizza il contesto, mostra una cronologia di sync leggibile e ti avvisa quando un connettore va riconnesso."
+    },
+    {
+      "title": "Lavora ovunque",
+      "copy": "Usa l’app desktop alla scrivania e ritrova il tuo spazio di lavoro sul web o su iPhone."
+    }
+  ],
+  "support": {
+    "label": "Assistenza"
+  },
+  "download": {
+    "mac": {
+      "title": "Scarica per Mac",
+      "meta": "Apple Silicon · macOS 13+"
+    },
+    "windows": {
+      "title": "Scarica per Windows",
+      "meta": "Windows 10 / 11 · .exe"
+    },
+    "moreOptions": "Mac Intel, cronologia versioni, aiuto all'installazione"
+  },
+  "guarantee": {
+    "label": "Garanzia",
+    "body": "Installer firmati, aggiornamenti silenziosi in background, recupero offline e sandbox dedicata nell'UE. Scaricando Fluso, accetti i nostri <terms>termini di servizio</terms>."
+  }
+}

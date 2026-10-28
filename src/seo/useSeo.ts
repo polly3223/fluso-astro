@@ -39,7 +39,7 @@ function meta(kind: "name" | "property", key: string, content: string) {
 }
 
 export function useSeo(seo: ResolvedSeo) {
-  const { title, description, canonical, ogImage } = seo;
+  const { title, description, canonical, ogImage, english, italian } = seo;
   useEffect(() => {
     document.title = title;
 
@@ -56,6 +56,16 @@ export function useSeo(seo: ResolvedSeo) {
       canonical,
     );
 
+    for (const [lang, href] of [['en', english], ['it', italian], ['x-default', english]]) {
+      const selector = `link[rel="alternate"][hreflang="${lang}"]`;
+      if (!href) { document.head.querySelector(selector)?.remove(); continue; }
+      upsert(selector, () => {
+        const link = document.createElement('link');
+        link.rel = 'alternate'; link.hreflang = lang!;
+        return link;
+      }, 'href', href);
+    }
+
     meta("property", "og:title", title);
     meta("property", "og:description", description);
     meta("property", "og:url", canonical);
@@ -64,5 +74,5 @@ export function useSeo(seo: ResolvedSeo) {
     meta("name", "twitter:title", title);
     meta("name", "twitter:description", description);
     meta("name", "twitter:image", ogImage);
-  }, [title, description, canonical, ogImage]);
+  }, [title, description, canonical, ogImage, english, italian]);
 }

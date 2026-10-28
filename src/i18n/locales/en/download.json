@@ -1,10 +1,10 @@
 {
   "hero": {
     "title": "Get Fluso<br/>for your machine.",
-    "subtitle": "Pick your installer. Fluso runs as a desktop app — the web shell is just here to hand it to you."
+    "subtitle": "Choose the app for your device, or sign in from your browser."
   },
   "platforms": {
-    "footnote": "Windows 10/11 and macOS 13+ (Apple Silicon & Intel). Native iOS is on the roadmap — Telegram remote access works from any phone today.",
+    "footnote": "Windows 10/11 and macOS 13+ (Apple Silicon & Intel). Fluso is also available on iPhone and the web.",
     "detectedPrefix": "Detected",
     "primary": {
       "title": "Download for Mac",
@@ -26,7 +26,9 @@
         "meta": "Windows 10 / 11 · .exe",
         "prettyName": "Windows"
       }
-    }
+    },
+    "web": "Open on the web",
+    "iphone": "Download for iPhone"
   },
   "install": {
     "steps": {

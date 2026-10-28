@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "Start with one<br/>serious project.",
-    "subtitle": "Available on macOS and Windows today. Telegram remote access works from any phone; native mobile is on the roadmap."
+    "subtitle": "Available on macOS, Windows, the web and iPhone. Sign in with the same account to pick up your workspace."
   },
   "steps": [
     {
@@ -14,7 +14,7 @@
     },
     {
       "title": "Work from anywhere",
-      "copy": "Use the desktop app at your desk. Message Fluso from anywhere via Telegram."
+      "copy": "Use the desktop app at your desk and pick up your workspace on the web or iPhone."
     }
   ],
   "support": {

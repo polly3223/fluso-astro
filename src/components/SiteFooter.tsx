@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import {locale, localePath} from "@/i18n";
+import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/utils/styles";
 import { FlusoText } from "@/components/FlusoWordmark";
@@ -20,6 +21,7 @@ const INDUSTRY_LINKS = [
 ] as const;
 
 const PRODUCT_LINKS = [
+  { to: "/#agents", key: "agents" },
   { to: "/pricing", key: "pricing" },
   { to: "/enterprise", key: "enterprise" },
   { to: "/get-started", key: "getStarted" },
@@ -125,6 +127,7 @@ export default function SiteFooter({
   hidePricing?: boolean;
 }) {
   const { t } = useTranslation("common");
+  const {pathname, search, hash} = useLocation();
 
   const industries: FooterLink[] = INDUSTRY_LINKS.map((l) => ({
     to: l.to,
@@ -238,6 +241,10 @@ export default function SiteFooter({
           )}
         >
           <span>{t("footer.copyright", { year: 2026 })}</span>
+          <nav aria-label="Language" className="inline-flex gap-3">
+            <a href={localePath(pathname, "en") + search + hash} lang="en" hrefLang="en" aria-current={locale === "en" ? "page" : undefined} className={locale === "en" ? "text-bone" : "hover:text-bone"}>English</a>
+            <a href={localePath(pathname, "it") + search + hash} lang="it" hrefLang="it" aria-current={locale === "it" ? "page" : undefined} className={locale === "it" ? "text-bone" : "hover:text-bone"}>Italiano</a>
+          </nav>
           <span aria-hidden="true" className="text-bone/25">
             ·
           </span>

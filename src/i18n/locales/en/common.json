@@ -20,7 +20,8 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "primaryLabel": "Primary",
-    "navigationLabel": "Navigation"
+    "navigationLabel": "Navigation",
+    "agents": "Agents"
   },
   "footer": {
     "tagline": "Your personal AI workspace. Connected context, open-weight models, your boundary.",
@@ -34,7 +35,8 @@
     "product": {
       "pricing": "Pricing",
       "enterprise": "Enterprise",
-      "getStarted": "Get started"
+      "getStarted": "Get started",
+      "agents": "Agents"
     },
     "company": {
       "premai": "Prem AI",

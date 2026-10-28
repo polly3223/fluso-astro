@@ -1,4 +1,5 @@
 import { Trans, useTranslation } from "react-i18next";
+import { localePath } from "@/i18n";
 import { cn } from "@/utils/styles";
 import BloomCard from "@/components/BloomCard";
 import { CARD_BODY, SUBTITLE, TITLE } from "@/components/cardChrome";
@@ -190,7 +191,7 @@ function PlanCard({ plan, index }: { plan: Plan; index: number }) {
 
       <a
         className={ctaCls}
-        href={plan.ctaHref}
+        href={plan.ctaExternal ? plan.ctaHref : localePath(plan.ctaHref)}
         {...(plan.ctaExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       >
         {text.cta}

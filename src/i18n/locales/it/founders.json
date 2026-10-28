@@ -1,0 +1,18 @@
+{
+  "stamp": "FONDATORE · SISTEMA OPERATIVO",
+  "title": "Un agente per i fondatori.",
+  "lead": "Aggiornamenti agli investitori, casella delle assunzioni, data room. Il lavoro che si accumula, gestito mentre tu costruisci.",
+  "customSkills": [
+    { "title": "Redazione del memo per gli investitori", "desc": "Legge Stripe, Mixpanel e il tuo ultimo aggiornamento. Redige l'email per il board nel tuo stile." },
+    { "title": "Triage della casella assunzioni", "desc": "Valuta le risposte rispetto alla tua job description. Redige note sulla shortlist e rifiuti prima dello standup." },
+    { "title": "Curatela della data room", "desc": "Monitora Drive, oscura i nomi dei clienti e blocca uno snapshot pulito quando un LP lo richiede." }
+  ],
+  "automations": [
+    { "title": "Snapshot settimanale per il board", "desc": "Estrae ARR e churn, invia un Loom + PDF agli investitori ogni venerdì alle 16:00." },
+    { "title": "Sincronizzazione pipeline-CRM", "desc": "Una nuova call con un cliente diventa un'opportunità in HubSpot, con lo stage suggerito dalla call." },
+    { "title": "Monitoraggio del burn", "desc": "Controlla Brex ogni giorno. Avvisa su Slack il giorno in cui la spesa inizia a superare il runway." }
+  ],
+  "footerMetaLabel": "Modalità fondatore",
+  "footerBlurb": "Funziona dentro il tuo Google Workspace. Nomi dei clienti, dati finanziari e cap table non lasciano mai il tuo ambiente né addestrano un modello di terze parti.",
+  "ctaLabel": "Inizia come fondatore"
+}

@@ -1,0 +1,18 @@
+{
+  "stamp": "RISERVATO AL CLIENTE",
+  "title": "Un agente per i consulenti.",
+  "lead": "Presentazioni, modelli e la fatica della sintesi. Gestiti con il rigore che il tuo principal si aspetta.",
+  "customSkills": [
+    { "title": "Bozze delle slide", "desc": "Legge gli appunti delle interviste. Redige le slide nel master del tuo studio, con la stessa struttura dell'ultima volta." },
+    { "title": "Sintesi delle call con gli esperti", "desc": "Recupera le call da AlphaSights e GLG, le raggruppa per tema e redige la sintesi." },
+    { "title": "Estrazioni di benchmarking", "desc": "Recupera i dati da CapIQ e Pitchbook. Genera un insieme di comparabili con una normalizzazione coerente." }
+  ],
+  "automations": [
+    { "title": "Avvio dell'incarico", "desc": "Un nuovo incarico predispone uno spazio di lavoro su Teams, cartelle, template e un tracker." },
+    { "title": "Nota di stato del venerdì", "desc": "Recupera l'elenco delle attività e i timesheet. Redige l'email al cliente alle 15:00 per l'approvazione dell'EM." },
+    { "title": "Normalizzatore degli appunti delle interviste", "desc": "La trascrizione grezza viene resa anonima, etichettata e archiviata nella cartella dell'incarico." }
+  ],
+  "footerMetaLabel": "Flusso di lavoro dell'incarico",
+  "footerBlurb": "Il materiale vincolato al cliente resta all'interno dello spazio di lavoro dell'incarico. Le fughe di dati tra clienti sono bloccate a livello dei dati. Revisione degli accessi del partner a ogni installazione.",
+  "ctaLabel": "Attiva sul tuo incarico"
+}

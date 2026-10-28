@@ -1,0 +1,80 @@
+{
+  "hero": {
+    "title": "Costruito per<br/>l'enterprise.",
+    "subtitle": "Progettato per organizzazioni ad alte prestazioni. Fluso gira all'interno dei tuoi confini sicuri, con SSO, log di audit, retention personalizzata e nessuna API proprietaria nella pipeline.",
+    "ctaPrimary": "Parla con il nostro team",
+    "ctaSecondary": "Esplora i prezzi",
+    "trust": [
+      "Hosting sovrano nell'UE",
+      "VPC del cliente o air-gapped",
+      "Elaborazione confidenziale",
+      "SOC 2 Type II in essere"
+    ],
+    "live": "Live",
+    "vizLabel": "Contorni di inferenza"
+  },
+  "capabilities": {
+    "title": "Progettato per essere<br/>personalizzato.",
+    "subtitle": "Fluso si adatta al modo in cui già operi: <strong>connettori</strong> ai tuoi sistemi, <strong>competenze</strong> che il tuo team codifica e <strong>deployment</strong> in linea con la tua postura di conformità.",
+    "connectors": {
+      "kicker": "01 / Connettori",
+      "title": "Collega Fluso al<br/>tuo stack.",
+      "desc": "Oltre 500 connettori canonici più i sistemi dietro il tuo firewall. <strong>REST, GraphQL, SOAP</strong>. Scriviamo noi la mappatura dello schema. Tu mantieni l'autenticazione nelle tue mani.",
+      "moreLabel": "altri",
+      "moreTitle": "Connettori personalizzati su richiesta"
+    },
+    "skills": {
+      "kicker": "02 / Competenze",
+      "title": "Codifica come<br/>lavora il tuo team.",
+      "desc": "Una competenza è un'istruzione salvata che Fluso esegue nel modo in cui gliel'hai insegnata. <strong>In linguaggio naturale</strong>, versionata come il codice, distribuita a tutto il team con permessi e audit.",
+      "items": [
+        { "label": "Memo del consiglio del venerdì", "meta": "programmata" },
+        { "label": "Revisione del contratto", "meta": "su richiesta" },
+        { "label": "Aggiornamento trimestrale agli investitori", "meta": "programmata" },
+        { "label": "Brief della pipeline", "meta": "webhook" },
+        { "label": "Pacchetto di audit interno", "meta": "programmata" },
+        { "label": "Registro dei rischi", "meta": "su richiesta" }
+      ]
+    },
+    "deployment": {
+      "kicker": "03 / Deployment",
+      "title": "Scegli dove<br/>risiedono i dati.",
+      "desc": "Tre modalità di deployment, un solo prodotto, piena parità di funzionalità. Scegli il perimetro che corrisponde alla tua <strong>postura di conformità</strong>.",
+      "modes": [
+        { "name": "Cloud gestito nell'UE.", "spec": "Elaborazione confidenziale" },
+        { "name": "VPC del cliente.", "spec": "" },
+        { "name": "On-prem, air-gapped.", "spec": "Funziona offline" }
+      ]
+    }
+  },
+  "confidential": {
+    "title": "Carichi di lavoro che nessuno<br/>può leggere. Noi compresi.",
+    "subtitle": "I tenant Enterprise girano all'interno di trusted execution environment isolati a livello hardware sull'<strong>elaborazione confidenziale di Prem AI</strong>. La memoria è crittografata durante l'uso e la remote attestation ti permette di verificare il runtime prima che entri qualsiasi testo in chiaro.",
+    "poweredBy": "Powered by",
+    "poweredByAria": "Powered by Prem AI",
+    "items": [
+      {
+        "name": "TEE isolato a livello hardware.",
+        "tag": "GPU confidenziale",
+        "spec": ["Memoria sigillata nel silicio", "confini per tenant"]
+      },
+      {
+        "name": "Remote attestation.",
+        "tag": "Verificabile",
+        "spec": ["Verifica il runtime", "prima che i segreti varchino il confine"]
+      },
+      {
+        "name": "Crittografato durante l'uso.",
+        "tag": "Sempre attivo",
+        "spec": ["Cieco all'operatore", "il testo in chiaro non lascia mai l'enclave"]
+      }
+    ]
+  },
+  "closing": {
+    "title": "Esegui Fluso dentro<br/>il tuo perimetro.",
+    "subtitle": "Parlaci del tuo stack e della tua postura di conformità. Ti risponderemo con un piano di deployment, l'ambito SSO e log di audit, e l'attestazione SOC 2 Type II attuale.",
+    "ctaPrimary": "Parla con il nostro team",
+    "ctaSecondary": "Esplora i prezzi",
+    "footnote": "Oppure <try>prova prima Fluso gratis</try>. Nessuna carta richiesta."
+  }
+}

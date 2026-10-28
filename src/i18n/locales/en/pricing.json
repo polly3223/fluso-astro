@@ -1,7 +1,7 @@
 {
   "plans": {
     "title": "Fluso desktop plans,<br/>serious capacity.",
-    "subtitle": "These plans apply to Fluso desktop. Start with Free, get 10× the usage with Plus, or choose unlimited token usage and confidential mode with Pro. Enterprise covers SSO, audit logs, and custom deployments.",
+    "subtitle": "Start with Free, choose Plus for 10× the weekly usage of Free, or Pro for 10× Plus and confidential mode. Agents are included in every plan.",
     "mostPopular": "Most popular",
     "items": [
       {
@@ -13,7 +13,7 @@
         "features": [
           "Enough usage to get started",
           "Standard models",
-          "Projects, chats and files",
+          "Projects, chats, files and agents",
           "Connectors and skills",
           "Artifact generation",
           "Meeting notes",
@@ -40,7 +40,7 @@
         "period": "/user/month",
         "includes": "Everything in Plus, plus",
         "features": [
-          "<strong>Unlimited token usage</strong>",
+          "<strong>10× the weekly usage</strong> of Plus",
           "<strong>Confidential mode</strong> included",
           "All core workspace features"
         ],
@@ -66,7 +66,7 @@
         "cta": "Get in touch with us"
       }
     ],
-    "billingNote": "Prices are in USD. Plus and Pro are billed monthly. Free and Plus usage resets weekly.",
+    "billingNote": "Prices are in USD. Plus and Pro are billed monthly. Free, Plus and Pro usage resets weekly.",
     "trialNote": "Eligible new subscribers can start a 30-day Pro trial. A payment card is required; after the trial, Pro renews at $30/month unless canceled. Free requires no card."
   },
   "trust": {
@@ -76,7 +76,7 @@
       {
         "label": "Usage",
         "heading": "Room for your work",
-        "body": "Free gives you enough to get started. Plus includes 10× the weekly usage of Free. Pro has unlimited token usage."
+        "body": "Free gives you enough to get started. Plus includes 10× the weekly usage of Free. Pro includes 10× Plus. See your usage percentage and reset time in the app."
       },
       {
         "label": "Models",
@@ -99,24 +99,76 @@
     "title": "All the details,<br/>side by side.",
     "subtitle": "Compare usage, privacy and workspace features across Fluso desktop plans.",
     "swipeHint": "Swipe to compare",
-    "headers": ["Feature", "Free", "Plus", "Pro", "Enterprise"],
+    "headers": [
+      "Feature",
+      "Free",
+      "Plus",
+      "Pro",
+      "Enterprise"
+    ],
     "included": "Included",
     "notIncluded": "Not included",
     "rows": [
-      { "label": "Weekly token usage", "cells": ["Enough to get started", "10× Free", "Unlimited", "Custom"] },
-      { "label": "Confidential mode" },
-      { "label": "Projects, chats and files" },
-      { "label": "Standard models" },
-      { "label": "Sandbox", "cells": ["Dedicated", "Dedicated", "Dedicated", "Encrypted"] },
-      { "label": "Skills Marketplace" },
-      { "label": "Artifact generation" },
-      { "label": "Connectors" },
-      { "label": "Dedicated support & AE" },
-      { "label": "SSO" },
-      { "label": "Audit logs" },
-      { "label": "Custom data retention" },
-      { "label": "Custom skills" },
-      { "label": "Hosting", "cells": ["Europe", "Europe", "Europe", "Europe"] }
+      {
+        "label": "Weekly usage",
+        "cells": [
+          "Enough to get started",
+          "10× Free",
+          "10× Plus",
+          "Custom"
+        ]
+      },
+      {
+        "label": "Confidential mode"
+      },
+      {
+        "label": "Projects, chats, files and agents"
+      },
+      {
+        "label": "Standard models"
+      },
+      {
+        "label": "Sandbox",
+        "cells": [
+          "Dedicated",
+          "Dedicated",
+          "Dedicated",
+          "Encrypted"
+        ]
+      },
+      {
+        "label": "Skills Marketplace"
+      },
+      {
+        "label": "Artifact generation"
+      },
+      {
+        "label": "Connectors"
+      },
+      {
+        "label": "Dedicated support & AE"
+      },
+      {
+        "label": "SSO"
+      },
+      {
+        "label": "Audit logs"
+      },
+      {
+        "label": "Custom data retention"
+      },
+      {
+        "label": "Custom skills"
+      },
+      {
+        "label": "Hosting",
+        "cells": [
+          "Europe",
+          "Europe",
+          "Europe",
+          "Europe"
+        ]
+      }
     ]
   },
   "faq": {
@@ -128,6 +180,9 @@
   "closing": {
     "title": "Experience each<br/>Fluso desktop plan.",
     "subtitle": "Free is forever for Fluso desktop. Plus, Pro and Enterprise are available when you're ready. The mobile app does not sell or manage Fluso desktop plans.",
-    "ctas": ["Explore Fluso desktop plans", "Talk to our team"]
+    "ctas": [
+      "Explore Fluso desktop plans",
+      "Talk to our team"
+    ]
   }
 }

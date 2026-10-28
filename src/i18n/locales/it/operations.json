@@ -1,0 +1,18 @@
+{
+  "stamp": "SPINA DORSALE DELLE OPERATIONS",
+  "title": "Un agente per chi gestisce le operations.",
+  "lead": "Revisioni dei fornitori, instradamento delle fatture, smistamento ticket. In funzione su ogni strumento che hai acquistato.",
+  "customSkills": [
+    { "title": "Revisione dei rinnovi", "desc": "Legge contratti e utilizzo. Ti dice quale rinnovo rinegoziare prima che si rinnovi automaticamente." },
+    { "title": "Gestione delle fatture", "desc": "Legge le fatture in PDF, assegna i codici GL secondo lo storico e le mette in coda per l'approvazione su Bill.com." },
+    { "title": "Smistamento ticket", "desc": "Classifica i ticket Zendesk in entrata, li instrada e redige risposte che il tuo team approva alla lettera." }
+  ],
+  "automations": [
+    { "title": "Onboarding e offboarding", "desc": "Una nuova assunzione predispone gli account su Okta, Slack, GitHub, Notion. L'offboarding annulla tutto senza lasciare tracce." },
+    { "title": "Chiusura di fine mese", "desc": "Riconcilia tra Quickbooks, Stripe e Mercury. Segnala gli scostamenti al controller." },
+    { "title": "Risposta agli incidenti", "desc": "Scatta Pagerduty; war-room su Slack, documento di stato redatto, template di comunicazione pronti." }
+  ],
+  "footerMetaLabel": "Flusso di lavoro delle operations",
+  "footerBlurb": "I contratti con i fornitori, i dati delle buste paga e i log degli incidenti restano nei tuoi sistemi. Controlli enterprise e un log di audit immutabile su ogni azione.",
+  "ctaLabel": "Attiva per il tuo team"
+}

@@ -1,3 +1,4 @@
+import {localePath} from "@/i18n";
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "motion/react";
 import { Trans, useTranslation } from "react-i18next";
@@ -427,7 +428,7 @@ export default function Capabilities() {
           <BentoTile
             area="g"
             as="a"
-            href="/for-founders"
+            href={localePath("/for-founders")}
             dark
             filled
             className="no-underline"
@@ -483,7 +484,7 @@ export default function Capabilities() {
               )}
             >
               {f.cta ? (
-                <a className="flex w-full items-center justify-between gap-3.5 text-inherit no-underline" href="/for-founders">
+                <a className="flex w-full items-center justify-between gap-3.5 text-inherit no-underline" href={localePath("/for-founders")}>
                   <span className="flex min-w-0 flex-1 flex-col gap-[3px]">
                     <span className={MFL_TITLE}>{f.title}</span>
                     <span className={MFL_DESC}>{f.desc}</span>

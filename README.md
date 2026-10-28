@@ -1,6 +1,6 @@
 # Fluso — Astro
 
-English-only Astro copy of the current [fluso.ai](https://fluso.ai) website, prepared on 28 October 2026. The existing design, content, fonts, imagery and animations are preserved. The language switcher and Italian resources are removed. The Agents update is the next task and has not been added here.
+Astro version of [fluso.ai](https://fluso.ai), preserving the existing design and adding the current pricing, Agents and Italian routes. The original English-only copy is preserved in the `current-site-baseline` tag.
 
 ## Run locally
 
@@ -19,29 +19,38 @@ bun run build   # Static site in dist/
 bun run preview
 ```
 
+## Current work
+
+- Free $0, Plus $10/month (10× Free), Pro $30/month (10× Plus); weekly usage allowances, no absolute token quotas. Pro includes confidential mode. The eligible 30-day card-required Pro trial is preserved.
+- Homepage Agents section, setup explanation and three selectable workflow examples. The actual `AgentReplica`/`AgentSurface` components are reused from the previous Fluso landing, with desktop and phone layouts and synthetic example content.
+- English at `/`; Italian marketing pages at `/it/`. The URL determines the language. Footer language links preserve the current page; the header has no language flags.
+- Localized canonical/alternate metadata and sitemap. Privacy and terms retain their existing published English versions; their Italian URLs redirect to English.
+- Retired Telegram, outdated model and mobile-roadmap claims are removed from current marketing copy.
+
 ## Where to work
 
-- `astro/pages/[...path].astro` generates the 16 existing routes; `astro/layouts/Site.astro` owns their HTML metadata.
-- `src/Website.tsx` mounts the existing React application as an Astro client island. This deliberately preserves the original visual behavior; the components have not been rewritten as native Astro templates.
-- `src/pages/home/sections/` contains homepage sections and animations.
+- `astro/pages/[...path].astro` and `astro/pages/it/[...path].astro` generate the routes; `astro/layouts/Site.astro` owns their HTML metadata.
+- `src/Website.tsx` mounts the existing React application as an Astro client island. This preserves the original visual behavior; the components have not all been rewritten as native Astro templates.
+- `src/pages/home/sections/Agents.tsx` contains the new section. `astro/components/app-replica/` contains the reused native Astro demo, passed into React through a slot.
+- `src/pages/home/sections/` contains the other homepage sections and animations.
 - `src/components/SiteNav.tsx` contains desktop and mobile navigation.
-- `src/i18n/locales/en/` contains English copy. The translation API is retained for future languages, but English is the only configured language.
+- `src/i18n/locales/en/` and `it/` contain localized copy. `src/i18n/index.ts` selects the language from the URL; the React router uses the same locale base.
 - `src/index.css`, `src/components/typography.ts` and local component classes control styling.
-- `assets/` contains the original images, icons and videos. `scripts/sync-static.ts` copies static assets and documents to `public/` before development and builds.
-- `src/seo/config.ts` contains route metadata.
+- `assets/` contains images, icons and videos. `scripts/sync-static.ts` copies them and supporting documents to `public/` before development and builds.
+- `src/seo/config.ts` contains localized route metadata. `scripts/generate-sitemap.ts` generates the sitemap.
 
-## Preview and publication
+## Publication
 
-The project is a standalone copy. It is not connected to the production Fluso deployment. Pages currently include `noindex, nofollow`; remove that deliberately before a production launch. Existing app, contact and download links still point to their original destinations. Fonts and some icons are loaded from external public services.
+This repository is not connected to the production Fluso deployment. Preview pages include `noindex, nofollow`; remove that deliberately before a production launch. Existing app, contact and download links still point to their original destinations. Fonts and some icons use external public services.
 
-The former production waitlist serverless integration and its Google Sheets endpoint are not included. The current 16-page UI does not submit to it. The local preview is static and does not process form submissions.
+`vercel.json` describes an optional Astro deployment, including legacy-page, English legal and desktop-auth redirects. No hosting project or automatic deployment has been configured. `bun run preview` runs a local Bun static server with the same redirects, bound to localhost. `PORT` defaults to 8902. For remote Astro development, set `ASTRO_ALLOWED_HOST` to the preview hostname.
 
-`vercel.json` describes an optional future Astro deployment and preserves the existing page and desktop-auth redirects. No hosting project or automatic deployment is configured. Local preview hostnames can be supplied with `ASTRO_ALLOWED_HOST`.
+The former production waitlist serverless integration and its Google Sheets endpoint are not included. The current UI does not submit to it. This project is static and does not process form submissions.
 
-The pricing copy intentionally matches the source snapshot, including its existing Pro wording. Update it separately when changing launch content.
+For an official fluso.ai rollout, integrate through the production website repository, review and merge before deployment, verify its Vercel project configuration, remove preview indexing restrictions, then verify the public routes and assets. This repository does not change the official domain or production accounts.
 
 ## Provenance
 
-Based on the website source snapshot `db8181c2939855fbed42372bb89f03e0ffea0145`. Its compiled application and stylesheet were checked against the live website. Before the requested English-only change, all 16 routes were compared at desktop and mobile sizes: heading geometry, links and page heights matched; one timed rotating label differed in animation phase.
+Based on website source `db8181c2939855fbed42372bb89f03e0ffea0145`, whose compiled application and stylesheet matched the live site. Before launch edits, all 16 routes were compared at desktop and mobile sizes: heading geometry, links and page heights matched. One timed rotating label differed in animation phase. The English-only baseline passed 201 browser checks.
 
-The cookie-consent package is included in `vendor/cookie-consent` so local installation does not require access to a private package registry. Its package metadata declares MIT; see `THIRD_PARTY_NOTICES.md`. Dependencies are pinned in `bun.lock`.
+The cookie-consent package is included in `vendor/cookie-consent`, so installation requires no private package registry access. Its metadata declares MIT; see `THIRD_PARTY_NOTICES.md`. Dependencies are pinned in `bun.lock`.

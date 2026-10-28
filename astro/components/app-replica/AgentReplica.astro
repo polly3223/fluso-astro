@@ -1,0 +1,48 @@
+---
+// Light render of the Fluso Agents conversation. Already light, so it must not sit inside an inverting wrapper.
+import AgentSurface from "./AgentSurface.astro";
+const {locale = "en"} = Astro.props;
+---
+
+<fluso-agent-demo style="display:block"><figure class="agent-replica mx-auto w-full max-w-[1290px] select-none">
+  <div class="hidden md:block" role="img" aria-label={locale === "it" ? "Conversazione con un agente Fluso: barra laterale, routine, sessioni e configurazione. Esempio di ricerca fornitori." : "Fluso Agent conversation with its sidebar, routine, sessions and setup. Example supplier research."}>
+    <div data-agent-stage data-width="1290" style="--design-width:1290px;--design-height:800px">
+      <div class="agent-canvas overflow-hidden rounded-[14px] border border-[#dadadb] bg-white shadow-[0_30px_70px_-25px_rgb(0_0_0/0.4)]">
+        <AgentSurface />
+      </div>
+    </div>
+  </div>
+  <div class="mx-auto w-full max-w-[320px] md:hidden" role="img" aria-label={locale === "it" ? "La stessa conversazione con un agente Fluso su schermo mobile, con contenuti di esempio." : "The same Fluso Agent conversation on a narrow screen, with example content."}>
+    <div data-agent-stage data-width="410" style="--design-width:410px;--design-height:864px">
+      <div class="agent-canvas">
+        <div class="relative h-[864px] w-[410px] rounded-[64px] border-[3px] border-[#c4c2c0] bg-[#ebeaea] p-[10px] shadow-[0_40px_80px_-20px_rgb(0_0_0/0.35),inset_0_0_0_2px_rgb(0_0_0/0.06)]">
+          <div class="h-[844px] w-[390px] overflow-hidden rounded-[52px]"><AgentSurface mobile /></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <figcaption class="mt-7 text-center text-sm text-bone/55">{locale === "it" ? "L’interfaccia Agents di Fluso, con contenuti di esempio." : "Fluso’s Agent interface, shown with example content."}</figcaption>
+</figure></fluso-agent-demo>
+
+<style>
+  [data-agent-stage] { position: relative; width: 100%; height: calc(var(--design-height) * var(--agent-scale, 1)); }
+  .agent-canvas { width: var(--design-width); height: var(--design-height); transform-origin: top left; transform: scale(var(--agent-scale, 1)); }
+</style>
+
+<script>
+  class FlusoAgentDemo extends HTMLElement {
+    observer?: ResizeObserver;
+    connectedCallback() {
+      requestAnimationFrame(() => {
+        if (!this.isConnected) return;
+        const stages = this.querySelectorAll<HTMLElement>('[data-agent-stage]');
+        const update = () => stages.forEach(stage => stage.style.setProperty('--agent-scale', String(stage.clientWidth / Number(stage.dataset.width))));
+        this.observer = new ResizeObserver(update);
+        stages.forEach(stage => this.observer!.observe(stage));
+        update();
+      });
+    }
+    disconnectedCallback() { this.observer?.disconnect(); }
+  }
+  if (!customElements.get('fluso-agent-demo')) customElements.define('fluso-agent-demo', FlusoAgentDemo);
+</script>

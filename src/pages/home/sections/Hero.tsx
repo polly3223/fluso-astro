@@ -1,3 +1,4 @@
+import {localePath} from "@/i18n";
 import { lazy, Suspense, useEffect } from "react";
 import { motion, stagger, useAnimate, useReducedMotion, type Variants } from "motion/react";
 import { Trans, useTranslation } from "react-i18next";
@@ -275,7 +276,7 @@ export default function Hero() {
                     "transition-[color,border-color] duration-[180ms] ease-[ease]",
                     "hover:border-b-ink/40 hover:text-ink/85",
                   )}
-                  href="/download"
+                  href={localePath("/download")}
                 >
                   {t("hero.otherPlatforms")}{" "}
                   <span aria-hidden="true" className="inline-block transition-transform duration-[180ms] ease-[ease] group-hover/alt:translate-x-0.5">
@@ -356,7 +357,7 @@ export default function Hero() {
                     {WORKS_WITH.map((w) => (
                       <a
                         key={w.label}
-                        href="/connectors"
+                        href={localePath("/#connectors")}
                         aria-label={w.label}
                         title={w.label}
                         onClick={(e) => {

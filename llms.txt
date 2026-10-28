@@ -4,6 +4,12 @@
 
 ## Product
 
+- [Agents](https://fluso.ai/#agents): Agents with instructions, files, connected apps and scheduled routines, included in every plan.
+- [Italiano](https://fluso.ai/it/): The Italian marketing website.
+
+Free costs $0. Plus costs $10/user/month and includes 10× Free weekly usage. Pro costs $30/user/month and includes 10× Plus weekly usage and confidential mode. All three allowances reset weekly. Eligible 30-day Pro trials require a payment card and renew at $30/month unless cancelled.
+
+
 - [Home](https://fluso.ai/): Overview of Fluso — full context, complete control, deep focus, open-weight models.
 - [Download](https://fluso.ai/download): Get the Fluso desktop app for macOS or Windows.
 - [Get Started](https://fluso.ai/get-started): Install Fluso and put your proactive AI agent to work on your first project.

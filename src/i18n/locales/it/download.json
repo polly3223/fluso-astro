@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "title": "Ottieni Fluso<br/>per il tuo dispositivo.",
+    "subtitle": "Scegli l’app per il tuo dispositivo o accedi dal browser."
+  },
+  "platforms": {
+    "footnote": "Windows 10/11 e macOS 13+ (Apple Silicon e Intel). Fluso è disponibile anche su iPhone e sul web.",
+    "detectedPrefix": "Rilevato",
+    "primary": {
+      "title": "Scarica per Mac",
+      "meta": "Apple Silicon · macOS 13+ · .dmg"
+    },
+    "downloads": {
+      "mac-arm64": {
+        "title": "Scarica per Mac",
+        "meta": "Apple Silicon · macOS 13+ · .dmg",
+        "prettyName": "Mac · Apple Silicon"
+      },
+      "mac-x64": {
+        "title": "Scarica per Mac (Intel)",
+        "meta": "Intel · macOS 13+ · .dmg",
+        "prettyName": "Mac · Intel"
+      },
+      "windows": {
+        "title": "Scarica per Windows",
+        "meta": "Windows 10 / 11 · .exe",
+        "prettyName": "Windows"
+      }
+    },
+    "web": "Apri sul web",
+    "iphone": "Scarica per iPhone"
+  },
+  "install": {
+    "steps": {
+      "quit": "Se Fluso è già in esecuzione, <strong>chiudilo prima</strong> con <kbd>⌘Q</kbd>. L'installer non può sostituire un'app in esecuzione.",
+      "open": {
+        "mac": "Apri il <strong>.dmg</strong> scaricato.",
+        "windows": "Apri l'<strong>.exe</strong> scaricato."
+      },
+      "place": {
+        "mac": "Trascina <strong>Fluso</strong> in <strong>Applicazioni</strong>.",
+        "windows": "Avvia l'installer e segui le istruzioni."
+      },
+      "signIn": "Apri Fluso. Accedi con lo stesso account e il tuo spazio di lavoro si aggiorna."
+    },
+    "help": "Su un altro dispositivo? <switch>Cambia piattaforma</switch> qui sopra. Problemi con l'installazione? Scrivi a <email>fluso@premai.io</email>."
+  },
+  "guarantee": "Firmato, autenticato e con aggiornamenti automatici. Se la connessione cade o il laptop va in stop durante una risposta, Fluso conserva il lavoro e continua quando può. I tuoi dati restano nella tua sandbox dedicata nell'UE. Scaricando Fluso, accetti i nostri <terms>termini</terms> e la <privacy>informativa sulla privacy</privacy>.",
+  "trust": [
+    {
+      "label": "Installer firmati",
+      "body": "Le build Mac sono autenticate, quelle Windows sono firmate e le nuove versioni desktop si installano silenziosamente in background."
+    },
+    {
+      "label": "Confine dei dati nell'UE",
+      "body": "Il tuo spazio di lavoro vive nella tua sandbox dedicata collocata in Unione Europea. L'app desktop è solo la finestra su di esso."
+    },
+    {
+      "label": "Si sincronizza all'accesso",
+      "body": "Nuovo dispositivo? Accedi con lo stesso account: progetti, memoria e connettori si aggiornano. La cronologia di sync mostra errori leggibili e ti chiede quando serve riconnettere."
+    }
+  ]
+}

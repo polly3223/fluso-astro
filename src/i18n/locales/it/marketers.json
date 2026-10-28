@@ -1,0 +1,18 @@
+{
+  "stamp": "GROWTH · PERFORMANCE · BRAND",
+  "title": "Un agente per i marketer.",
+  "lead": "Brief, analisi delle performance, gestione degli asset. Il lavoro che ti distoglie dalla strategia, sparito.",
+  "customSkills": [
+    { "title": "Redazione del brief di campagna", "desc": "Legge i successi dell'ultimo trimestre. Redige un nuovo brief, con gli hook ordinati per CTR previsto." },
+    { "title": "Diagnostica dei canali", "desc": "Legge costi e conversioni su tutto il paid. Ti dice quale canale si è rotto in sordina questa settimana." },
+    { "title": "Riutilizzo dei contenuti", "desc": "Un singolo post long-form diventa varianti per LinkedIn, tweet e un blocco per la newsletter, già schedulati." }
+  ],
+  "automations": [
+    { "title": "Recap delle performance del lunedì", "desc": "GA4 + le piattaforme ad diventano un riepilogo su Slack alle 9:00, con le tre cose da cambiare." },
+    { "title": "Checklist di lancio campagna", "desc": "Una nuova campagna predispone gli UTM, verifica il tracciamento e instrada il creative al legale." },
+    { "title": "Passaggio lead-vendite", "desc": "Un nuovo MQL viene arricchito, valutato e instradato all'AE giusto con una nota di contesto." }
+  ],
+  "footerMetaLabel": "Marketing operations",
+  "footerBlurb": "PII instradate attraverso il tuo CDP, consenso rispettato per ogni regione. Conforme a GDPR e CASL. Niente lascia il tuo warehouse né addestra un modello pubblico.",
+  "ctaLabel": "Attiva per il tuo team"
+}

@@ -1,0 +1,162 @@
+---
+// Render of the current Fluso Agents conversation, not a proposed interface.
+// Source: fluso-frontend f00768ddd, AgentSidebar / AgentContextPanel / AgentConversationRow.
+// Names and conversation content are synthetic; no customer data is used.
+import Icon from "./Icon.astro";
+
+interface Props { mobile?: boolean }
+const { mobile = false } = Astro.props;
+const agents = [
+  { name: "Research brief", avatar: "goutte", preview: "The comparison is ready.", next: "Next Mon 9:00 AM" },
+  { name: "Document review", avatar: "capsule", preview: "Ready to start", next: "" },
+];
+---
+
+<div lang="en" class:list={["agent-surface", { mobile }]} aria-hidden="true">
+  {mobile ? <div class="status-bar">
+    <span>9:41</span><span class="island"></span>
+    <span class="phone-status">
+      <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+      <svg width="17" height="12" viewBox="0 0 17 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1.5 4.2a10 10 0 0 1 14 0"/><path d="M4 7a6.5 6.5 0 0 1 9 0"/><circle cx="8.5" cy="10" r="1" fill="currentColor" stroke="none"/></svg>
+      <svg width="27" height="13" viewBox="0 0 27 13" fill="none"><rect x="0.5" y="0.5" width="23" height="12" rx="3.5" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="20" height="9" rx="2.2" fill="currentColor"/><rect x="25" y="4.2" width="1.6" height="4.6" rx=".8" fill="currentColor" opacity=".4"/></svg>
+    </span>
+  </div> : (
+    <aside class="agent-sidebar">
+      <div class="window-dots"><i></i><i></i><i></i><span data-sidebar-label class="ws-label">Agents</span><Icon name="sidebar" /></div>
+      <div class="new-agent"><Icon name="plus" />New agent</div>
+      <div class="search"><Icon name="search" />Search Agents</div>
+      {agents.map((agent, index) => (
+        <div class:list={["agent-row", { selected: index === 0 }]}>
+          <img src={`/assets/agents/${agent.avatar}.svg`} alt="" width="36" height="36" />
+          <div class="row-copy">
+            <div class="row-title"><span>{agent.name}</span><small>{agent.next}</small></div>
+            <p>{agent.preview}</p>
+          </div>
+        </div>
+      ))}
+      <div class="sidebar-account"><span class="account-avatar">M</span>Marco<Icon name="chevronDown" /><Icon name="command" /><Icon name="bug" /></div>
+    </aside>
+  )}
+
+  <div class="agent-workspace">
+    <div class="agent-topbar">
+      {mobile && <Icon name="menu" />}
+      <img src="/assets/agents/goutte.svg" alt="" width="26" height="26" />
+      <span>Research brief</span><Icon name="chevronDown" size={12} />
+      {!mobile && <div class="workspace-switch" data-workspace-switch="agents"><span><Icon name="chats" size={14} stroke={1.7} />Chats</span><span class="active"><Icon name="agents" size={14} stroke={1.7} />Agents</span></div>}
+      <span class="panel-icon"><Icon name="sidebar" /></span>
+    </div>
+    <div class="agent-body">
+      <div class="agent-conversation">
+        <div class="messages">
+          <div class="user-message">Compare the supplier proposals. What should I look at before choosing?</div>
+          <div class="worked">Worked for 24s <Icon name="chevronRight" size={13} /><span></span></div>
+          <div class="answer">
+            <p>The lowest price is only part of the decision. Here are the three points to review:</p>
+            <ul>
+              <li><strong>Scope.</strong> Check what each proposal includes, and what would be charged separately.</li>
+              <li><strong>Delivery.</strong> Compare the stated lead times and any dependencies on your team.</li>
+              <li><strong>Renewal.</strong> Review notice periods and how the price can change at renewal.</li>
+            </ul>
+            <p class="source">Source: <span>supplier-proposals.pdf</span></p>
+          </div>
+          <div class="answer-actions"><Icon name="copy" /><Icon name="thumbsUp" /><Icon name="thumbsDown" /></div>
+        </div>
+        <div class="agent-composer">
+          <div class="composer-placeholder">Message Research brief<Icon name="shield" /></div>
+          <div class="composer-controls"><Icon name="plus" /><span>Ask me first</span><span class="mode"><Icon name="sparkles" />High</span><Icon name="mic" /><span class="send"><Icon name="arrowUp" /></span></div>
+        </div>
+      </div>
+      {!mobile && <aside class="agent-context">
+        <div class="context-heading">Routines<span>+ Add</span></div>
+        <div class="routine">
+          <div class="routine-title">Review the supplier updates.<span class="toggle"><i></i></span></div>
+          <p>Weekly · Mon · 9:00 AM Rome</p>
+          <p>Next Monday, 9:00 AM</p>
+        </div>
+        <div class="context-heading">Sessions</div>
+        <div class="session-row">Supplier comparison<span></span></div>
+        <div class="context-heading">Setup</div>
+        <p class="setup-copy">Compare supplier proposals using the sources I provide. Explain tradeoffs and flag what still needs checking.</p>
+        <div class="setup-actions"><span>Refine with manager</span><span>Edit</span></div>
+      </aside>}
+    </div>
+  </div>
+  {mobile && <div class="home-indicator"></div>}
+</div>
+
+<style>
+  .agent-surface { display: flex; width: 1290px; height: 800px; background: white; color: #101111; font: 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; text-align: left; }
+  .agent-sidebar { display: flex; flex-direction: column; flex: 0 0 282px; margin: 7px; border: 1px solid #dadadb; border-radius: 16px; background: #f5f6f7; padding: 0 8px; }
+  .window-dots { display: flex; align-items: center; gap: 7px; height: 36px; padding: 0 10px; }
+  .window-dots i { width: 12px; height: 12px; border-radius: 50%; background: #ff5f57; }
+  .window-dots i:nth-child(2) { background: #febc2e; }
+  .window-dots i:nth-child(3) { background: #28c840; }
+  .window-dots :global(svg) { margin-left: auto; color: #737579; }
+  .ws-label { margin-left: 8px; font-size: 14px; font-weight: 500; line-height: 20px; color: #101111e6; }
+  .new-agent { display: flex; justify-content: center; align-items: center; gap: 8px; margin: 8px 0 6px; height: 36px; border-radius: 8px; background: #101111; color: white; font-weight: 500; box-shadow: 0 1px 2px #0002; }
+  .search { display: flex; align-items: center; gap: 10px; padding: 10px; color: #737579; }
+  .agent-row { display: flex; align-items: center; gap: 10px; border-radius: 8px; padding: 10px 8px; }
+  .agent-row.selected { background: #1011110f; }
+  .row-copy { flex: 1; min-width: 0; }
+  .row-title { display: flex; align-items: baseline; gap: 6px; }
+  .row-title > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .row-title small { flex-shrink: 0; font-size: 10px; color: #737579; }
+  .row-copy p { margin: 1px 0 0; color: #737579; font-size: 12px; }
+  .sidebar-account { display: flex; align-items: center; gap: 12px; border-top: 1px solid #e4e5e6; margin: auto -8px 0; padding: 14px; }
+  .account-avatar { display: grid; place-items: center; width: 26px; height: 26px; border: 1px solid #dadadb; border-radius: 50%; font-size: 11px; }
+  .sidebar-account :global(svg:first-of-type) { margin-left: auto; }
+  .sidebar-account :global(svg) { color: #737579; }
+  .agent-workspace { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+  .agent-topbar { position: relative; display: flex; align-items: center; gap: 10px; height: 64px; flex-shrink: 0; padding: 0 18px; }
+  .workspace-switch { position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; box-sizing: border-box; height: 36px; padding: 3px; border: 1px solid #dadadb; border-radius: 9999px; background: #f5f6f7b3; font-size: 13px; font-weight: 500; }
+  .workspace-switch span { display: flex; align-items: center; justify-content: center; gap: 6px; width: 88px; height: 100%; border-radius: 9999px; color: #737579; }
+  .workspace-switch .active { background: #101111; color: white; box-shadow: 0 1px 2px #0003; }
+  .panel-icon { display: flex; margin-left: auto; }
+  .agent-body { display: flex; flex: 1; min-height: 0; }
+  .agent-conversation { min-width: 0; flex: 1; display: flex; flex-direction: column; padding: 0 22px 14px; }
+  .messages { margin-top: auto; padding-bottom: 28px; }
+  .user-message { width: fit-content; max-width: 86%; margin-left: auto; padding: 12px 17px; border: 1px solid #dadadb; border-radius: 24px 24px 8px 24px; }
+  .worked { display: flex; align-items: center; gap: 8px; color: #85868a; margin: 40px 0 12px; font-size: 13px; }
+  .worked span { height: 1px; flex: 1; background: #e7e7e7; }
+  .answer p { margin: 0; }
+  .answer ul { list-style: disc; padding-left: 22px; margin: 16px 0; }
+  .answer li { margin: 8px 0; }
+  .answer strong { font-weight: 600; }
+  .answer .source { color: #737579; font-size: 12px; }
+  .source span { border-bottom: 1px solid #c8c9ca; color: #4b4d50; }
+  .answer-actions { display: flex; gap: 16px; margin-top: 20px; color: #6a6c70; }
+  .agent-composer { border: 1px solid #dadadb; border-radius: 22px; padding: 16px; height: 124px; flex-shrink: 0; display: flex; flex-direction: column; justify-content: space-between; }
+  .composer-placeholder { display: flex; justify-content: space-between; color: #a4a7ac; }
+  .composer-controls { display: flex; gap: 14px; align-items: center; color: #737579; font-size: 12px; }
+  .mode { display: flex; gap: 6px; align-items: center; margin-left: auto; }
+  .send { display: grid; place-items: center; border-radius: 50%; width: 32px; height: 32px; background: #f5f5f5; }
+  .agent-context { width: 292px; flex-shrink: 0; border-left: 1px solid #eee; padding: 12px 16px; }
+  .context-heading { display: flex; justify-content: space-between; align-items: center; height: 28px; margin-bottom: 8px; }
+  .context-heading:not(:first-child) { margin-top: 26px; }
+  .context-heading > span { color: #737579; font-size: 12px; }
+  .routine { border: 1px solid #bdbfc2; border-radius: 9px; padding: 12px; }
+  .routine-title { display: flex; align-items: flex-start; gap: 14px; line-height: 1.35; margin-bottom: 5px; }
+  .toggle { display: flex; justify-content: flex-end; flex: 0 0 32px; padding: 2px; border-radius: 12px; background: #101111; }
+  .toggle i { width: 14px; height: 14px; background: white; border-radius: 50%; }
+  .routine p { font-size: 12px; line-height: 1.4; color: #737579; margin: 0; }
+  .session-row { display: flex; justify-content: space-between; align-items: center; color: #737579; padding: 8px 0; }
+  .session-row span { width: 7px; height: 7px; border-radius: 50%; background: #c7c7c7; }
+  .setup-copy { color: #737579; margin: 0 0 12px; }
+  .setup-actions { display: flex; gap: 12px; align-items: center; font-size: 12px; }
+  .setup-actions span:first-child { border: 1px solid #a6a7aa; border-radius: 9px; padding: 6px 10px; box-shadow: 0 1px 2px #0001; }
+  .setup-actions span:last-child { color: #737579; }
+  .mobile { position: relative; width: 390px; height: 844px; flex-direction: column; }
+  .status-bar { display: flex; align-items: center; justify-content: space-between; height: 52px; padding: 8px 30px 0; font-weight: 600; flex-shrink: 0; }
+  .island { position: absolute; left: 50%; transform: translateX(-50%); width: 122px; height: 34px; background: #101111; border-radius: 20px; }
+  .phone-status { display: flex; align-items: center; gap: 6px; }
+  .mobile .agent-topbar { height: 54px; padding: 0 20px; gap: 10px; }
+  .mobile .agent-topbar > span:not(.panel-icon) { font-size: 14px; }
+  .mobile .agent-conversation { padding: 0 16px 32px; }
+  .mobile .messages { padding-bottom: 26px; }
+  .mobile .user-message { max-width: 94%; }
+  .mobile .worked { margin-top: 30px; }
+  .mobile .answer { font-size: 14px; line-height: 1.55; }
+  .mobile .agent-composer { height: 120px; }
+  .home-indicator { position: absolute; bottom: 9px; left: 50%; transform: translateX(-50%); width: 135px; height: 5px; background: #101111; border-radius: 4px; }
+</style>

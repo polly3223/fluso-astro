@@ -1,0 +1,188 @@
+{
+  "plans": {
+    "title": "Piani Fluso desktop,<br/>capacità seria.",
+    "subtitle": "Inizia con Free, scegli Plus per 10× l’utilizzo settimanale di Free o Pro per 10× quello di Plus e la modalità confidenziale. Gli agenti sono inclusi in tutti i piani.",
+    "mostPopular": "Più popolare",
+    "items": [
+      {
+        "name": "Free",
+        "desc": "Abbastanza per provare Fluso desktop su lavoro reale.",
+        "price": "$0",
+        "period": "per sempre",
+        "includes": "Include",
+        "features": [
+          "Capacità di utilizzo sufficiente per iniziare",
+          "Modelli standard",
+          "Progetti, chat, file e agenti",
+          "Connettori e competenze",
+          "Generazione di artefatti",
+          "Note delle riunioni",
+          "Sandbox dedicata",
+          "Hosting in Europa"
+        ],
+        "cta": "Inizia gratis"
+      },
+      {
+        "name": "Plus",
+        "desc": "Per usare Fluso desktop come assistente quotidiano. La maggior parte delle persone inizia qui.",
+        "period": "/utente/mese",
+        "includes": "Tutto di Free, più",
+        "features": [
+          "<strong>10× la capacità settimanale</strong> di Free",
+          "Disponibilità rinnovata ogni settimana",
+          "Tutte le funzionalità di base dello spazio di lavoro"
+        ],
+        "cta": "Scegli Plus"
+      },
+      {
+        "name": "Pro",
+        "desc": "Per un uso intensivo e inferenza confidenziale su Fluso desktop.",
+        "period": "/utente/mese",
+        "includes": "Tutto di Plus, più",
+        "features": [
+          "<strong>10× l’utilizzo settimanale</strong> di Plus",
+          "<strong>Modalità confidenziale</strong> inclusa",
+          "Tutte le funzionalità di base dello spazio di lavoro"
+        ],
+        "cta": "Scegli Pro"
+      },
+      {
+        "name": "Enterprise",
+        "desc": "Per organizzazioni con esigenze personalizzate.",
+        "price": "Su misura",
+        "period": "preventivo",
+        "includes": "Tutto di Pro, più",
+        "features": [
+          "<strong>SSO</strong> (Single Sign-On)",
+          "Account executive dedicato",
+          "Assistenza clienti dedicata",
+          "Rilevamento degli impegni personalizzato, su misura per i tuoi flussi di lavoro",
+          "Ambiente sandbox crittografato",
+          "Controlli personalizzati sulla conservazione dei dati",
+          "Log di audit",
+          "Competenze personalizzate",
+          "SOC 2 Type II in essere; ISO 27001 in corso"
+        ],
+        "cta": "Contattaci"
+      }
+    ],
+    "billingNote": "Prezzi in USD. Plus e Pro sono fatturati mensilmente. La capacità di utilizzo di Free, Plus e Pro si rinnova ogni settimana.",
+    "trialNote": "I nuovi abbonati idonei possono attivare una prova Pro di 30 giorni. È richiesta una carta di pagamento; dopo la prova, Pro si rinnova a $30/mese salvo disdetta. Free non richiede una carta."
+  },
+  "trust": {
+    "title": "Quattro cose che ogni piano Fluso desktop<br/>ottiene di default.",
+    "subtitle": "Ogni piano Fluso desktop include lo stesso spazio di lavoro di base, modelli aperti e hosting europeo. Scegli la capacità di utilizzo e il livello di privacy che ti servono.",
+    "items": [
+      {
+        "label": "Utilizzo",
+        "heading": "Capacità per il tuo lavoro",
+        "body": "Free offre la capacità per iniziare. Plus include 10× l’utilizzo settimanale di Free. Pro include 10× quello di Plus. Nell’app puoi vedere la percentuale utilizzata e quando si rinnova."
+      },
+      {
+        "label": "Modelli",
+        "heading": "Open-source, sempre",
+        "body": "Solo modelli open-source, ospitati in Europa. Nessuna API proprietaria nella pipeline."
+      },
+      {
+        "label": "Hosting",
+        "heading": "Hosting in Europa",
+        "body": "Calcolo, archiviazione e orchestrazione girano tutti in datacenter europei. Allineati al GDPR, sovrani per progettazione."
+      },
+      {
+        "label": "Privacy",
+        "heading": "I tuoi dati, il tuo confine",
+        "body": "Il tuo lavoro non addestra mai modelli condivisi. Elaborazione confidenziale su Pro ed Enterprise, sandbox crittografate per le organizzazioni che le richiedono."
+      }
+    ]
+  },
+  "compare": {
+    "title": "Tutti i dettagli,<br/>fianco a fianco.",
+    "subtitle": "Confronta utilizzo, privacy e funzionalità dello spazio di lavoro nei piani Fluso desktop.",
+    "swipeHint": "Scorri per confrontare",
+    "headers": [
+      "Funzionalità",
+      "Free",
+      "Plus",
+      "Pro",
+      "Enterprise"
+    ],
+    "included": "Incluso",
+    "notIncluded": "Non incluso",
+    "rows": [
+      {
+        "label": "Utilizzo settimanale",
+        "cells": [
+          "Per iniziare",
+          "10× Free",
+          "10× Plus",
+          "Personalizzato"
+        ]
+      },
+      {
+        "label": "Modalità confidenziale"
+      },
+      {
+        "label": "Progetti, chat, file e agenti"
+      },
+      {
+        "label": "Modelli standard"
+      },
+      {
+        "label": "Sandbox",
+        "cells": [
+          "Dedicata",
+          "Dedicata",
+          "Dedicata",
+          "Crittografata"
+        ]
+      },
+      {
+        "label": "Marketplace delle competenze"
+      },
+      {
+        "label": "Generazione di artefatti"
+      },
+      {
+        "label": "Connettori"
+      },
+      {
+        "label": "Supporto dedicato e AE"
+      },
+      {
+        "label": "SSO"
+      },
+      {
+        "label": "Log di audit"
+      },
+      {
+        "label": "Conservazione dei dati personalizzata"
+      },
+      {
+        "label": "Competenze personalizzate"
+      },
+      {
+        "label": "Hosting",
+        "cells": [
+          "Europa",
+          "Europa",
+          "Europa",
+          "Europa"
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "title": "Domande<br/>prima di passare a noi.",
+    "subtitle": "Le cose che i team chiedono prima di spostare il loro lavoro quotidiano su Fluso. Se ci è sfuggito qualcosa, scrivici.",
+    "cta": "Parla con il nostro team",
+    "tryFree": "Oppure <tryfree>prova Fluso gratis</tryfree>. Nessuna carta richiesta."
+  },
+  "closing": {
+    "title": "Prova ciascun<br/>piano Fluso desktop.",
+    "subtitle": "Free è per sempre per Fluso desktop. Plus, Pro ed Enterprise sono disponibili quando sei pronto. L'app mobile non vende né gestisce i piani Fluso desktop.",
+    "ctas": [
+      "Esplora i piani Fluso desktop",
+      "Parla con il nostro team"
+    ]
+  }
+}

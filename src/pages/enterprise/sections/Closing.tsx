@@ -1,3 +1,4 @@
+import {localePath} from "@/i18n";
 import { Link } from "react-router-dom";
 import { Trans, useTranslation } from "react-i18next";
 import { cn } from "@/utils/styles";
@@ -48,7 +49,7 @@ export default function Closing() {
               "transition-[background,border-color,transform] duration-[180ms] ease-[ease] hover:-translate-y-px hover:border-[rgba(12,12,12,0.5)] hover:bg-white/50",
               "[&_svg]:size-3.5 [&_svg]:transition-transform [&_svg]:duration-[180ms] [&_svg]:ease-[ease] hover:[&_svg]:translate-x-0.5",
             )}
-            href="/pricing"
+            href={localePath("/pricing")}
           >
             {t("closing.ctaSecondary")}
             <svg {...ARROW_SVG_PROPS} aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>

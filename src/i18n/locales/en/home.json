@@ -2,7 +2,7 @@
   "hero": {
     "badge": "Engineered in Switzerland, hosted in the EU",
     "title": "Your proactive<br/>AI workspace",
-    "lead": "Fluso brings proactive AI to everything you do. Full context. Complete control. Deep focus.",
+    "lead": "Chat with your context. Give recurring work to agents. Your files, apps and instructions, in one private workspace.",
     "downloadMac": "Download for Mac",
     "downloadIphone": "Download for iPhone",
     "otherPlatforms": "Other platforms",
@@ -25,7 +25,7 @@
       },
       {
         "title": "Performs complex multi-step tasks",
-        "copy": "Breaks the work into steps: research, draft, check, revise. GLM 5.2 powers the deep work, and per-chat Fast mode keeps simpler turns quick."
+        "copy": "Breaks the work into steps: research, draft, check, revise. Choose the reasoning level that fits the task."
       },
       {
         "title": "Builds artifacts in formats you work with",
@@ -184,5 +184,50 @@
     "downloadMac": "Download for Mac",
     "allInstallers": "All installers (Mac Intel · Windows)",
     "enterpriseLine": "Or <contact>tell us about your team</contact> for enterprise."
+  },
+  "agents": {
+    "eyebrow": "Fluso Agents",
+    "title": "Give the recurring work an agent.",
+    "body": "Give an agent a job, the files it needs, and access to the right apps. Keep its conversation going, refine the instructions, and add a routine when the work needs to happen again.",
+    "availability": "Included in every plan. Agent activity uses your plan’s weekly allowance.",
+    "cta": "Create your first agent",
+    "examplesLabel": "A few jobs to start with",
+    "steps": [
+      {
+        "title": "Set it up once",
+        "body": "Describe the job to the manager. Review the instructions, choose the files and connected apps, and set the tool permissions."
+      },
+      {
+        "title": "Keep the context",
+        "body": "Return to the same agent to ask questions, add information and review its work. Its setup and sessions stay together."
+      },
+      {
+        "title": "Add a routine",
+        "body": "Run a task once, daily, on weekdays or weekly. Choose a time and timezone, then come back to the conversation for the result."
+      }
+    ],
+    "examples": [
+      {
+        "title": "Morning inbox",
+        "schedule": "Weekdays, 08:30",
+        "body": "Sort new messages into what needs you, what is waiting and what can wait. Prepare reply drafts for your review.",
+        "apps": "Gmail",
+        "control": "Allow reading and draft creation; deny sending."
+      },
+      {
+        "title": "Meeting briefs",
+        "schedule": "Before the day’s calls",
+        "body": "Bring together the calendar invite, recent emails and relevant Slack context. Summarise open commitments and questions for each external call.",
+        "apps": "Google Calendar · Gmail · Slack",
+        "control": "Give the agent read access to the sources it needs."
+      },
+      {
+        "title": "Weekly reporting",
+        "schedule": "Every Monday, 09:00",
+        "body": "Read the latest numbers, highlight what changed and prepare a concise update with links back to the sources.",
+        "apps": "Google Sheets · connected files",
+        "control": "Review the result in the agent conversation before sharing."
+      }
+    ]
   }
 }

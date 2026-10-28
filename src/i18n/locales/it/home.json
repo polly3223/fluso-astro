@@ -1,0 +1,233 @@
+{
+  "hero": {
+    "badge": "Progettato in Svizzera, ospitato nell'UE",
+    "title": "Il tuo spazio di lavoro<br/>AI personale",
+    "lead": "Chatta con il tuo contesto. Affida agli agenti il lavoro che si ripete. File, app e istruzioni, in un unico spazio di lavoro privato.",
+    "downloadMac": "Scarica per Mac",
+    "downloadIphone": "Scarica per iPhone",
+    "otherPlatforms": "Altre piattaforme",
+    "checks": [
+      "Privato fin dalla progettazione",
+      "Contesto connesso",
+      "Modelli open-source"
+    ],
+    "syncsWith": "Si sincronizza con",
+    "foundation": "La decisione è in un thread di Slack, i numeri in un foglio, la scadenza è uscita durante una call. Fluso riunisce tutto in un unico spazio di lavoro che ricorda, nel tuo ambiente sicuro."
+  },
+  "howItWorks": {
+    "title": "Da intenzioni sparse<br/>al lavoro finito.",
+    "subtitle": "Cinque passaggi da una casella di posta caotica a un documento finito. Ecco cosa succede tra l'uno e l'altro.",
+    "tablistLabel": "Come funziona Fluso, in cinque passaggi",
+    "steps": [
+      {
+        "title": "Tiene traccia del lavoro in sospeso",
+        "copy": "Legge tra Gmail, Slack, Drive e Calendar, incluso il contesto email recente invece di controllare solo l'ultimo messaggio. Estrae gli impegni concreti e a ciascuno assegna un responsabile, una scadenza e l'origine."
+      },
+      {
+        "title": "Esegue attività complesse in più fasi",
+        "copy": "Suddivide il lavoro in passaggi: ricerca, scrittura, verifica e revisione. Scegli il livello di ragionamento adatto al compito."
+      },
+      {
+        "title": "Crea artefatti nei formati con cui lavori",
+        "copy": "Docs, Sheets, Slides, Word, Excel, PowerPoint, PDF. I file consegnati si aprono in chat per Markdown, documenti e codice; le modifiche tornano all'assistente senza perdere quelle manuali."
+      },
+      {
+        "title": "Si integra con gli strumenti che già usi",
+        "copy": "Gmail, Outlook, Drive, Calendar, Slack, Teams, Notion, Linear. Connetti, rivedi i permessi per tool, carica su Drive dalla chat e recupera OAuth bloccati da un unico posto."
+      },
+      {
+        "title": "Scorre attraverso le tue comunicazioni",
+        "copy": "Risposte, follow-up, riepiloghi. Redatti con il tuo tono, rifiniti prima dell'invio e mantenuti prima in bozza su Gmail finché non approvi."
+      }
+    ]
+  },
+  "capabilities": {
+    "title": "Pensato per automatizzare<br/>il lavoro di conoscenza.",
+    "subtitle": "Il lavoro mentale ripetitivo, fatto. Ricerca, redazione, reportistica, outreach, sugli strumenti che già usi.",
+    "ariaLabel": "Funzionalità",
+    "tiles": {
+      "buildDocuments": {
+        "title": "Crea documenti.",
+        "desc": "Fogli, presentazioni, memo, contratti, brief — redatti dal tuo contesto, modificabili dopo la consegna, esportati senza perdere modifiche manuali."
+      },
+      "automateCommunications": {
+        "title": "Automatizza le comunicazioni.",
+        "desc": "Risposte con il tuo tono. Follow-up in coda. Gmail resta prima in bozza e chiede conferma prima di email o messaggi in uscita. Su email, Slack e il tuo CRM."
+      },
+      "captureMeetings": {
+        "title": "Cattura le riunioni.",
+        "desc": "Presentati. Esci con il riepilogo, le azioni da svolgere e il follow-up già pronti."
+      },
+      "buildAutomations": {
+        "title": "Crea automazioni.",
+        "desc": "Imposta una volta il memo del consiglio del venerdì o il brief della pipeline delle 9. Gli orari relativi usano il tuo fuso locale. Senza codice."
+      },
+      "organiseProjects": {
+        "title": "Organizza i progetti.",
+        "desc": "Uno spazio di lavoro che cerca nelle conversazioni passate, evidenzia le corrispondenze, conserva allegati per chat e mostra cosa blocca il passo successivo."
+      },
+      "installSkills": {
+        "title": "Installa competenze.",
+        "desc": "Oltre 100 istruzioni salvate, a un clic di distanza. Gli strumenti collegati mantengono credenziali crittografate e si riconnettono in modo pulito."
+      },
+      "exploreUseCases": {
+        "title": "Esplora i casi d'uso.",
+        "desc": "Nove settori. Ognuno usa Fluso in modo diverso. Scegli quello più vicino al tuo lavoro."
+      }
+    },
+    "skills": [
+      "Brief quotidiano",
+      "Memo del consiglio",
+      "Brief della pipeline",
+      "Revisione contratto",
+      "Preparazione 1:1",
+      "Triage della posta"
+    ],
+    "useCasesTags": [
+      "Fondatori",
+      "Avvocati",
+      "Investitori",
+      "+6 altri"
+    ],
+    "mobileFeatures": [
+      {
+        "title": "Crea documenti",
+        "desc": "Fogli, presentazioni, memo, contratti, brief: redatti dal tuo contesto e modificabili dopo la consegna."
+      },
+      {
+        "title": "Automatizza le comunicazioni",
+        "desc": "Risposte con il tuo tono. Follow-up in coda. Gmail resta prima in bozza e chiede conferma prima dell'invio."
+      },
+      {
+        "title": "Cattura le riunioni",
+        "desc": "Esci con il riepilogo, le azioni da svolgere e il follow-up già pronti."
+      },
+      {
+        "title": "Organizza i progetti",
+        "desc": "Uno spazio di lavoro che cerca nelle conversazioni, conserva allegati per chat e mostra cosa blocca il passo successivo."
+      },
+      {
+        "title": "Crea automazioni",
+        "desc": "Imposta una volta il memo del consiglio del venerdì. Gli orari relativi usano il tuo fuso locale."
+      },
+      {
+        "title": "Installa competenze",
+        "desc": "Oltre 100 istruzioni salvate. Oppure crea le tue in linguaggio naturale."
+      },
+      {
+        "title": "Esplora i casi d'uso",
+        "desc": "Nove settori. Scegli quello più vicino al tuo lavoro."
+      }
+    ]
+  },
+  "connectors": {
+    "title": "Una memoria di<br/>come lavori.",
+    "subtitle": "Fluso costruisce un grafo privato di come operi davvero: persone, progetti, decisioni e ciò che è dovuto a ciascuno.",
+    "hubAriaLabel": "Attiva la rete Fluso",
+    "dragSourceAriaLabel": "Trascina il connettore {{source}}",
+    "cards": [
+      {
+        "title": "Tutto catturato,<br/>sempre tuo.",
+        "body": "Posta, calendario, documenti, riunioni, acquisiti in continuo e indicizzati nel tuo perimetro. Mai usati per l'addestramento."
+      },
+      {
+        "title": "Tutto connesso.",
+        "body": "Persone, progetti, thread e impegni intrecciati in un unico grafo. Si affina a ogni riunione che fai."
+      },
+      {
+        "title": "Risposte<br/>con le fonti.",
+        "body": "Chiedi qualsiasi cosa. Ottieni la risposta più i thread, i documenti e le riunioni da cui proviene davvero. Verificabile, ogni volta."
+      }
+    ],
+    "researchLink": "Leggi la nostra ricerca aperta sulla memoria AI su <strong>prem-research</strong>"
+  },
+  "privacy": {
+    "title": "Privato fin dalla progettazione.<br/>Trasparente per impostazione predefinita.",
+    "subtitle": "Modelli aperti, perimetri verificabili, il tuo deployment. I tuoi dati non addestrano mai nulla.",
+    "deploymentOptions": "Opzioni di deployment",
+    "commitments": [
+      {
+        "eyebrow": "Modelli",
+        "heading": "Intelligenza<br/>open-source.",
+        "body": "Costruita su modelli open-source. Ispeziona ogni livello. I tuoi dati non entrano mai nell'addestramento."
+      },
+      {
+        "eyebrow": "Infrastruttura",
+        "heading": "Perimetri<br/>distribuibili.",
+        "body": "Scegli il tuo perimetro: il nostro cloud sicuro, il tuo VPC o completamente air-gapped on premise. Lo stesso spazio di lavoro, le tue regole."
+      },
+      {
+        "eyebrow": "Giurisdizione",
+        "heading": "Protezione dei dati<br/>nell'UE.",
+        "body": "Ospitato sul confidential compute di Prem AI nell'UE. Conforme al GDPR e sovrano fin dalla progettazione."
+      },
+      {
+        "eyebrow": "Isolamento",
+        "heading": "Sandbox<br/>dedicato.",
+        "body": "Ogni spazio di lavoro gira nel proprio ambiente isolato. Nessun tenant condiviso, nessuna fuga incrociata, nessun addestramento sul corpus di altri."
+      },
+      {
+        "eyebrow": "Portabilità",
+        "heading": "Workflow<br/>recuperabili.",
+        "body": "Aggiornamenti automatici, recupero offline, recupero dai problemi del provider e risposte in corso preservate impediscono al lavoro lungo di restare bloccato."
+      },
+      {
+        "eyebrow": "Standard",
+        "heading": "Nessun<br/>lock-in del fornitore.",
+        "body": "I connettori sono basati su standard. I modelli sono sostituibili. I tuoi dati vivono in formati aperti che puoi portare in qualsiasi altro sistema."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Quello che tutti<br/>chiedono per primo.",
+    "subtitle": "Le cose che le persone vogliono sapere prima di scaricare. Se ci è sfuggito qualcosa, siamo a disposizione.",
+    "downloadMac": "Scarica per Mac",
+    "allInstallers": "Tutti gli installer (Mac Intel · Windows)",
+    "enterpriseLine": "Oppure <contact>parlaci del tuo team</contact> per l'enterprise."
+  },
+  "agents": {
+    "eyebrow": "Fluso Agents",
+    "title": "Affida il lavoro ricorrente a un agente.",
+    "body": "Assegna un compito a un agente, aggiungi i file necessari e collegalo alle app giuste. Continua la conversazione, affina le istruzioni e aggiungi una routine quando il lavoro deve ripetersi.",
+    "availability": "Inclusi in tutti i piani. Le attività degli agenti utilizzano la capacità settimanale del tuo piano.",
+    "cta": "Crea il tuo primo agente",
+    "examplesLabel": "Qualche attività da cui iniziare",
+    "steps": [
+      {
+        "title": "Configuralo una volta",
+        "body": "Descrivi il compito al manager. Rivedi le istruzioni, scegli i file e le app collegate e imposta i permessi degli strumenti."
+      },
+      {
+        "title": "Mantieni il contesto",
+        "body": "Torna dallo stesso agente per fare domande, aggiungere informazioni e controllare il lavoro. Configurazione e sessioni restano insieme."
+      },
+      {
+        "title": "Aggiungi una routine",
+        "body": "Esegui un compito una volta, ogni giorno, nei giorni feriali o ogni settimana. Scegli ora e fuso orario, poi ritrova il risultato nella conversazione."
+      }
+    ],
+    "examples": [
+      {
+        "title": "La posta del mattino",
+        "schedule": "Giorni feriali, 08:30",
+        "body": "Distingui i nuovi messaggi che richiedono attenzione, quelli in attesa e quelli che possono aspettare. Prepara bozze di risposta da rivedere.",
+        "apps": "Gmail",
+        "control": "Consenti lettura e creazione di bozze; nega l’invio."
+      },
+      {
+        "title": "Preparazione alle riunioni",
+        "schedule": "Prima delle chiamate del giorno",
+        "body": "Riunisci l’invito, le email recenti e il contesto rilevante da Slack. Riassumi impegni aperti e domande per ogni incontro esterno.",
+        "apps": "Google Calendar · Gmail · Slack",
+        "control": "Concedi accesso in lettura alle fonti necessarie."
+      },
+      {
+        "title": "Report settimanali",
+        "schedule": "Ogni lunedì, 09:00",
+        "body": "Leggi i dati aggiornati, evidenzia i cambiamenti e prepara un breve riepilogo con i link alle fonti.",
+        "apps": "Google Sheets · file collegati",
+        "control": "Controlla il risultato nella conversazione prima di condividerlo."
+      }
+    ]
+  }
+}

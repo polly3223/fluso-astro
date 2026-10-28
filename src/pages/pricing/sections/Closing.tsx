@@ -1,3 +1,4 @@
+import {localePath} from "@/i18n";
 import { Trans, useTranslation } from "react-i18next";
 import { cn } from "@/utils/styles";
 import { CARD, KICKER, TITLE } from "@/components/cardChrome";
@@ -43,7 +44,7 @@ export default function Closing() {
                     ? "bg-bone text-ink border-bone shadow-[0_14px_32px_rgba(0,0,0,0.25)] hover:bg-white hover:border-white"
                     : "bg-transparent text-bone border-[rgba(242,241,237,0.3)] hover:bg-[rgba(242,241,237,0.08)] hover:border-[rgba(242,241,237,0.55)]",
                 )}
-                href={c.href}
+                href={c.external ? c.href : localePath(c.href)}
                 {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >
                 {ctaLabels[i]}

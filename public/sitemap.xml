@@ -1,99 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://fluso.ai/</loc>
-    <lastmod>2026-06-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://fluso.ai/download</loc>
-    <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fluso.ai/enterprise</loc>
-    <lastmod>2026-06-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fluso.ai/for-consultants</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fluso.ai/for-doctors</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fluso.ai/for-founders</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fluso.ai/for-investors</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fluso.ai/for-lawyers</loc>
-    <lastmod>2026-06-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fluso.ai/for-marketers</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fluso.ai/for-operations</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fluso.ai/for-researchers</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fluso.ai/for-sales</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fluso.ai/get-started</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fluso.ai/pricing</loc>
-    <lastmod>2026-06-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fluso.ai/privacy</loc>
-    <lastmod>2026-06-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://fluso.ai/terms</loc>
-    <lastmod>2026-06-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url><loc>https://fluso.ai/</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/"/></url>
+<url><loc>https://fluso.ai/it/</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/"/></url>
+<url><loc>https://fluso.ai/pricing</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/pricing"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/pricing"/></url>
+<url><loc>https://fluso.ai/it/pricing</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/pricing"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/pricing"/></url>
+<url><loc>https://fluso.ai/enterprise</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/enterprise"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/enterprise"/></url>
+<url><loc>https://fluso.ai/it/enterprise</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/enterprise"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/enterprise"/></url>
+<url><loc>https://fluso.ai/download</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/download"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/download"/></url>
+<url><loc>https://fluso.ai/it/download</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/download"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/download"/></url>
+<url><loc>https://fluso.ai/get-started</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/get-started"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/get-started"/></url>
+<url><loc>https://fluso.ai/it/get-started</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/get-started"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/get-started"/></url>
+<url><loc>https://fluso.ai/privacy</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/privacy"/></url>
+<url><loc>https://fluso.ai/terms</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/terms"/></url>
+<url><loc>https://fluso.ai/for-founders</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/for-founders"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/for-founders"/></url>
+<url><loc>https://fluso.ai/it/for-founders</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/for-founders"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/for-founders"/></url>
+<url><loc>https://fluso.ai/for-lawyers</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/for-lawyers"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/for-lawyers"/></url>
+<url><loc>https://fluso.ai/it/for-lawyers</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/for-lawyers"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/for-lawyers"/></url>
+<url><loc>https://fluso.ai/for-investors</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/for-investors"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/for-investors"/></url>
+<url><loc>https://fluso.ai/it/for-investors</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/for-investors"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/for-investors"/></url>
+<url><loc>https://fluso.ai/for-marketers</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/for-marketers"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/for-marketers"/></url>
+<url><loc>https://fluso.ai/it/for-marketers</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/for-marketers"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/for-marketers"/></url>
+<url><loc>https://fluso.ai/for-researchers</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/for-researchers"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/for-researchers"/></url>
+<url><loc>https://fluso.ai/it/for-researchers</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/for-researchers"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/for-researchers"/></url>
+<url><loc>https://fluso.ai/for-doctors</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/for-doctors"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/for-doctors"/></url>
+<url><loc>https://fluso.ai/it/for-doctors</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/for-doctors"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/for-doctors"/></url>
+<url><loc>https://fluso.ai/for-consultants</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/for-consultants"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/for-consultants"/></url>
+<url><loc>https://fluso.ai/it/for-consultants</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/for-consultants"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/for-consultants"/></url>
+<url><loc>https://fluso.ai/for-sales</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/for-sales"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/for-sales"/></url>
+<url><loc>https://fluso.ai/it/for-sales</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/for-sales"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/for-sales"/></url>
+<url><loc>https://fluso.ai/for-operations</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/for-operations"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/for-operations"/></url>
+<url><loc>https://fluso.ai/it/for-operations</loc><xhtml:link rel="alternate" hreflang="en" href="https://fluso.ai/for-operations"/><xhtml:link rel="alternate" hreflang="it" href="https://fluso.ai/it/for-operations"/></url>
 </urlset>

@@ -1,0 +1,18 @@
+{
+  "stamp": "HIPAA · INFORMAZIONI SANITARIE PROTETTE",
+  "title": "Un agente per i medici.",
+  "lead": "La compilazione delle cartelle, le autorizzazioni preventive, la posta. Gestite, così puoi restare con il paziente.",
+  "customSkills": [
+    { "title": "Bozze delle note di visita", "desc": "Ascolta con il consenso. Redige una nota SOAP e precompila i codici che scegli di solito." },
+    { "title": "Pratiche di autorizzazione preventiva", "desc": "Recupera l'elenco dei problemi e gli esami recenti. Compone la pratica che il tuo assicuratore accetta." },
+    { "title": "Smistamento della posta", "desc": "Legge i messaggi dei pazienti e gli esami. Segnala i due o tre che richiedono la tua attenzione oggi." }
+  ],
+  "automations": [
+    { "title": "Riepilogo post-visita", "desc": "Una visita conclusa genera un riepilogo comprensibile per il paziente, inviato per la tua revisione." },
+    { "title": "Orchestrazione dei rinnovi terapia", "desc": "Le richieste di rinnovo vengono verificate con PDMP ed EHR. Bozza pronta per la tua firma." },
+    { "title": "Contatto sulle lacune assistenziali", "desc": "Un'esecuzione settimanale individua i pazienti in ritardo sugli screening e redige il contatto." }
+  ],
+  "footerMetaLabel": "Flusso di lavoro clinico",
+  "footerBlurb": "Funziona all'interno del tuo ambiente clinico. I PHI non lasciano mai il tenant né addestrano un modello pubblico. BAA firmato al momento del deployment.",
+  "ctaLabel": "Attiva nel tuo studio"
+}

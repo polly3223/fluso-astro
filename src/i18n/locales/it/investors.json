@@ -1,0 +1,18 @@
+{
+  "stamp": "PER I PROFESSIONISTI DEGLI INVESTIMENTI",
+  "title": "Un agente per gli investitori.",
+  "lead": "Sourcing, due diligence e monitoraggio del portafoglio. In funzione mentre vai al prossimo meeting.",
+  "customSkills": [
+    { "title": "Triage degli inbound", "desc": "Legge i deck, li valuta rispetto alla tua tesi e redige una risposta di tre righe nel tuo stile." },
+    { "title": "Pacchetti di due diligence", "desc": "Estrae dati finanziari, traffico e background dei fondatori. Assembla la bozza del memo." },
+    { "title": "Monitoraggio del portafoglio", "desc": "Sorveglia le portfolio company per aggiornamenti, notizie e assunzioni chiave. Digest settimanale prima di lunedì." }
+  ],
+  "automations": [
+    { "title": "Igiene della pipeline", "desc": "Un pitch via email diventa un record in Affinity. Promemoria impostato per la decisione di intro al partner." },
+    { "title": "Redazione della lettera agli LP", "desc": "A fine trimestre estrae IRR e MOIC più gli aggiornamenti delle portfolio company. Redige la lettera agli LP." },
+    { "title": "Note delle reference call", "desc": "Registra le reference call e fissa le citazioni alla pagina di due diligence del fondatore." }
+  ],
+  "footerMetaLabel": "Modalità investitore",
+  "footerBlurb": "Deck dei fondatori, due diligence vincolata da MNDA e corrispondenza con gli LP restano dentro il perimetro del tuo fondo. Nessun addestramento di terze parti. Log di audit su ogni azione.",
+  "ctaLabel": "Attiva per il tuo fondo"
+}

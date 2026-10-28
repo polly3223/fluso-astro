@@ -63,6 +63,10 @@ export default function Download() {
             <p className={cn(SUBTITLE, "max-w-[520px] max-[1024px]:max-w-full")}>
               {t("hero.subtitle")}
             </p>
+            <div className="mt-5 flex flex-wrap gap-5 text-sm">
+              <a className="underline underline-offset-4" href="https://app.fluso.ai">{t('platforms.web')}</a>
+              <a className="underline underline-offset-4" href="https://apps.apple.com/us/app/fluso/id6780937477">{t('platforms.iphone')}</a>
+            </div>
           </div>
 
           <div className="relative z-10 my-auto grid min-h-0 grid-cols-[1.05fr_1fr] gap-[clamp(40px,6vw,80px)] pt-[clamp(24px,3.6vh,44px)] max-[1024px]:grid-cols-1 max-[1024px]:gap-8">

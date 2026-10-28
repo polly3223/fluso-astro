@@ -6,7 +6,7 @@ import { cn } from "@/utils/styles";
 import { useMorphingShape } from "@/hooks/useMorphingShape";
 import { FlusoText } from "@/components/FlusoWordmark";
 
-const BREAKPOINT = 768;
+const BREAKPOINT = 1024;
 
 type IndustryKey =
   | "founders"
@@ -31,7 +31,8 @@ const INDUSTRY_LINKS: { href: string; key: IndustryKey }[] = [
   { href: "/for-operations", key: "operations" },
 ];
 
-const TOP_LINKS: { href: string; key: "pricing" | "enterprise"; soon?: boolean }[] = [
+const TOP_LINKS: { href: string; key: "agents" | "pricing" | "enterprise"; soon?: boolean }[] = [
+  { href: "/#agents", key: "agents" },
   { href: "/pricing", key: "pricing" },
   { href: "/enterprise", key: "enterprise" },
 ];
@@ -368,7 +369,7 @@ export default function SiteNav({ hidePricing = false }: { hidePricing?: boolean
       }
     };
     const onResize = () => {
-      if (window.innerWidth > BREAKPOINT) setDrawerOpen(false);
+      if (window.innerWidth >= BREAKPOINT) setDrawerOpen(false);
     };
     document.addEventListener("keydown", onKeyDown);
     document.addEventListener("click", onDocClick);
@@ -410,7 +411,7 @@ export default function SiteNav({ hidePricing = false }: { hidePricing?: boolean
         aria-hidden="true"
         onClick={closeDrawer}
         className={cn(
-          "fixed inset-0 z-90 bg-black/40 backdrop-blur-[2px] transition-opacity duration-220 md:hidden!",
+          "fixed inset-0 z-90 bg-black/40 backdrop-blur-[2px] transition-opacity duration-220 lg:hidden!",
           drawerOpen ? "opacity-100" : "opacity-0 pointer-events-none",
         )}
       />
@@ -433,7 +434,7 @@ export default function SiteNav({ hidePricing = false }: { hidePricing?: boolean
         "left-6",
 
         "max-lg:gap-x-4",
-        "max-md:grid-cols-[1fr_auto] max-md:gap-x-3 max-md:py-3 max-md:px-4!",
+        "max-lg:grid-cols-[1fr_auto] max-lg:gap-x-3 max-lg:py-3 max-lg:px-4!",
       )}
     >
 
@@ -454,7 +455,7 @@ export default function SiteNav({ hidePricing = false }: { hidePricing?: boolean
           barTheme === "cross" && "bg-[#faf9f5]",
         )}
       />
-      <div className="justify-self-start max-md:justify-self-auto">
+      <div className="justify-self-start max-lg:justify-self-auto">
         <Link to="/" className="text-2xl text-inherit no-underline relative top-[-3px]">
           <FlusoText />
         </Link>
@@ -462,7 +463,7 @@ export default function SiteNav({ hidePricing = false }: { hidePricing?: boolean
 
       <nav
         aria-label={t("nav.primaryLabel")}
-        className="flex items-center justify-self-center justify-center gap-6 max-lg:gap-4 max-md:hidden!"
+        className="flex items-center justify-self-center justify-center gap-6 max-lg:gap-4 max-lg:hidden!"
       >
         <div
           ref={dropdownRef}
@@ -537,7 +538,7 @@ export default function SiteNav({ hidePricing = false }: { hidePricing?: boolean
 
           "before:content-[''] before:absolute before:-top-3 before:inset-x-0 before:h-3",
           "transition-[opacity,transform] duration-200 ease-[ease]",
-          "max-md:hidden",
+          "max-lg:hidden",
           dropdownOpen
             ? "visible translate-y-0 opacity-100 pointer-events-auto"
             : "invisible -translate-y-1.5 opacity-0 pointer-events-none",
@@ -571,12 +572,12 @@ export default function SiteNav({ hidePricing = false }: { hidePricing?: boolean
       <div
         className={cn(
           "justify-self-end text-right",
-          "max-md:flex! max-md:items-center max-md:justify-end max-md:ml-auto",
-          "max-md:justify-self-auto max-md:opacity-100",
+          "max-lg:flex! max-lg:items-center max-lg:justify-end max-lg:ml-auto",
+          "max-lg:justify-self-auto max-lg:opacity-100",
         )}
       >
 
-        <div className="inline-flex items-center gap-5 max-md:hidden!">
+        <div className="inline-flex items-center gap-5 max-lg:hidden!">
           <a
             href="https://form.typeform.com/to/vZnBDhzs"
             target="_blank"
@@ -658,7 +659,7 @@ export default function SiteNav({ hidePricing = false }: { hidePricing?: boolean
             barTheme !== "light" && "text-[#0c0c0c]",
             "hover:opacity-80",
             "[-webkit-tap-highlight-color:transparent]",
-            "max-md:inline-flex",
+            "max-lg:inline-flex",
           )}
         >
           <IconMenu className={drawerOpen ? "hidden" : "block"} />
@@ -678,7 +679,7 @@ export default function SiteNav({ hidePricing = false }: { hidePricing?: boolean
           if ((e.target as HTMLElement).closest("a")) closeDrawer();
         }}
         className={cn(
-          "col-span-full hidden min-w-0 max-md:grid",
+          "col-span-full hidden min-w-0 max-lg:grid",
           "transition-[grid-template-rows] duration-300 ease-[cubic-bezier(0.22,0.61,0.36,1)]",
           drawerOpen ? "[grid-template-rows:1fr]" : "[grid-template-rows:0fr]",
         )}

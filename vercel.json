@@ -84,6 +84,16 @@
       "source": "/for-operations.html",
       "destination": "/for-operations",
       "permanent": true
+    },
+    {
+      "source": "/it/privacy",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/it/terms",
+      "destination": "/terms",
+      "permanent": true
     }
   ]
 }

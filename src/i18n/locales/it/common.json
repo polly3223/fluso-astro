@@ -1,0 +1,63 @@
+{
+  "industries": {
+    "founders": "Amministratori Delegati",
+    "lawyers": "Avvocati",
+    "investors": "Investitori",
+    "marketers": "Marketer",
+    "researchers": "Ricercatori",
+    "doctors": "Medici",
+    "consultants": "Consulenti",
+    "sales": "Vendite",
+    "operations": "Operatività Aziendale"
+  },
+  "nav": {
+    "professionals": "Professionisti",
+    "pricing": "Prezzi",
+    "enterprise": "Enterprise",
+    "contact": "Contattaci",
+    "getStarted": "Inizia",
+    "comingSoon": "In arrivo",
+    "openMenu": "Apri il menu",
+    "closeMenu": "Chiudi il menu",
+    "primaryLabel": "Principale",
+    "navigationLabel": "Navigazione",
+    "agents": "Agenti"
+  },
+  "footer": {
+    "tagline": "Il tuo spazio di lavoro AI personale. Contesto connesso, modelli open-weight, il tuo perimetro.",
+    "productOf": "Un prodotto di",
+    "requestEarlyAccess": "Richiedi l'accesso anticipato",
+    "columns": {
+      "product": "Prodotto",
+      "industries": "Settori",
+      "company": "Azienda"
+    },
+    "product": {
+      "pricing": "$t(nav.pricing)",
+      "enterprise": "$t(nav.enterprise)",
+      "getStarted": "$t(nav.getStarted)",
+      "agents": "Agenti"
+    },
+    "company": {
+      "premai": "Prem AI",
+      "privacy": "Privacy",
+      "terms": "Termini",
+      "contact": "Contatti"
+    },
+    "copyright": "© {{year}} Fluso",
+    "engineeredInSwitzerland": "Progettato in Svizzera",
+    "hostedInEu": "Ospitato in Unione Europea",
+    "backToTop": "Torna su"
+  },
+  "parent": {
+    "productOf": "$t(footer.productOf)",
+    "tagline": "Prem AI is a private intelligence company.",
+    "visit": "Visita premai.io",
+    "contact": "$t(nav.contact)"
+  },
+  "industryPage": {
+    "customSkills": "Competenze personalizzate",
+    "automations": "Automazioni",
+    "connectors": "Connettori disponibili"
+  }
+}

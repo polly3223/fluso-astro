@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "bun run scripts/sync-static.ts && bun --bun astro dev --host 127.0.0.1 --port 8902",
-    "build": "bun run scripts/sync-static.ts && bun --bun astro build",
-    "preview": "bun --bun astro preview --host 127.0.0.1 --port 8902",
+    "build": "bun run scripts/sync-static.ts && bun run scripts/generate-sitemap.ts && bun --bun astro build",
+    "preview": "bun scripts/preview.ts",
     "check": "bun --bun astro check"
   },
   "dependencies": {
